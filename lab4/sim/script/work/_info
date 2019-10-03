@@ -1,0 +1,98 @@
+m255
+K4
+z2
+!s11e vcom 2019.2 2019.04, Apr 17 2019
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dS:/2019 Fall/HDL Lab/blink/blink/sim/script
+T_opt
+!s110 1568300378
+VCB9>bA@=a5HYPM[1CkY]U2
+04 8 4 work blink_tb arch 1
+=1-8cec4b9de813-5d7a5d50-328-299c
+o-quiet -auto_acc_if_foreign -work work +acc=rnbp
+tCvgOpt 0
+n@_opt
+OL;O;2019.2;69
+Eblink
+Z1 w1535832810
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+R0
+Z4 8../../src/blink.vhd
+Z5 F../../src/blink.vhd
+l0
+L37
+Vk?BJc5mIQ>]:YfNMSc6O40
+!s100 9m>z7SBUW@CD;cEaG76iD3
+Z6 OL;C;2019.2;69
+31
+Z7 !s110 1568300351
+!i10b 1
+Z8 !s108 1568300347.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|../../src/blink.vhd|
+Z10 !s107 ../../src/blink.vhd|
+!i113 0
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+DEx4 work 5 blink 0 22 k?BJc5mIQ>]:YfNMSc6O40
+l53
+L48
+VLY6?Yh7D]ZSgm6hH;nBER3
+!s100 jNo6??>A_]YJ6GWGnfK[]2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 0
+R11
+R12
+Eblink_tb
+Z13 w1535982096
+R2
+R3
+R0
+Z14 8../src/blink_tb.vhd
+Z15 F../src/blink_tb.vhd
+l0
+L31
+V6eUKJ==bNR@cVVX9LC>Wl0
+!s100 DHGXXR;A;e<X>SY3PB4c50
+R6
+31
+Z16 !s110 1568300364
+!i10b 1
+Z17 !s108 1568300362.000000
+Z18 !s90 -reportprogress|300|-93|-work|work|../src/blink_tb.vhd|
+Z19 !s107 ../src/blink_tb.vhd|
+!i113 0
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 8 blink_tb 0 22 6eUKJ==bNR@cVVX9LC>Wl0
+l52
+L34
+VOC7O]G3U5cm<602[RWd6a0
+!s100 DJlJj5AejV2_BgBZKHcS=0
+R6
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R11
+R12
