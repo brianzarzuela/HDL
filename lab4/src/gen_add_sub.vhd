@@ -4,7 +4,7 @@
 --
 --  DESIGNER NAME:  Brian Zarzuela
 --
---          LAB 3:  Seven Segment Display Counter
+--          LAB 4:  Hardware Add and Subtract [3 bit]
 --
 --      FILE NAME:  gen_add_sub.vhd
 --
