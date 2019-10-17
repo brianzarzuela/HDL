@@ -90,7 +90,7 @@ begin
   
   if (reset = '1') then 
     state_reg <= s_enter_a;
-  elsif (clk'event and clk '1') then
+  elsif (clk'event and clk = '1') then
     state_reg <= next_state;
   end if;
   
