@@ -25,11 +25,20 @@
 --    |  10  | not in use       |
 --    |------+------------------|
 --    |  11  | not in use       |
---     --------------------------
+--    +-------------------------+
 --
 --    ALU operation codes :
---    00: add               10: multiply
---    01: subtract          11: divide
+--     ____________________
+--    | opcode | operation |
+--    |--------+-----------|
+--    |   00   | add       |
+--    |--------+-----------|
+--    |   01   | subtract  |
+--    |--------+-----------|
+--    |   10   | multiply  |
+--    |--------+-----------|
+--    |   11   | divide    |
+--    +--------------------+
 --
 --******************************************************************************
 --******************************************************************************
@@ -40,19 +49,34 @@ use ieee.numeric_std.all;
 
 entity calculator is
   port(
-    input   : in  std_logic_vector(7 downto 0);
-    opcode  : in  std_logic_vector(1 downto 0);
-    clk     : in  std_logic;
-    execute : in  std_logic;
-    ms      : in  std_logic;
-    mr      : in  std_logic;
-    reset   : in  std_logic;
+    input    : in  std_logic_vector(7 downto 0);
+    opcode   : in  std_logic_vector(1 downto 0);
+    clk      : in  std_logic;
+    execute  : in  std_logic;
+    ms       : in  std_logic;
+    mr       : in  std_logic;
+    reset    : in  std_logic;
     --
-    display : out std_logic_vector(6 downto 0)
+    ones     : out std_logic_vector(6 downto 0);
+    tens     : out std_logic_vector(6 downto 0);
+    hundreds : out std_logic_vector(6 downto 0)
   );
 end calculator;
 
 architecture arc of calculator is
+
+--------------------------------------------------------------------------------
+
+-- component declarations
+
+component double_dabble
+  port(
+    result_padded :  in std_logic_vector(11 downto 0);
+    ones          : out std_logic_vector(3 downto 0);
+    tens          : out std_logic_vector(3 downto 0);
+    hundreds      : out std_logic_vector(3 downto 0)
+  );
+end component;
 
 component bcd_to_seven_seg
   port(
@@ -98,6 +122,9 @@ signal mem_to_alu : std_logic_vector(7 downto 0);
 signal ones     : std_logic_vector(3 downto 0);
 signal tens     : std_logic_vector(3 downto 0);
 signal hundreds : std_logic_vector(3 downto 0);
+
+-- display signals
+signal result_padded : std_logic_vector(11 downto 0);
 
 -- state machine declaration
 type state_type is (read_w, read_s, write_w, write_s, write_w_no_op);
@@ -189,64 +216,7 @@ end process;
 
 --------------------------------------------------------------------------------
 
-result_padded <= "000" & result_reg;
-
--- double dabble povided code
-bcd1: process(result_padded)
--- temporary variable
-variable temp : STD_LOGIC_VECTOR (11 downto 0);
-
--- variable to store the output BCD number
--- organized as follows
--- thousands = bcd(15 downto 12)
--- hundreds = bcd(11 downto 8)
--- tens = bcd(7 downto 4)
--- units = bcd(3 downto 0)
-variable bcd : UNSIGNED (15 downto 0) := (others => '0');
-
--- by
--- https://en.wikipedia.org/wiki/Double_dabble
-
-begin
-  -- zero the bcd variable
-  bcd := (others => '0');
-  
-  -- read input into temp variable
-  temp(11 downto 0) := result_padded;
-  
-  -- cycle 12 times as we have 12 input bits
-  -- this could be optimized, we dont need to check and add 3 for the 
-  -- first 3 iterations as the number can never be >4
-  for i in 0 to 11 loop
-    if bcd(3 downto 0) > 4 then 
-      bcd(3 downto 0) := bcd(3 downto 0) + 3;
-    end if;
-    
-    if bcd(7 downto 4) > 4 then 
-      bcd(7 downto 4) := bcd(7 downto 4) + 3;
-    end if;
-  
-    if bcd(11 downto 8) > 4 then  
-      bcd(11 downto 8) := bcd(11 downto 8) + 3;
-    end if;
-
-    -- thousands can't be >4 for a 12-bit input number
-    -- so don't need to do anything to upper 4 bits of bcd
-  
-    -- shift bcd left by 1 bit, copy MSB of temp into LSB of bcd
-    bcd := bcd(14 downto 0) & temp(11);
-  
-    -- shift temp left by 1 bit
-    temp := temp(10 downto 0) & '0';
-  
-  end loop;
-
-  -- set outputs
-  ones <= STD_LOGIC_VECTOR(bcd(3 downto 0));
-  tens <= STD_LOGIC_VECTOR(bcd(7 downto 4));
-  hundreds <= STD_LOGIC_VECTOR(bcd(11 downto 8));
-  --thousands <= STD_LOGIC_VECTOR(bcd(15 downto 12));
-end process bcd1; 
+result_padded <= "0000" & result_reg;
 
 --------------------------------------------------------------------------------
 
