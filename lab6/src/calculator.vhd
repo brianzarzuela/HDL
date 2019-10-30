@@ -115,16 +115,14 @@ end component;
 -- memory signals
 signal we         : std_logic;
 signal addr       : std_logic_vector(1 downto 0);
-signal result_reg : std_logic_vector(7 downto 0);
-signal mem_to_alu : std_logic_vector(7 downto 0);
-
--- display signals
-signal ones     : std_logic_vector(3 downto 0);
-signal tens     : std_logic_vector(3 downto 0);
-signal hundreds : std_logic_vector(3 downto 0);
+signal result_reg : std_logic_vector(7 downto 0) := (others => '0');
+signal mem_to_alu : std_logic_vector(7 downto 0) := (others => '0');
 
 -- display signals
 signal result_padded : std_logic_vector(11 downto 0);
+signal ones_bcd      : std_logic_vector(3 downto 0);
+signal tens_bcd      : std_logic_vector(3 downto 0);
+signal hundreds_bcd  : std_logic_vector(3 downto 0);
 
 -- state machine declaration
 type state_type is (read_w, read_s, write_w, write_s, write_w_no_op);
@@ -153,12 +151,45 @@ mem_u : memory
 
 alu_u : alu
   port map(
-    clk => clk,
-    reset => reset,
-    a => input,
-    b => mem_to_alu,
-    op => opcode,
+    clk    => clk,
+    reset  => reset,
+    a      => input,
+    b      => mem_to_alu,
+    op     => opcode,
     result => result
+  );
+
+--------------------------------------------------------------------------------
+
+double_dabble_u : double_dabble
+  port map(
+    result_padded => result_padded,
+    ones          => ones_bcd,
+    tens          => tens_bcd,
+    hundreds      => hundreds_bcd
+  );
+
+--------------------------------------------------------------------------------
+
+ones_display : bcd_to_seven_seg
+  port map(
+    clk     => clk,
+    input   => ones_bcd,
+    display => ones
+  );
+
+tens_display : bcd_to_seven_seg
+  port map(
+    clk     => clk,
+    input   => tens_bcd,
+    display => tens
+  );
+
+hundreds_display : bcd_to_seven_seg
+  port map(
+    clk     => clk,
+    input   => hundreds_bcd,
+    display => hundreds
   );
 
 --------------------------------------------------------------------------------
