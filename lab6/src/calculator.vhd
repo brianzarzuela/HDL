@@ -59,7 +59,8 @@ entity calculator is
     --
     ones     : out std_logic_vector(6 downto 0);
     tens     : out std_logic_vector(6 downto 0);
-    hundreds : out std_logic_vector(6 downto 0)
+    hundreds : out std_logic_vector(6 downto 0);
+    led      : out std_logic_vector(4 downto 0)
   );
 end calculator;
 
@@ -68,6 +69,15 @@ architecture arc of calculator is
 --------------------------------------------------------------------------------
 
 -- component declarations
+
+component synchronizer_8bit
+  port (
+    input    :  in std_logic_vector(7 downto 0);
+    clk      :  in std_logic;
+    reset    :  in std_logic;
+    sync_out : out std_logic_vector(7 downto 0)
+  );
+end component;
 
 component double_dabble
   port(
@@ -112,6 +122,9 @@ end component;
 
 --------------------------------------------------------------------------------
 
+-- synchronized signals
+signal input_sync : std_logic_vector(7 downto 0);
+
 -- memory signals
 signal we         : std_logic;
 signal addr       : std_logic_vector(1 downto 0);
@@ -135,6 +148,16 @@ begin
 
 --------------------------------------------------------------------------------
 
+sync_u : synchronizer_8bit
+  port map(
+    input    => input,
+    clk      => clk,
+    reset    => reset,
+    sync_out => input_sync
+  );
+
+--------------------------------------------------------------------------------
+
 mem_u : memory
   generic map(
     addr_width => 2,
@@ -153,7 +176,7 @@ alu_u : alu
   port map(
     clk    => clk,
     reset  => reset,
-    a      => input,
+    a      => input_sync,
     b      => mem_to_alu,
     op     => opcode,
     result => result
@@ -197,7 +220,7 @@ hundreds_display : bcd_to_seven_seg
 -- state register
 process (clk, reset)
 begin
-  if (reset = '1') then
+  if (reset = '0') then
     state_reg <= read_w;
   elsif (clk'event and clk = '1') then
     state_reg <= next_state;
@@ -234,7 +257,7 @@ end process;
 -- result register
 process (clk, reset)
 begin
-  if (reset = '1') then
+  if (reset = '0') then
     result_reg <= (others => '0');
   elsif (clk'event and clk = '1') then
     if (state_reg = write_w_no_op) then
@@ -248,6 +271,21 @@ end process;
 --------------------------------------------------------------------------------
 
 result_padded <= "0000" & result_reg;
+
+--------------------------------------------------------------------------------
+
+-- state led
+process (state_reg)
+begin
+  case state_reg is
+    when read_w        => led <= "00001";
+    when read_s        => led <= "00010";
+    when write_s       => led <= "00100";
+    when write_w       => led <= "01000";
+    when write_w_no_op => led <= "10000";
+    when others        => led <= "00000";
+  end case;
+end process;
 
 --------------------------------------------------------------------------------
 

@@ -24,7 +24,7 @@ signal result_temp : std_logic_vector(15 downto 0);
 begin
 process(clk,reset)
   begin
-    if (reset = '1') then 
+    if (reset = '0') then 
       result <= (others => '0');
     elsif (clk'event and clk = '1') then
       if (op = "00") then
