@@ -37,7 +37,7 @@ begin
 
 --------------------------------------------------------------------------------
 
-process(reset, clk, async_in)
+process(reset, clk, input)
   begin
     if reset = '0' then
       flop1 <= "00000000";
