@@ -33,8 +33,9 @@ signal ones_bcd      : std_logic_vector(3 downto 0);
 signal tens_bcd      : std_logic_vector(3 downto 0);
 signal hundreds_bcd  : std_logic_vector(3 downto 0);
 
-signal to_alu : std_logic_vector(7 downto 0) := (others => '0');
-signal result : std_logic_vector(7 downto 0);
+signal to_alu     : std_logic_vector(7 downto 0);
+signal result     : std_logic_vector(7 downto 0);
+signal result_reg : std_logic_vector(7 downto 0) := (others => '0');
 
 type state is (idle, operate);
 signal state_reg  : state := idle;
@@ -82,7 +83,7 @@ alu_u : alu
 
 --------------------------------------------------------------------------------
 
-result_padded <= "0000" & result;
+result_padded <= "0000" & result_reg;
 
 --------------------------------------------------------------------------------
 
@@ -140,6 +141,19 @@ begin
     when others => state_next <= idle;
   end case;
 end process;
+
+--------------------------------------------------------------------------------
+
+process (state_reg, reset)
+begin
+  if (reset = '0') then result_reg <= (others => '0');
+  elsif (state_reg = operate) then result_reg <= result;
+  end if;
+end process;
+
+--------------------------------------------------------------------------------
+
+to_alu <= result_reg;
 
 --------------------------------------------------------------------------------
 

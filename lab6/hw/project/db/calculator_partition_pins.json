@@ -88,15 +88,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "switch[0]",
-					"strict" : false
-				},
-				{
 					"name" : "reset",
 					"strict" : false
 				},
 				{
 					"name" : "opcode[1]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[0]",
+					"strict" : false
+				},
+				{
+					"name" : "switch[0]",
 					"strict" : false
 				},
 				{
@@ -120,15 +124,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "switch[6]",
-					"strict" : false
-				},
-				{
 					"name" : "switch[7]",
 					"strict" : false
 				},
 				{
-					"name" : "opcode[0]",
+					"name" : "switch[6]",
+					"strict" : false
+				},
+				{
+					"name" : "execute",
 					"strict" : false
 				}
 			]

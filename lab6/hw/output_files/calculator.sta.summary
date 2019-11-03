@@ -3,51 +3,99 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'clk'
-Slack : -1.554
-TNS   : -24.148
+Slack : -23.682
+TNS   : -328.032
+
+Type  : Slow 1100mV 85C Model Setup 'calculator:calculator_u|state_reg'
+Slack : -4.857
+TNS   : -35.125
 
 Type  : Slow 1100mV 85C Model Hold 'clk'
-Slack : 0.363
+Slack : 0.425
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'calculator:calculator_u|state_reg'
+Slack : 3.071
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
 Slack : -0.394
-TNS   : -18.736
+TNS   : -21.370
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'calculator:calculator_u|state_reg'
+Slack : 0.395
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'clk'
-Slack : -1.563
-TNS   : -24.418
+Slack : -24.552
+TNS   : -320.920
+
+Type  : Slow 1100mV 0C Model Setup 'calculator:calculator_u|state_reg'
+Slack : -4.916
+TNS   : -35.658
 
 Type  : Slow 1100mV 0C Model Hold 'clk'
-Slack : 0.339
+Slack : 0.365
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'calculator:calculator_u|state_reg'
+Slack : 3.148
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
 Slack : -0.394
-TNS   : -20.497
+TNS   : -22.856
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'calculator:calculator_u|state_reg'
+Slack : 0.405
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'clk'
-Slack : -0.476
-TNS   : -5.474
+Slack : -12.524
+TNS   : -210.390
+
+Type  : Fast 1100mV 85C Model Setup 'calculator:calculator_u|state_reg'
+Slack : -2.454
+TNS   : -17.368
 
 Type  : Fast 1100mV 85C Model Hold 'clk'
-Slack : 0.203
+Slack : 0.246
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'calculator:calculator_u|state_reg'
+Slack : 1.814
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
 Slack : -0.093
-TNS   : -3.164
+TNS   : -3.672
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'calculator:calculator_u|state_reg'
+Slack : 0.374
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'clk'
-Slack : -0.378
-TNS   : -4.103
+Slack : -11.751
+TNS   : -181.931
+
+Type  : Fast 1100mV 0C Model Setup 'calculator:calculator_u|state_reg'
+Slack : -2.356
+TNS   : -16.777
 
 Type  : Fast 1100mV 0C Model Hold 'clk'
-Slack : 0.188
+Slack : 0.231
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'calculator:calculator_u|state_reg'
+Slack : 1.827
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -0.088
-TNS   : -3.091
+Slack : -0.092
+TNS   : -3.649
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'calculator:calculator_u|state_reg'
+Slack : 0.400
+TNS   : 0.000
 
 ------------------------------------------------------------
