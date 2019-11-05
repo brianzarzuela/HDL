@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sun Nov 03 15:43:47 2019
+Fitter Status : Successful - Tue Nov 05 14:36:00 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : calculator
 Top-level Entity Name : top
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 189 / 32,070 ( < 1 % )
-Total registers : 41
+Logic utilization (in ALMs) : 198 / 32,070 ( < 1 % )
+Total registers : 87
 Total pins : 41 / 457 ( 9 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for calculator
-Sun Nov 03 15:42:49 2019
+Tue Nov 05 14:35:00 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,15 +14,15 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis DSP Block Usage Summary
-  9. User-Specified and Inferred Latches
+  9. State Machine - |top|calculator:calculator_u|state_reg
  10. Registers Removed During Synthesis
  11. General Register Statistics
  12. Inverted Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for Inferred Entity Instance: calculator:calculator_u|alu:alu_u|lpm_divide:Div0
- 15. Port Connectivity Checks: "calculator:calculator_u|double_dabble:double_dabble_u"
- 16. Port Connectivity Checks: "calculator:calculator_u|rising_edge_synchronizer:mr_u"
- 17. Port Connectivity Checks: "calculator:calculator_u|rising_edge_synchronizer:ms_u"
+ 14. Parameter Settings for User Entity Instance: calculator:calculator_u|memory:mem
+ 15. Parameter Settings for Inferred Entity Instance: calculator:calculator_u|alu:comp|lpm_divide:Div0
+ 16. Port Connectivity Checks: "calculator:calculator_u|double_dabble:dd"
+ 17. Port Connectivity Checks: "calculator:calculator_u|memory:mem"
  18. Post-Synthesis Netlist Statistics for Top Partition
  19. Elapsed Time Per Partition
  20. Analysis & Synthesis Messages
@@ -51,13 +51,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Nov 03 15:42:49 2019       ;
+; Analysis & Synthesis Status     ; Successful - Tue Nov 05 14:35:00 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; calculator                                  ;
 ; Top-level Entity Name           ; top                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 41                                          ;
+; Total registers                 ; 85                                          ;
 ; Total pins                      ; 41                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -183,6 +183,7 @@ refer to the applicable agreement for further details.
 ; ../../src/bcd_to_seven_seg.vhd         ; yes             ; User VHDL File               ; C:/Users/briza/Documents/GitHub/HDL/lab6/src/bcd_to_seven_seg.vhd              ;         ;
 ; ../../src/rising_edge_synchronizer.vhd ; yes             ; User VHDL File               ; C:/Users/briza/Documents/GitHub/HDL/lab6/src/rising_edge_synchronizer.vhd      ;         ;
 ; ../../src/double_dabble.vhd            ; yes             ; User VHDL File               ; C:/Users/briza/Documents/GitHub/HDL/lab6/src/double_dabble.vhd                 ;         ;
+; ../../src/memory.vhd                   ; yes             ; User VHDL File               ; C:/Users/briza/Documents/GitHub/HDL/lab6/src/memory.vhd                        ;         ;
 ; ../../src/alu.vhd                      ; yes             ; User VHDL File               ; C:/Users/briza/Documents/GitHub/HDL/lab6/src/alu.vhd                           ;         ;
 ; ../../src/components.vhd               ; yes             ; User VHDL File               ; C:/Users/briza/Documents/GitHub/HDL/lab6/src/components.vhd                    ;         ;
 ; ../../src/calculator.vhd               ; yes             ; User VHDL File               ; C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd                    ;         ;
@@ -202,46 +203,49 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 188       ;
+; Estimate of Logic utilization (ALMs needed) ; 200       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 369       ;
+; Combinational ALUT usage for logic          ; 378       ;
 ;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 5         ;
-;     -- 5 input functions                    ; 54        ;
-;     -- 4 input functions                    ; 139       ;
-;     -- <=3 input functions                  ; 171       ;
+;     -- 6 input functions                    ; 7         ;
+;     -- 5 input functions                    ; 55        ;
+;     -- 4 input functions                    ; 140       ;
+;     -- <=3 input functions                  ; 176       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 41        ;
+; Dedicated logic registers                   ; 85        ;
 ;                                             ;           ;
 ; I/O pins                                    ; 41        ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 1         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 41        ;
-; Total fan-out                               ; 1542      ;
-; Average fan-out                             ; 3.13      ;
+; Maximum fan-out                             ; 85        ;
+; Total fan-out                               ; 1723      ;
+; Average fan-out                             ; 3.16      ;
 +---------------------------------------------+-----------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                      ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                    ; Entity Name              ; Library Name ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |top                                         ; 369 (0)             ; 41 (0)                    ; 0                 ; 1          ; 41   ; 0            ; |top                                                                                                                                   ; top                      ; work         ;
-;    |calculator:calculator_u|                 ; 369 (9)             ; 41 (1)                    ; 0                 ; 1          ; 0    ; 0            ; |top|calculator:calculator_u                                                                                                           ; calculator               ; work         ;
-;       |alu:alu_u|                            ; 329 (18)            ; 16 (16)                   ; 0                 ; 1          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u                                                                                                 ; alu                      ; work         ;
-;          |lpm_divide:Div0|                   ; 311 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u|lpm_divide:Div0                                                                                 ; lpm_divide               ; work         ;
-;             |lpm_divide_7dm:auto_generated|  ; 311 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated                                                   ; lpm_divide_7dm           ; work         ;
-;                |sign_div_unsign_dnh:divider| ; 311 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh      ; work         ;
-;                   |alt_u_div_03f:divider|    ; 311 (311)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider ; alt_u_div_03f            ; work         ;
-;       |bcd_to_seven_seg:hundreds_display|    ; 3 (3)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|bcd_to_seven_seg:hundreds_display                                                                         ; bcd_to_seven_seg         ; work         ;
-;       |bcd_to_seven_seg:ones_display|        ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|bcd_to_seven_seg:ones_display                                                                             ; bcd_to_seven_seg         ; work         ;
-;       |bcd_to_seven_seg:tens_display|        ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|bcd_to_seven_seg:tens_display                                                                             ; bcd_to_seven_seg         ; work         ;
-;       |double_dabble:double_dabble_u|        ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|double_dabble:double_dabble_u                                                                             ; double_dabble            ; work         ;
-;       |rising_edge_synchronizer:execute_u|   ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|rising_edge_synchronizer:execute_u                                                                        ; rising_edge_synchronizer ; work         ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                   ; Entity Name              ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
+; |top                                          ; 378 (0)             ; 85 (0)                    ; 0                 ; 1          ; 41   ; 0            ; |top                                                                                                                                  ; top                      ; work         ;
+;    |calculator:calculator_u|                  ; 378 (5)             ; 85 (13)                   ; 0                 ; 1          ; 0    ; 0            ; |top|calculator:calculator_u                                                                                                          ; calculator               ; work         ;
+;       |alu:comp|                              ; 329 (18)            ; 16 (16)                   ; 0                 ; 1          ; 0    ; 0            ; |top|calculator:calculator_u|alu:comp                                                                                                 ; alu                      ; work         ;
+;          |lpm_divide:Div0|                    ; 311 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:comp|lpm_divide:Div0                                                                                 ; lpm_divide               ; work         ;
+;             |lpm_divide_7dm:auto_generated|   ; 311 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:comp|lpm_divide:Div0|lpm_divide_7dm:auto_generated                                                   ; lpm_divide_7dm           ; work         ;
+;                |sign_div_unsign_dnh:divider|  ; 311 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:comp|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh      ; work         ;
+;                   |alt_u_div_03f:divider|     ; 311 (311)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:comp|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider ; alt_u_div_03f            ; work         ;
+;       |bcd_to_seven_seg:hundreds_display|     ; 3 (3)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|bcd_to_seven_seg:hundreds_display                                                                        ; bcd_to_seven_seg         ; work         ;
+;       |bcd_to_seven_seg:ones_display|         ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|bcd_to_seven_seg:ones_display                                                                            ; bcd_to_seven_seg         ; work         ;
+;       |bcd_to_seven_seg:tens_display|         ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|bcd_to_seven_seg:tens_display                                                                            ; bcd_to_seven_seg         ; work         ;
+;       |double_dabble:dd|                      ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|double_dabble:dd                                                                                         ; double_dabble            ; work         ;
+;       |memory:mem|                            ; 10 (10)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|memory:mem                                                                                               ; memory                   ; work         ;
+;       |rising_edge_synchronizer:execute_edge| ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|rising_edge_synchronizer:execute_edge                                                                    ; rising_edge_synchronizer ; work         ;
+;       |rising_edge_synchronizer:mr_edge|      ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|rising_edge_synchronizer:mr_edge                                                                         ; rising_edge_synchronizer ; work         ;
+;       |rising_edge_synchronizer:ms_edge|      ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|rising_edge_synchronizer:ms_edge                                                                         ; rising_edge_synchronizer ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -257,22 +261,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                             ;
-+----------------------------------------------------+-----------------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal               ; Free of Timing Hazards ;
-+----------------------------------------------------+-----------------------------------+------------------------+
-; calculator:calculator_u|result_reg[0]              ; calculator:calculator_u|state_reg ; yes                    ;
-; calculator:calculator_u|result_reg[1]              ; calculator:calculator_u|state_reg ; yes                    ;
-; calculator:calculator_u|result_reg[2]              ; calculator:calculator_u|state_reg ; yes                    ;
-; calculator:calculator_u|result_reg[3]              ; calculator:calculator_u|state_reg ; yes                    ;
-; calculator:calculator_u|result_reg[4]              ; calculator:calculator_u|state_reg ; yes                    ;
-; calculator:calculator_u|result_reg[5]              ; calculator:calculator_u|state_reg ; yes                    ;
-; calculator:calculator_u|result_reg[7]              ; calculator:calculator_u|state_reg ; yes                    ;
-; calculator:calculator_u|result_reg[6]              ; calculator:calculator_u|state_reg ; yes                    ;
-; Number of user-specified and inferred latches = 8  ;                                   ;                        ;
-+----------------------------------------------------+-----------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|calculator:calculator_u|state_reg                                                                          ;
++-------------------------+-------------------------+-------------------+-------------------+------------------+------------------+
+; Name                    ; state_reg.write_w_no_op ; state_reg.write_s ; state_reg.write_w ; state_reg.read_s ; state_reg.read_w ;
++-------------------------+-------------------------+-------------------+-------------------+------------------+------------------+
+; state_reg.read_w        ; 0                       ; 0                 ; 0                 ; 0                ; 0                ;
+; state_reg.read_s        ; 0                       ; 0                 ; 0                 ; 1                ; 1                ;
+; state_reg.write_w       ; 0                       ; 0                 ; 1                 ; 0                ; 1                ;
+; state_reg.write_s       ; 0                       ; 1                 ; 0                 ; 0                ; 1                ;
+; state_reg.write_w_no_op ; 1                       ; 0                 ; 0                 ; 0                ; 1                ;
++-------------------------+-------------------------+-------------------+-------------------+------------------+------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -281,7 +281,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Register name                                                        ; Reason for Removal                     ;
 +----------------------------------------------------------------------+----------------------------------------+
 ; calculator:calculator_u|bcd_to_seven_seg:hundreds_display|display[1] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1                                ;                                        ;
+; calculator:calculator_u|memory:mem|RAM~27                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~28                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~29                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~30                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~31                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~32                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~33                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~34                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~35                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~36                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~37                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~38                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~39                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~40                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~41                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~42                            ; Lost fanout                            ;
+; Total Number of Removed Registers = 17                               ;                                        ;
 +----------------------------------------------------------------------+----------------------------------------+
 
 
@@ -290,85 +306,96 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 41    ;
+; Total registers                              ; 85    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 8     ;
-; Number of registers using Asynchronous Clear ; 13    ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 33    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Clock Enable       ; 32    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------+
-; Inverted Register Statistics                                                   ;
-+----------------------------------------------------------------------+---------+
-; Inverted Register                                                    ; Fan out ;
-+----------------------------------------------------------------------+---------+
-; calculator:calculator_u|rising_edge_synchronizer:execute_u|input_zz  ; 2       ;
-; calculator:calculator_u|rising_edge_synchronizer:execute_u|input_zzz ; 1       ;
-; calculator:calculator_u|rising_edge_synchronizer:execute_u|input_z   ; 1       ;
-; Total number of inverted registers = 3                               ;         ;
-+----------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                      ;
++-------------------------------------------------------------------------+---------+
+; Inverted Register                                                       ; Fan out ;
++-------------------------------------------------------------------------+---------+
+; calculator:calculator_u|rising_edge_synchronizer:mr_edge|input_zz       ; 2       ;
+; calculator:calculator_u|rising_edge_synchronizer:mr_edge|input_zzz      ; 1       ;
+; calculator:calculator_u|rising_edge_synchronizer:execute_edge|input_zz  ; 2       ;
+; calculator:calculator_u|rising_edge_synchronizer:execute_edge|input_zzz ; 1       ;
+; calculator:calculator_u|rising_edge_synchronizer:ms_edge|input_zz       ; 2       ;
+; calculator:calculator_u|rising_edge_synchronizer:ms_edge|input_zzz      ; 1       ;
+; calculator:calculator_u|rising_edge_synchronizer:mr_edge|input_z        ; 1       ;
+; calculator:calculator_u|rising_edge_synchronizer:execute_edge|input_z   ; 1       ;
+; calculator:calculator_u|rising_edge_synchronizer:ms_edge|input_z        ; 1       ;
+; Total number of inverted registers = 9                                  ;         ;
++-------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|calculator:calculator_u|alu:alu_u|result_temp[3] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top|calculator:calculator_u|result_reg[5]           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|calculator:calculator_u|alu:comp|result_temp[5] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top|calculator:calculator_u|next_state              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top|calculator:calculator_u|next_state.write_s      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: calculator:calculator_u|alu:alu_u|lpm_divide:Div0 ;
-+------------------------+----------------+----------------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                                     ;
-+------------------------+----------------+----------------------------------------------------------+
-; LPM_WIDTHN             ; 16             ; Untyped                                                  ;
-; LPM_WIDTHD             ; 16             ; Untyped                                                  ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                  ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                  ;
-; LPM_PIPELINE           ; 0              ; Untyped                                                  ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                  ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                                  ;
-; CBXI_PARAMETER         ; lpm_divide_7dm ; Untyped                                                  ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                                  ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                  ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                               ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                             ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                             ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                           ;
-+------------------------+----------------+----------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: calculator:calculator_u|memory:mem ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; addr_width     ; 2     ; Signed Integer                                         ;
+; data_width     ; 8     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------+
-; Port Connectivity Checks: "calculator:calculator_u|double_dabble:double_dabble_u" ;
-+----------------------+-------+----------+-----------------------------------------+
-; Port                 ; Type  ; Severity ; Details                                 ;
-+----------------------+-------+----------+-----------------------------------------+
-; result_padded[11..8] ; Input ; Info     ; Stuck at GND                            ;
-+----------------------+-------+----------+-----------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: calculator:calculator_u|alu:comp|lpm_divide:Div0 ;
++------------------------+----------------+---------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                    ;
++------------------------+----------------+---------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                                 ;
+; LPM_WIDTHD             ; 16             ; Untyped                                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                 ;
+; CBXI_PARAMETER         ; lpm_divide_7dm ; Untyped                                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                          ;
++------------------------+----------------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "calculator:calculator_u|rising_edge_synchronizer:mr_u"                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; edge ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "calculator:calculator_u|double_dabble:dd" ;
++----------------------+-------+----------+----------------------------+
+; Port                 ; Type  ; Severity ; Details                    ;
++----------------------+-------+----------+----------------------------+
+; result_padded[11..8] ; Input ; Info     ; Stuck at GND               ;
++----------------------+-------+----------+----------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "calculator:calculator_u|rising_edge_synchronizer:ms_u"                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; edge ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "calculator:calculator_u|memory:mem" ;
++---------+-------+----------+-----------------------------------+
+; Port    ; Type  ; Severity ; Details                           ;
++---------+-------+----------+-----------------------------------+
+; addr[1] ; Input ; Info     ; Stuck at GND                      ;
++---------+-------+----------+-----------------------------------+
 
 
 +-----------------------------------------------------+
@@ -376,12 +403,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 41                          ;
-;     CLR               ; 5                           ;
+; arriav_ff             ; 85                          ;
+;     CLR               ; 17                          ;
 ;     CLR SLD           ; 8                           ;
-;     ENA               ; 8                           ;
-;     plain             ; 20                          ;
-; arriav_lcell_comb     ; 370                         ;
+;     ENA               ; 24                          ;
+;     ENA CLR SLD       ; 8                           ;
+;     plain             ; 28                          ;
+; arriav_lcell_comb     ; 379                         ;
 ;     arith             ; 167                         ;
 ;         0 data inputs ; 23                          ;
 ;         1 data inputs ; 8                           ;
@@ -389,19 +417,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 14                          ;
 ;         4 data inputs ; 69                          ;
 ;         5 data inputs ; 41                          ;
-;     normal            ; 203                         ;
+;     normal            ; 212                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 75                          ;
-;         3 data inputs ; 38                          ;
-;         4 data inputs ; 70                          ;
-;         5 data inputs ; 13                          ;
-;         6 data inputs ; 5                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 74                          ;
+;         3 data inputs ; 42                          ;
+;         4 data inputs ; 71                          ;
+;         5 data inputs ; 14                          ;
+;         6 data inputs ; 7                           ;
 ; arriav_mac            ; 1                           ;
 ; boundary_port         ; 41                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 31.00                       ;
-; Average LUT depth     ; 23.06                       ;
+; Average LUT depth     ; 21.36                       ;
 +-----------------------+-----------------------------+
 
 
@@ -410,7 +438,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -420,7 +448,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Nov 03 15:42:31 2019
+    Info: Processing started: Tue Nov 05 14:34:34 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calculator -c calculator
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -453,26 +481,17 @@ Info (12021): Found 2 design units, including 1 entities, in source file /users/
 Info (12127): Elaborating entity "top" for the top level hierarchy
 Info (12128): Elaborating entity "calculator" for hierarchy "calculator:calculator_u" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 64
 Warning (10541): VHDL Signal Declaration warning at calculator.vhd(19): used implicit default value for signal "led" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 19
-Warning (10036): Verilog HDL or VHDL warning at calculator.vhd(27): object "ms_pulse" assigned a value but never read File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 27
-Warning (10036): Verilog HDL or VHDL warning at calculator.vhd(28): object "mr_pulse" assigned a value but never read File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 28
-Warning (10492): VHDL Process Statement warning at calculator.vhd(150): signal "result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 150
-Warning (10631): VHDL Process Statement warning at calculator.vhd(147): inferring latch(es) for signal or variable "result_reg", which holds its previous value in one or more paths through the process File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 147
-Info (10041): Inferred latch for "result_reg[0]" at calculator.vhd(147) File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 147
-Info (10041): Inferred latch for "result_reg[1]" at calculator.vhd(147) File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 147
-Info (10041): Inferred latch for "result_reg[2]" at calculator.vhd(147) File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 147
-Info (10041): Inferred latch for "result_reg[3]" at calculator.vhd(147) File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 147
-Info (10041): Inferred latch for "result_reg[4]" at calculator.vhd(147) File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 147
-Info (10041): Inferred latch for "result_reg[5]" at calculator.vhd(147) File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 147
-Info (10041): Inferred latch for "result_reg[6]" at calculator.vhd(147) File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 147
-Info (10041): Inferred latch for "result_reg[7]" at calculator.vhd(147) File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 147
-Info (12128): Elaborating entity "rising_edge_synchronizer" for hierarchy "calculator:calculator_u|rising_edge_synchronizer:execute_u" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 48
-Info (12128): Elaborating entity "alu" for hierarchy "calculator:calculator_u|alu:alu_u" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 74
-Info (12128): Elaborating entity "double_dabble" for hierarchy "calculator:calculator_u|double_dabble:double_dabble_u" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 90
-Info (12128): Elaborating entity "bcd_to_seven_seg" for hierarchy "calculator:calculator_u|bcd_to_seven_seg:ones_display" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 100
+Info (12128): Elaborating entity "rising_edge_synchronizer" for hierarchy "calculator:calculator_u|rising_edge_synchronizer:execute_edge" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 58
+Info (12128): Elaborating entity "alu" for hierarchy "calculator:calculator_u|alu:comp" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 84
+Info (12128): Elaborating entity "memory" for hierarchy "calculator:calculator_u|memory:mem" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 96
+Info (12128): Elaborating entity "double_dabble" for hierarchy "calculator:calculator_u|double_dabble:dd" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 181
+Info (12128): Elaborating entity "bcd_to_seven_seg" for hierarchy "calculator:calculator_u|bcd_to_seven_seg:ones_display" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 189
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "calculator:calculator_u|memory:mem|RAM" is uninferred due to inappropriate RAM size File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/memory.vhd Line: 24
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "calculator:calculator_u|alu:alu_u|Div0" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/alu.vhd Line: 38
-Info (12130): Elaborated megafunction instantiation "calculator:calculator_u|alu:alu_u|lpm_divide:Div0" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/alu.vhd Line: 38
-Info (12133): Instantiated megafunction "calculator:calculator_u|alu:alu_u|lpm_divide:Div0" with the following parameter: File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/alu.vhd Line: 38
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "calculator:calculator_u|alu:comp|Div0" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/alu.vhd Line: 38
+Info (12130): Elaborated megafunction instantiation "calculator:calculator_u|alu:comp|lpm_divide:Div0" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/alu.vhd Line: 38
+Info (12133): Instantiated megafunction "calculator:calculator_u|alu:comp|lpm_divide:Div0" with the following parameter: File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/alu.vhd Line: 38
     Info (12134): Parameter "LPM_WIDTHN" = "16"
     Info (12134): Parameter "LPM_WIDTHD" = "16"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -491,20 +510,18 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "led[3]" is stuck at GND File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 39
     Warning (13410): Pin "led[4]" is stuck at GND File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 39
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 16 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "ms" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 32
-    Warning (15610): No output dependent on input pin "mr" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 33
-Info (21057): Implemented 417 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 454 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 26 output pins
-    Info (21061): Implemented 375 logic cells
+    Info (21061): Implemented 412 logic cells
     Info (21062): Implemented 1 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 4875 megabytes
-    Info: Processing ended: Sun Nov 03 15:42:49 2019
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:36
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4873 megabytes
+    Info: Processing ended: Tue Nov 05 14:35:00 2019
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:37
 
 

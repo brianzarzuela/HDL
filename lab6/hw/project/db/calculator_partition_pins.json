@@ -124,15 +124,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "switch[7]",
-					"strict" : false
-				},
-				{
 					"name" : "switch[6]",
 					"strict" : false
 				},
 				{
+					"name" : "switch[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mr",
+					"strict" : false
+				},
+				{
 					"name" : "execute",
+					"strict" : false
+				},
+				{
+					"name" : "ms",
 					"strict" : false
 				}
 			]
