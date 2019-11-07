@@ -1,5 +1,5 @@
 Analysis & Synthesis report for calculator
-Tue Nov 05 14:35:00 2019
+Thu Nov 07 10:23:09 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -51,14 +51,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 05 14:35:00 2019       ;
+; Analysis & Synthesis Status     ; Successful - Thu Nov 07 10:23:09 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; calculator                                  ;
 ; Top-level Entity Name           ; top                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 85                                          ;
-; Total pins                      ; 41                                          ;
+; Total registers                 ; 77                                          ;
+; Total pins                      ; 36                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 1                                           ;
@@ -203,25 +203,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 200       ;
+; Estimate of Logic utilization (ALMs needed) ; 195       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 378       ;
+; Combinational ALUT usage for logic          ; 368       ;
 ;     -- 7 input functions                    ; 0         ;
 ;     -- 6 input functions                    ; 7         ;
 ;     -- 5 input functions                    ; 55        ;
-;     -- 4 input functions                    ; 140       ;
-;     -- <=3 input functions                  ; 176       ;
+;     -- 4 input functions                    ; 132       ;
+;     -- <=3 input functions                  ; 174       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 85        ;
+; Dedicated logic registers                   ; 77        ;
 ;                                             ;           ;
-; I/O pins                                    ; 41        ;
+; I/O pins                                    ; 36        ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 1         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 85        ;
-; Total fan-out                               ; 1723      ;
-; Average fan-out                             ; 3.16      ;
+; Maximum fan-out                             ; 77        ;
+; Total fan-out                               ; 1648      ;
+; Average fan-out                             ; 3.18      ;
 +---------------------------------------------+-----------+
 
 
@@ -230,8 +230,8 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 ; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                   ; Entity Name              ; Library Name ;
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |top                                          ; 378 (0)             ; 85 (0)                    ; 0                 ; 1          ; 41   ; 0            ; |top                                                                                                                                  ; top                      ; work         ;
-;    |calculator:calculator_u|                  ; 378 (5)             ; 85 (13)                   ; 0                 ; 1          ; 0    ; 0            ; |top|calculator:calculator_u                                                                                                          ; calculator               ; work         ;
+; |top                                          ; 368 (0)             ; 77 (0)                    ; 0                 ; 1          ; 36   ; 0            ; |top                                                                                                                                  ; top                      ; work         ;
+;    |calculator:calculator_u|                  ; 368 (5)             ; 77 (13)                   ; 0                 ; 1          ; 0    ; 0            ; |top|calculator:calculator_u                                                                                                          ; calculator               ; work         ;
 ;       |alu:comp|                              ; 329 (18)            ; 16 (16)                   ; 0                 ; 1          ; 0    ; 0            ; |top|calculator:calculator_u|alu:comp                                                                                                 ; alu                      ; work         ;
 ;          |lpm_divide:Div0|                    ; 311 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:comp|lpm_divide:Div0                                                                                 ; lpm_divide               ; work         ;
 ;             |lpm_divide_7dm:auto_generated|   ; 311 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:comp|lpm_divide:Div0|lpm_divide_7dm:auto_generated                                                   ; lpm_divide_7dm           ; work         ;
@@ -241,7 +241,7 @@ refer to the applicable agreement for further details.
 ;       |bcd_to_seven_seg:ones_display|         ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|bcd_to_seven_seg:ones_display                                                                            ; bcd_to_seven_seg         ; work         ;
 ;       |bcd_to_seven_seg:tens_display|         ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|bcd_to_seven_seg:tens_display                                                                            ; bcd_to_seven_seg         ; work         ;
 ;       |double_dabble:dd|                      ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|double_dabble:dd                                                                                         ; double_dabble            ; work         ;
-;       |memory:mem|                            ; 10 (10)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|memory:mem                                                                                               ; memory                   ; work         ;
+;       |memory:mem|                            ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|memory:mem                                                                                               ; memory                   ; work         ;
 ;       |rising_edge_synchronizer:execute_edge| ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|rising_edge_synchronizer:execute_edge                                                                    ; rising_edge_synchronizer ; work         ;
 ;       |rising_edge_synchronizer:mr_edge|      ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|rising_edge_synchronizer:mr_edge                                                                         ; rising_edge_synchronizer ; work         ;
 ;       |rising_edge_synchronizer:ms_edge|      ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|rising_edge_synchronizer:ms_edge                                                                         ; rising_edge_synchronizer ; work         ;
@@ -281,6 +281,14 @@ Encoding Type:  One-Hot
 ; Register name                                                        ; Reason for Removal                     ;
 +----------------------------------------------------------------------+----------------------------------------+
 ; calculator:calculator_u|bcd_to_seven_seg:hundreds_display|display[1] ; Stuck at GND due to stuck port data_in ;
+; calculator:calculator_u|memory:mem|RAM~19                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~20                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~21                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~22                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~23                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~24                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~25                            ; Lost fanout                            ;
+; calculator:calculator_u|memory:mem|RAM~26                            ; Lost fanout                            ;
 ; calculator:calculator_u|memory:mem|RAM~27                            ; Lost fanout                            ;
 ; calculator:calculator_u|memory:mem|RAM~28                            ; Lost fanout                            ;
 ; calculator:calculator_u|memory:mem|RAM~29                            ; Lost fanout                            ;
@@ -297,7 +305,7 @@ Encoding Type:  One-Hot
 ; calculator:calculator_u|memory:mem|RAM~40                            ; Lost fanout                            ;
 ; calculator:calculator_u|memory:mem|RAM~41                            ; Lost fanout                            ;
 ; calculator:calculator_u|memory:mem|RAM~42                            ; Lost fanout                            ;
-; Total Number of Removed Registers = 17                               ;                                        ;
+; Total Number of Removed Registers = 25                               ;                                        ;
 +----------------------------------------------------------------------+----------------------------------------+
 
 
@@ -306,12 +314,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 85    ;
+; Total registers                              ; 77    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 16    ;
 ; Number of registers using Asynchronous Clear ; 33    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Clock Enable       ; 16    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -325,10 +333,10 @@ Encoding Type:  One-Hot
 ; calculator:calculator_u|rising_edge_synchronizer:mr_edge|input_zzz      ; 1       ;
 ; calculator:calculator_u|rising_edge_synchronizer:execute_edge|input_zz  ; 2       ;
 ; calculator:calculator_u|rising_edge_synchronizer:execute_edge|input_zzz ; 1       ;
-; calculator:calculator_u|rising_edge_synchronizer:ms_edge|input_zz       ; 2       ;
-; calculator:calculator_u|rising_edge_synchronizer:ms_edge|input_zzz      ; 1       ;
 ; calculator:calculator_u|rising_edge_synchronizer:mr_edge|input_z        ; 1       ;
 ; calculator:calculator_u|rising_edge_synchronizer:execute_edge|input_z   ; 1       ;
+; calculator:calculator_u|rising_edge_synchronizer:ms_edge|input_zz       ; 2       ;
+; calculator:calculator_u|rising_edge_synchronizer:ms_edge|input_zzz      ; 1       ;
 ; calculator:calculator_u|rising_edge_synchronizer:ms_edge|input_z        ; 1       ;
 ; Total number of inverted registers = 9                                  ;         ;
 +-------------------------------------------------------------------------+---------+
@@ -391,11 +399,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +----------------------------------------------------------------+
 ; Port Connectivity Checks: "calculator:calculator_u|memory:mem" ;
-+---------+-------+----------+-----------------------------------+
-; Port    ; Type  ; Severity ; Details                           ;
-+---------+-------+----------+-----------------------------------+
-; addr[1] ; Input ; Info     ; Stuck at GND                      ;
-+---------+-------+----------+-----------------------------------+
++------+-------+----------+--------------------------------------+
+; Port ; Type  ; Severity ; Details                              ;
++------+-------+----------+--------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                         ;
+; addr ; Input ; Info     ; Stuck at GND                         ;
++------+-------+----------+--------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -403,13 +412,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 85                          ;
+; arriav_ff             ; 77                          ;
 ;     CLR               ; 17                          ;
 ;     CLR SLD           ; 8                           ;
-;     ENA               ; 24                          ;
+;     ENA               ; 8                           ;
 ;     ENA CLR SLD       ; 8                           ;
-;     plain             ; 28                          ;
-; arriav_lcell_comb     ; 379                         ;
+;     plain             ; 36                          ;
+; arriav_lcell_comb     ; 369                         ;
 ;     arith             ; 167                         ;
 ;         0 data inputs ; 23                          ;
 ;         1 data inputs ; 8                           ;
@@ -417,19 +426,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 14                          ;
 ;         4 data inputs ; 69                          ;
 ;         5 data inputs ; 41                          ;
-;     normal            ; 212                         ;
+;     normal            ; 202                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 74                          ;
-;         3 data inputs ; 42                          ;
-;         4 data inputs ; 71                          ;
+;         3 data inputs ; 40                          ;
+;         4 data inputs ; 63                          ;
 ;         5 data inputs ; 14                          ;
 ;         6 data inputs ; 7                           ;
 ; arriav_mac            ; 1                           ;
-; boundary_port         ; 41                          ;
+; boundary_port         ; 36                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 31.00                       ;
-; Average LUT depth     ; 21.36                       ;
+; Average LUT depth     ; 21.96                       ;
 +-----------------------+-----------------------------+
 
 
@@ -438,7 +447,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -448,7 +457,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Nov 05 14:34:34 2019
+    Info: Processing started: Thu Nov 07 10:22:55 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calculator -c calculator
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -476,11 +485,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file /users/
     Info (12022): Found design unit 1: calculator-arc File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 23
     Info (12023): Found entity 1: calculator File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file /users/briza/documents/github/hdl/lab6/src/top.vhd
-    Info (12022): Found design unit 1: top-implementation File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 43
+    Info (12022): Found design unit 1: top-implementation File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 42
     Info (12023): Found entity 1: top File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 26
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Info (12128): Elaborating entity "calculator" for hierarchy "calculator:calculator_u" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 64
-Warning (10541): VHDL Signal Declaration warning at calculator.vhd(19): used implicit default value for signal "led" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 19
+Info (12128): Elaborating entity "calculator" for hierarchy "calculator:calculator_u" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 62
+Warning (10540): VHDL Signal Declaration warning at calculator.vhd(38): used explicit default value for signal "we" because signal was never assigned a value File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 38
+Warning (10540): VHDL Signal Declaration warning at calculator.vhd(39): used explicit default value for signal "addr" because signal was never assigned a value File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 39
 Info (12128): Elaborating entity "rising_edge_synchronizer" for hierarchy "calculator:calculator_u|rising_edge_synchronizer:execute_edge" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 58
 Info (12128): Elaborating entity "alu" for hierarchy "calculator:calculator_u|alu:comp" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 84
 Info (12128): Elaborating entity "memory" for hierarchy "calculator:calculator_u|memory:mem" File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/calculator.vhd Line: 96
@@ -504,24 +514,19 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alt_
     Info (12023): Found entity 1: alt_u_div_03f File: C:/Users/briza/Documents/GitHub/HDL/lab6/hw/project/db/alt_u_div_03f.tdf Line: 22
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "hundreds[1]" is stuck at GND File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 38
-    Warning (13410): Pin "led[0]" is stuck at GND File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 39
-    Warning (13410): Pin "led[1]" is stuck at GND File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 39
-    Warning (13410): Pin "led[2]" is stuck at GND File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 39
-    Warning (13410): Pin "led[3]" is stuck at GND File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 39
-    Warning (13410): Pin "led[4]" is stuck at GND File: C:/Users/briza/Documents/GitHub/HDL/lab6/src/top.vhd Line: 39
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 16 registers lost all their fanouts during netlist optimizations.
+Info (17049): 24 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 454 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 439 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 26 output pins
-    Info (21061): Implemented 412 logic cells
+    Info (21059): Implemented 21 output pins
+    Info (21061): Implemented 402 logic cells
     Info (21062): Implemented 1 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4873 megabytes
-    Info: Processing ended: Tue Nov 05 14:35:00 2019
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:37
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4876 megabytes
+    Info: Processing ended: Thu Nov 07 10:23:09 2019
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:25
 
 

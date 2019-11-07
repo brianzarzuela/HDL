@@ -1,3 +1,48 @@
+--****************************  VHDL Source Code  ******************************
+--***********  Copyright 2019, Rochester Institute of Technology  **************
+--******************************************************************************
+--
+--  DESIGNER NAME:  Brian Zarzuela
+--
+--          LAB 6:  Calculator [8 bit]
+--
+--      FILE NAME:  add_sub_state_machine.vhd
+--
+-------------------------------------------------------------------------------
+--
+--  DESCRIPTION
+--    8-bit calculator with basic add, subtract, multiply and divide operations.
+--    Encorporates MS and MR buttons to save the present result into memory and
+--    to retrueve values from memory, respectively.
+--    4x8 bit memory diagram :
+--     _________________________
+--    | addr | reg description  |
+--    |------+------------------|
+--    |  00  | working register |
+--    |------+------------------|
+--    |  01  | save register    |
+--    |------+------------------|
+--    |  10  | not in use       |
+--    |------+------------------|
+--    |  11  | not in use       |
+--    +-------------------------+
+--
+--    ALU operation codes :
+--     ____________________
+--    | opcode | operation |
+--    |--------+-----------|
+--    |   00   | add       |
+--    |--------+-----------|
+--    |   01   | subtract  |
+--    |--------+-----------|
+--    |   10   | multiply  |
+--    |--------+-----------|
+--    |   11   | divide    |
+--    +--------------------+
+--
+--******************************************************************************
+--******************************************************************************
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -15,7 +60,7 @@ entity calculator is
     --
     ones     : out std_logic_vector(6 downto 0);
     tens     : out std_logic_vector(6 downto 0);
-    hundreds : out std_logic_vector(6 downto 0);
+    hundreds : out std_logic_vector(6 downto 0)
 --    led      : out std_logic_vector(4 downto 0)
   );
 end calculator;

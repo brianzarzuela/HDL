@@ -35,11 +35,6 @@ hundreds[3] <= calculator:calculator_u.hundreds[3]
 hundreds[4] <= calculator:calculator_u.hundreds[4]
 hundreds[5] <= calculator:calculator_u.hundreds[5]
 hundreds[6] <= calculator:calculator_u.hundreds[6]
-led[0] <= calculator:calculator_u.led[0]
-led[1] <= calculator:calculator_u.led[1]
-led[2] <= calculator:calculator_u.led[2]
-led[3] <= calculator:calculator_u.led[3]
-led[4] <= calculator:calculator_u.led[4]
 
 
 |top|calculator:calculator_u
@@ -107,11 +102,6 @@ hundreds[3] <= bcd_to_seven_seg:hundreds_display.display[3]
 hundreds[4] <= bcd_to_seven_seg:hundreds_display.display[4]
 hundreds[5] <= bcd_to_seven_seg:hundreds_display.display[5]
 hundreds[6] <= bcd_to_seven_seg:hundreds_display.display[6]
-led[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-led[1] <= led[1].DB_MAX_OUTPUT_PORT_TYPE
-led[2] <= led[2].DB_MAX_OUTPUT_PORT_TYPE
-led[3] <= led[3].DB_MAX_OUTPUT_PORT_TYPE
-led[4] <= led[4].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|calculator:calculator_u|rising_edge_synchronizer:execute_edge
