@@ -23,7 +23,7 @@ signal input_zzz   : std_logic;
 begin 
 synchronizer: process(reset,clk,input)
   begin
-    if reset = '1' then
+    if reset = '0' then
       input_z     <= '1';
       input_zz    <= '1';
     elsif rising_edge(clk) then
@@ -34,7 +34,7 @@ end process;
 
 rising_edge_detector: process(reset,clk,input_zz)
   begin
-    if reset = '1' then
+    if reset = '0' then
       edge        <= '0';
       input_zzz   <= '1';
     elsif rising_edge(clk) then

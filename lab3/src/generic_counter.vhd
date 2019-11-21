@@ -23,7 +23,7 @@ signal count_sig    : integer range 0 to max_count := 0;
 begin
 process(clk,reset)
   begin
-    if (reset = '1') then 
+    if (reset = '0') then 
       count_sig <= 0;
       output <= '0';
     elsif (clk'event and clk = '1') then

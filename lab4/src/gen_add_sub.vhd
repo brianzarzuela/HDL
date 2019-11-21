@@ -21,7 +21,7 @@ use ieee.numeric_std.all;
 
 entity gen_add_sub is
   generic(
-    bits : integer := 3;
+    bits : integer := 3
   );
   port(
     a    : in std_logic_vector(bits-1 downto 0);

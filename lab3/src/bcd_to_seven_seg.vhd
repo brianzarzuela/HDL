@@ -58,16 +58,16 @@ begin
   
     if (clk'event and clk='1') then
       case input is
-        when "0000" => display <= "0000001";
-        when "0001" => display <= "1001111";
-        when "0010" => display <= "0010010";
-        when "0011" => display <= "0000110";
-        when "0101" => display <= "0100100";
-        when "0100" => display <= "1001100";
-        when "0110" => display <= "0100000";
-        when "0111" => display <= "0001111";
+        when "0000" => display <= "1000000";
+        when "0001" => display <= "1111001";
+        when "0010" => display <= "0100100";
+        when "0011" => display <= "0110000";
+        when "0101" => display <= "0010010";
+        when "0100" => display <= "0011001";
+        when "0110" => display <= "0000010";
+        when "0111" => display <= "1111000";
         when "1000" => display <= "0000000";
-        when "1001" => display <= "0000100";
+        when "1001" => display <= "0010000";
         when others => display <= "1111111"; -- blank display on illegel inputs
       end case;
     end if;
