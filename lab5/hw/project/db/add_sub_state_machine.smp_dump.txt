@@ -1,0 +1,7 @@
+
+State Machine - |add_sub_state_machine|state_reg
+Name state_reg.disp_diff state_reg.disp_sum state_reg.input_b state_reg.input_a 
+state_reg.input_a 0 0 0 0 
+state_reg.input_b 0 0 1 1 
+state_reg.disp_sum 0 1 0 1 
+state_reg.disp_diff 1 0 0 1 
