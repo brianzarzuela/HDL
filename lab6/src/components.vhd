@@ -15,9 +15,9 @@ end component;
 
 component synchronizer_8bit
   port(
-    input    :  in std_logic_vector(7 downto 0);
     clk      :  in std_logic;
     reset    :  in std_logic;
+    async_in :  in std_logic_vector(7 downto 0);
     sync_out : out std_logic_vector(7 downto 0)
   );
 end component;

@@ -76,7 +76,7 @@ signal mr_pulse      : std_logic;
 
 -- alu signals
 signal result     : std_logic_vector(7 downto 0);
-signal to_alu     : std_logic_vector(7 downto 0);
+signal mem_to_alu : std_logic_vector(7 downto 0);
 signal result_reg : std_logic_vector(7 downto 0) := (others => '0');
 
 -- memory signals
@@ -130,7 +130,7 @@ comp : alu
   port map(
     clk    => clk,
     reset  => reset,
-    a      => to_alu,
+    a      => mem_to_alu,
     b      => input,
     op     => opcode,
     result => result
@@ -144,7 +144,7 @@ mem : memory
     data_width => 8)
   port map(
     clk  => clk,
-    we   => we,
+    we   => '1',
     addr => addr,
     din  => result_reg,
     dout => to_alu
@@ -162,63 +162,25 @@ begin
   end if;
 end process;
 
--- next state logic
-process (state_reg, execute_pulse, ms_pulse, mr_pulse)
-begin
-  -- default value (prevents a latch)
-  next_state <= state_reg;
-  case state_reg is
-    when read_w =>
-      if    (execute_pulse = '1') then next_state <= write_w_no_op;
-      elsif (mr_pulse = '1')      then next_state <= read_s;
-      elsif (ms_pulse = '1')      then next_state <= write_s;
-      end if;
-    when read_s =>
-      next_state <= write_w_no_op;
-    when write_w_no_op =>
-      next_state <= write_w;
-    when others =>
-      next_state <= read_w;
-  end case;
-end process;
-
 -- result register
-process (clk, reset, state_reg)
+process (clk, reset)
 begin
   if (reset = '0') then
     result_reg <= (others => '0');
   elsif (clk'event and clk = '1') then
-    if (state_reg = read_s) then
-      result_reg <= to_alu;
-    elsif (state_reg = write_w) then
+    if (state_reg = wrtie_w_no_op) then
       result_reg <= result;
+    elsif (state_reg = read_s) then
+      result_reg <= mem_to_alu;
     end if;
   end if;
 end process;
 
--- -- address
--- process (state_reg)
--- begin
-  -- case state_reg is
-    -- when write_s => addr <= "01";
-    -- when read_s  => addr <= "01";
-    -- when write_w => addr <= "00";
-    -- when read_w  => addr <= "00";
-    -- when others  => addr <= "00";
-  -- end case;
--- end process;
+-- next state logic
+process (state_reg, execute_pulse)
+begin
+  
 
--- -- write enable
--- process (state_reg)
--- begin
-  -- case state_reg is
-    -- when read_w  => we <= '0';
-    -- when read_s  => we <= '0';
-    -- when write_w => we <= '1';
-    -- when write_s => we <= '1';
-    -- when others  => we <= '1';
-  -- end case;
--- end process;
 --------------------------------------------------------------------------------
 
 result_padded <= "0000" & result_reg;
