@@ -1,5 +1,5 @@
 Flow report for calculator
-Sun Nov 24 15:25:36 2019
+Sun Nov 24 15:37:40 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Nov 24 15:25:27 2019       ;
+; Flow Status                     ; Successful - Sun Nov 24 15:37:31 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; calculator                                  ;
 ; Top-level Entity Name           ; top                                         ;
@@ -48,7 +48,7 @@ refer to the applicable agreement for further details.
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; 198 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 89                                          ;
+; Total registers                 ; 85                                          ;
 ; Total pins                      ; 36 / 457 ( 8 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/24/2019 15:24:17 ;
+; Start date & time ; 11/24/2019 15:36:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; calculator          ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +--------------------------+-------------------------------+---------------+-------------+------------+
 ; Assignment Name          ; Value                         ; Default Value ; Entity Name ; Section Id ;
 +--------------------------+-------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID    ; 1097466183335.157462705720696 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID    ; 1097466183335.157462778228984 ; --            ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY ; ../output_files               ; --            ; --          ; --         ;
 ; TOP_LEVEL_ENTITY         ; top                           ; calculator    ; --          ; --         ;
 +--------------------------+-------------------------------+---------------+-------------+------------+
@@ -89,11 +89,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4876 MB             ; 00:00:29                           ;
-; Fitter               ; 00:00:45     ; 1.0                     ; 6620 MB             ; 00:01:31                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4841 MB             ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:08     ; 1.2                     ; 5145 MB             ; 00:00:08                           ;
-; Total                ; 00:01:14     ; --                      ; --                  ; 00:02:16                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4876 MB             ; 00:00:28                           ;
+; Fitter               ; 00:00:44     ; 1.0                     ; 6624 MB             ; 00:01:31                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4838 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:08     ; 1.2                     ; 5143 MB             ; 00:00:08                           ;
+; Total                ; 00:01:13     ; --                      ; --                  ; 00:02:14                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

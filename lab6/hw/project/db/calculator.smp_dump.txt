@@ -1,8 +1,8 @@
 
 State Machine - |top|calculator:calculator_u|state_reg
-Name state_reg.write_w_no_op state_reg.write_s state_reg.write_w state_reg.read_s state_reg.read_w 
-state_reg.read_w 0 0 0 0 0 
+Name state_reg.write_w_no_op state_reg.read_w state_reg.write_w state_reg.read_s state_reg.write_s 
+state_reg.write_s 0 0 0 0 0 
 state_reg.read_s 0 0 0 1 1 
 state_reg.write_w 0 0 1 0 1 
-state_reg.write_s 0 1 0 0 1 
+state_reg.read_w 0 1 0 0 1 
 state_reg.write_w_no_op 1 0 0 0 1 

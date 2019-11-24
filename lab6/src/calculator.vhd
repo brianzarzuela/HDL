@@ -155,8 +155,9 @@ mem_u : memory
 -- state register
 process (clk, reset)
 begin
+  -- reset sets save register to 0
   if (reset = '1') then
-    state_reg <= read_w;
+    state_reg <= write_s;
   elsif (clk'event and clk = '1') then
     state_reg <= next_state;
   end if;
