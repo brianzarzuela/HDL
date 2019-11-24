@@ -32,11 +32,11 @@ set_location_assignment PIN_AA15 -to mr
 set_location_assignment PIN_W15  -to ms
 set_location_assignment PIN_Y16  -to execute
 
-# set_location_assignment PIN_V16  -to led[0]
-# set_location_assignment PIN_W16  -to led[1]
-# set_location_assignment PIN_V17  -to led[2]
-# set_location_assignment PIN_V18  -to led[3]
-# set_location_assignment PIN_W17  -to led[3]
+set_location_assignment PIN_V16  -to led[0]
+set_location_assignment PIN_W16  -to led[1]
+set_location_assignment PIN_V17  -to led[2]
+set_location_assignment PIN_V18  -to led[3]
+set_location_assignment PIN_W17  -to led[4]
 
 set_location_assignment PIN_AB12 -to switch[0]
 set_location_assignment PIN_AC12 -to switch[1]

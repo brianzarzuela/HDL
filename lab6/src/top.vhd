@@ -35,7 +35,8 @@ entity top is
     --
     ones     : out std_logic_vector(6 downto 0);
     tens     : out std_logic_vector(6 downto 0);
-    hundreds : out std_logic_vector(6 downto 0)
+    hundreds : out std_logic_vector(6 downto 0);
+    led      : out std_logic_vector(4 downto 0)
   );
 end top;
 
@@ -55,7 +56,8 @@ component calculator
     --
     ones     : out std_logic_vector(6 downto 0);
     tens     : out std_logic_vector(6 downto 0);
-    hundreds : out std_logic_vector(6 downto 0)
+    hundreds : out std_logic_vector(6 downto 0);
+    led      : out std_logic_vector(4 downto 0)
   );
 end component;
 
@@ -74,7 +76,8 @@ calculator_u : calculator
     reset    => reset_n,
     ones     => ones,
     tens     => tens,
-    hundreds => hundreds
+    hundreds => hundreds,
+    led      => led
   );
 
 end implementation;

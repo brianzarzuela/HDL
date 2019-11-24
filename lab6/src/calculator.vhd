@@ -60,8 +60,8 @@ entity calculator is
     --
     ones     : out std_logic_vector(6 downto 0);
     tens     : out std_logic_vector(6 downto 0);
-    hundreds : out std_logic_vector(6 downto 0)
---    led      : out std_logic_vector(4 downto 0)
+    hundreds : out std_logic_vector(6 downto 0);
+    led      : out std_logic_vector(4 downto 0)
   );
 end calculator;
 
@@ -197,6 +197,14 @@ begin
     when others        => next_state <= read_w;
   end case;
 end process;
+
+-- state led display
+with state_reg select led <=
+  "00001" when read_w,
+  "00010" when write_w_no_op,
+  "00100" when write_w,
+  "01000" when write_s,
+  "10000" when read_s;
 
 --------------------------------------------------------------------------------
 
