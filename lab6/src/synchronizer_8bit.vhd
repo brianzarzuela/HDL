@@ -33,7 +33,7 @@ signal flop1     : std_logic_vector(7 downto 0);
 signal flop2     : std_logic_vector(7 downto 0);
 
 begin 
-double_flop :process(reset,clk,async_in)
+double_flop : process(reset,clk,async_in)
   begin
     if reset = '1' then
       flop1 <= (others => '0');   

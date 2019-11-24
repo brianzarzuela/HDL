@@ -41,6 +41,8 @@ end top;
 
 architecture implementation of top is
 
+signal reset_n : std_logic;
+
 component calculator
   port(
     input    : in  std_logic_vector(7 downto 0);
@@ -59,6 +61,8 @@ end component;
 
 begin
 
+reset_n <= not reset;
+
 calculator_u : calculator
   port map(
     input    => switch,
@@ -67,7 +71,7 @@ calculator_u : calculator
     execute  => execute,
     ms       => ms,
     mr       => mr,
-    reset    => reset,
+    reset    => reset_n,
     ones     => ones,
     tens     => tens,
     hundreds => hundreds

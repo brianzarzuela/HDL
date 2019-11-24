@@ -75,12 +75,12 @@ signal ms_pulse      : std_logic;
 signal mr_pulse      : std_logic;
 
 -- alu signals
-signal result     : std_logic_vector(7 downto 0);
-signal mem_to_alu : std_logic_vector(7 downto 0);
+signal result     : std_logic_vector(7 downto 0) := (others => '0');
+signal mem_to_alu : std_logic_vector(7 downto 0) := (others => '0');
 signal result_reg : std_logic_vector(7 downto 0) := (others => '0');
 
 -- memory signals
-signal we   : std_logic := '1';
+signal we   : std_logic := '0';
 signal addr : std_logic_vector(1 downto 0) := "00";
 
 -- state machine declaration
@@ -100,7 +100,7 @@ begin
 
 --------------------------------------------------------------------------------
 
-execute_edge : rising_edge_synchronizer
+ex_u : rising_edge_synchronizer
   port map(
     clk   => clk,
     reset => reset,
@@ -108,7 +108,7 @@ execute_edge : rising_edge_synchronizer
     edge  => execute_pulse
   );
 
-ms_edge : rising_edge_synchronizer
+ms_u : rising_edge_synchronizer
   port map(
     clk   => clk,
     reset => reset,
@@ -116,7 +116,7 @@ ms_edge : rising_edge_synchronizer
     edge  => ms_pulse
   );
 
-mr_edge : rising_edge_synchronizer
+mr_u : rising_edge_synchronizer
   port map(
     clk   => clk,
     reset => reset,
@@ -126,7 +126,7 @@ mr_edge : rising_edge_synchronizer
 
 --------------------------------------------------------------------------------
 
-comp : alu
+alu_u : alu
   port map(
     clk    => clk,
     reset  => reset,
@@ -138,16 +138,16 @@ comp : alu
 
 --------------------------------------------------------------------------------
 
-mem : memory
+mem_u : memory
   generic map(
     addr_width => 2,
     data_width => 8)
   port map(
     clk  => clk,
-    we   => '1',
+    we   => we,
     addr => addr,
     din  => result_reg,
-    dout => to_alu
+    dout => mem_to_alu
   );
 
 --------------------------------------------------------------------------------
@@ -155,7 +155,7 @@ mem : memory
 -- state register
 process (clk, reset)
 begin
-  if (reset = '0') then
+  if (reset = '1') then
     state_reg <= read_w;
   elsif (clk'event and clk = '1') then
     state_reg <= next_state;
@@ -165,10 +165,10 @@ end process;
 -- result register
 process (clk, reset)
 begin
-  if (reset = '0') then
+  if (reset = '1') then
     result_reg <= (others => '0');
   elsif (clk'event and clk = '1') then
-    if (state_reg = wrtie_w_no_op) then
+    if (state_reg = write_w_no_op) then
       result_reg <= result;
     elsif (state_reg = read_s) then
       result_reg <= mem_to_alu;
@@ -177,9 +177,52 @@ begin
 end process;
 
 -- next state logic
-process (state_reg, execute_pulse)
+process (state_reg, execute_pulse, mr_pulse, ms_pulse)
 begin
-  
+  -- default value (prevents a latch)
+  next_state <= state_reg;
+  case state_reg is
+    when read_w =>
+      if    (execute_pulse = '1') then next_state <= write_w_no_op;
+      elsif (mr_pulse = '1')      then next_state <= read_s;
+      elsif (ms_pulse = '1')      then next_state <= write_s;
+      end if;
+    when read_s =>
+      if    (execute_pulse = '1') then next_state <= write_w_no_op;
+      end if;
+    when write_s       => next_state <= read_w;
+    when write_w_no_op => next_state <= write_w;
+    when write_w       => next_state <= read_w;
+    when others        => next_state <= read_w;
+  end case;
+end process;
+
+--------------------------------------------------------------------------------
+
+-- memory manager
+process (state_reg)
+begin
+  case state_reg is
+    when read_w =>
+      we   <= '0';
+      addr <= "00";
+    when write_s =>
+      we   <= '1';
+      addr <= "01";
+    when read_s =>
+      we   <= '0';
+      addr <= "01";
+    when write_w_no_op =>
+      we   <= '1';
+      addr <= "00";
+    when write_w =>
+      we   <= '1';
+      addr <= "00";
+    when others =>
+      we   <= '0';
+      addr <= "00";
+  end case;
+end process;
 
 --------------------------------------------------------------------------------
 
