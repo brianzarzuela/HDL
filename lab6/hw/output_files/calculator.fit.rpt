@@ -1,5 +1,5 @@
 Fitter report for calculator
-Sun Nov 24 15:53:14 2019
+Mon Nov 25 08:52:37 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Sun Nov 24 15:53:14 2019       ;
+; Fitter Status                   ; Successful - Mon Nov 25 08:52:37 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; calculator                                  ;
 ; Top-level Entity Name           ; top                                         ;
@@ -72,7 +72,7 @@ refer to the applicable agreement for further details.
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; 200 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 88                                          ;
+; Total registers                 ; 87                                          ;
 ; Total pins                      ; 41 / 457 ( 9 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
@@ -157,38 +157,21 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.1%      ;
-;     Processor 3            ;   1.1%      ;
-;     Processor 4            ;   1.1%      ;
+;     Processor 2            ;   1.0%      ;
+;     Processor 3            ;   1.0%      ;
+;     Processor 4            ;   1.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Netlist Optimizations                                                                                                                                                                                                                                                                                 ;
-+------------------------------------------------------------+-----------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------------------------------------+------------------+-----------------------+
-; Node                                                       ; Action          ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                                                     ; Destination Port ; Destination Port Name ;
-+------------------------------------------------------------+-----------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------------------------------------+------------------+-----------------------+
-; clk~inputCLKENA0                                           ; Created         ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                                      ;                  ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[0]               ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|alu:alu_u|Mult0~8                            ; AX               ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[0]               ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|memory:mem_u|dout[0]~_Duplicate_1            ; Q                ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[1]               ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|alu:alu_u|Mult0~8                            ; AX               ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[1]               ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|memory:mem_u|dout[1]~_Duplicate_1            ; Q                ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[2]               ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|alu:alu_u|Mult0~8                            ; AX               ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[2]               ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|memory:mem_u|dout[2]~_Duplicate_1            ; Q                ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[3]               ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|alu:alu_u|Mult0~8                            ; AX               ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[3]               ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|memory:mem_u|dout[3]~_Duplicate_1            ; Q                ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[4]               ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|alu:alu_u|Mult0~8                            ; AX               ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[4]               ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|memory:mem_u|dout[4]~_Duplicate_1            ; Q                ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[5]               ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|alu:alu_u|Mult0~8                            ; AX               ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[5]               ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|memory:mem_u|dout[5]~_Duplicate_1            ; Q                ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[6]               ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|alu:alu_u|Mult0~8                            ; AX               ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[6]               ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|memory:mem_u|dout[6]~_Duplicate_1            ; Q                ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[7]               ; Packed Register ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|alu:alu_u|Mult0~8                            ; AX               ;                       ;
-; calculator:calculator_u|memory:mem_u|dout[7]               ; Duplicated      ; Register Packing                                  ; Timing optimization        ; Q         ;                ; calculator:calculator_u|memory:mem_u|dout[7]~_Duplicate_1            ; Q                ;                       ;
-; calculator:calculator_u|rising_edge_synchronizer:ex_u|edge ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; calculator:calculator_u|rising_edge_synchronizer:ex_u|edge~DUPLICATE ;                  ;                       ;
-; calculator:calculator_u|rising_edge_synchronizer:mr_u|edge ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; calculator:calculator_u|rising_edge_synchronizer:mr_u|edge~DUPLICATE ;                  ;                       ;
-; calculator:calculator_u|state_reg.read_w                   ; Duplicated      ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; calculator:calculator_u|state_reg.read_w~DUPLICATE                   ;                  ;                       ;
-+------------------------------------------------------------+-----------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------------------------------------+------------------+-----------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Netlist Optimizations                                                                                                                                                                                                                                          ;
++-------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------------------+------------------+-----------------------+
+; Node                                      ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                                    ; Destination Port ; Destination Port Name ;
++-------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------------------+------------------+-----------------------+
+; clk~inputCLKENA0                          ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                     ;                  ;                       ;
+; calculator:calculator_u|state_reg.read_w  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; calculator:calculator_u|state_reg.read_w~DUPLICATE  ;                  ;                       ;
+; calculator:calculator_u|state_reg.write_s ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; calculator:calculator_u|state_reg.write_s~DUPLICATE ;                  ;                       ;
++-------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------------------+------------------+-----------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -197,8 +180,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 549 ) ; 0.00 % ( 0 / 549 )         ; 0.00 % ( 0 / 549 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 549 ) ; 0.00 % ( 0 / 549 )         ; 0.00 % ( 0 / 549 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 543 ) ; 0.00 % ( 0 / 543 )         ; 0.00 % ( 0 / 543 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 543 ) ; 0.00 % ( 0 / 543 )         ; 0.00 % ( 0 / 543 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -221,7 +204,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 549 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 543 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -239,12 +222,12 @@ The pin-out file can be found in C:/Users/briza/Documents/GitHub/HDL/lab6/hw/out
 +-------------------------------------------------------------+--------------------+-------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 200 / 32,070       ; < 1 % ;
 ; ALMs needed [=A-B+C]                                        ; 200                ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 210 / 32,070       ; < 1 % ;
-;         [a] ALMs used for LUT logic and registers           ; 29                 ;       ;
-;         [b] ALMs used for LUT logic                         ; 168                ;       ;
-;         [c] ALMs used for registers                         ; 13                 ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 213 / 32,070       ; < 1 % ;
+;         [a] ALMs used for LUT logic and registers           ; 21                 ;       ;
+;         [b] ALMs used for LUT logic                         ; 170                ;       ;
+;         [c] ALMs used for registers                         ; 22                 ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 12 / 32,070        ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 15 / 32,070        ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 2 / 32,070         ; < 1 % ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -253,25 +236,25 @@ The pin-out file can be found in C:/Users/briza/Documents/GitHub/HDL/lab6/hw/out
 ;                                                             ;                    ;       ;
 ; Difficulty packing design                                   ; Low                ;       ;
 ;                                                             ;                    ;       ;
-; Total LABs:  partially or completely used                   ; 33 / 3,207         ; 1 %   ;
-;     -- Logic LABs                                           ; 33                 ;       ;
+; Total LABs:  partially or completely used                   ; 34 / 3,207         ; 1 %   ;
+;     -- Logic LABs                                           ; 34                 ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Combinational ALUT usage for logic                          ; 380                ;       ;
+; Combinational ALUT usage for logic                          ; 374                ;       ;
 ;     -- 7 input functions                                    ; 0                  ;       ;
-;     -- 6 input functions                                    ; 6                  ;       ;
-;     -- 5 input functions                                    ; 55                 ;       ;
-;     -- 4 input functions                                    ; 143                ;       ;
-;     -- <=3 input functions                                  ; 176                ;       ;
-; Combinational ALUT usage for route-throughs                 ; 16                 ;       ;
+;     -- 6 input functions                                    ; 5                  ;       ;
+;     -- 5 input functions                                    ; 54                 ;       ;
+;     -- 4 input functions                                    ; 135                ;       ;
+;     -- <=3 input functions                                  ; 180                ;       ;
+; Combinational ALUT usage for route-throughs                 ; 23                 ;       ;
 ;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 88                 ;       ;
+; Dedicated logic registers                                   ; 87                 ;       ;
 ;     -- By type:                                             ;                    ;       ;
-;         -- Primary logic registers                          ; 82 / 64,140        ; < 1 % ;
-;         -- Secondary logic registers                        ; 6 / 64,140         ; < 1 % ;
+;         -- Primary logic registers                          ; 85 / 64,140        ; < 1 % ;
+;         -- Secondary logic registers                        ; 2 / 64,140         ; < 1 % ;
 ;     -- By function:                                         ;                    ;       ;
 ;         -- Design implementation registers                  ; 85                 ;       ;
-;         -- Routing optimization registers                   ; 3                  ;       ;
+;         -- Routing optimization registers                   ; 2                  ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
 ; I/O pins                                                    ; 41 / 457           ; 9 %   ;
@@ -327,11 +310,11 @@ The pin-out file can be found in C:/Users/briza/Documents/GitHub/HDL/lab6/hw/out
 ; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.2% / 0.2% / 0.1% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 5.4% / 5.7% / 4.5% ;       ;
-; Maximum fan-out                                             ; 89                 ;       ;
-; Highest non-global fan-out                                  ; 37                 ;       ;
-; Total fan-out                                               ; 1758               ;       ;
-; Average fan-out                                             ; 3.10               ;       ;
+; Peak interconnect usage (total/H/V)                         ; 4.7% / 5.2% / 3.2% ;       ;
+; Maximum fan-out                                             ; 87                 ;       ;
+; Highest non-global fan-out                                  ; 54                 ;       ;
+; Total fan-out                                               ; 1757               ;       ;
+; Average fan-out                                             ; 3.09               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -342,12 +325,12 @@ The pin-out file can be found in C:/Users/briza/Documents/GitHub/HDL/lab6/hw/out
 +-------------------------------------------------------------+-----------------------+--------------------------------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 200 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
 ; ALMs needed [=A-B+C]                                        ; 200                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 210 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 29                    ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 168                   ; 0                              ;
-;         [c] ALMs used for registers                         ; 13                    ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 213 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 21                    ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 170                   ; 0                              ;
+;         [c] ALMs used for registers                         ; 22                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 12 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 15 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 2 / 32070 ( < 1 % )   ; 0 / 32070 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                     ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                     ; 0                              ;
@@ -356,28 +339,28 @@ The pin-out file can be found in C:/Users/briza/Documents/GitHub/HDL/lab6/hw/out
 ;                                                             ;                       ;                                ;
 ; Difficulty packing design                                   ; Low                   ; Low                            ;
 ;                                                             ;                       ;                                ;
-; Total LABs:  partially or completely used                   ; 33 / 3207 ( 1 % )     ; 0 / 3207 ( 0 % )               ;
-;     -- Logic LABs                                           ; 33                    ; 0                              ;
+; Total LABs:  partially or completely used                   ; 34 / 3207 ( 1 % )     ; 0 / 3207 ( 0 % )               ;
+;     -- Logic LABs                                           ; 34                    ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
-; Combinational ALUT usage for logic                          ; 380                   ; 0                              ;
+; Combinational ALUT usage for logic                          ; 374                   ; 0                              ;
 ;     -- 7 input functions                                    ; 0                     ; 0                              ;
-;     -- 6 input functions                                    ; 6                     ; 0                              ;
-;     -- 5 input functions                                    ; 55                    ; 0                              ;
-;     -- 4 input functions                                    ; 143                   ; 0                              ;
-;     -- <=3 input functions                                  ; 176                   ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 16                    ; 0                              ;
+;     -- 6 input functions                                    ; 5                     ; 0                              ;
+;     -- 5 input functions                                    ; 54                    ; 0                              ;
+;     -- 4 input functions                                    ; 135                   ; 0                              ;
+;     -- <=3 input functions                                  ; 180                   ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 23                    ; 0                              ;
 ; Memory ALUT usage                                           ; 0                     ; 0                              ;
 ;     -- 64-address deep                                      ; 0                     ; 0                              ;
 ;     -- 32-address deep                                      ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Dedicated logic registers                                   ; 0                     ; 0                              ;
 ;     -- By type:                                             ;                       ;                                ;
-;         -- Primary logic registers                          ; 82 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 6 / 64140 ( < 1 % )   ; 0 / 64140 ( 0 % )              ;
+;         -- Primary logic registers                          ; 85 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 2 / 64140 ( < 1 % )   ; 0 / 64140 ( 0 % )              ;
 ;     -- By function:                                         ;                       ;                                ;
 ;         -- Design implementation registers                  ; 85                    ; 0                              ;
-;         -- Routing optimization registers                   ; 3                     ; 0                              ;
+;         -- Routing optimization registers                   ; 2                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ;                                                             ;                       ;                                ;
 ; Virtual pins                                                ; 0                     ; 0                              ;
@@ -395,8 +378,8 @@ The pin-out file can be found in C:/Users/briza/Documents/GitHub/HDL/lab6/hw/out
 ;     -- Registered Output Connections                        ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Internal Connections                                        ;                       ;                                ;
-;     -- Total Connections                                    ; 1758                  ; 0                              ;
-;     -- Registered Connections                               ; 244                   ; 0                              ;
+;     -- Total Connections                                    ; 1757                  ; 0                              ;
+;     -- Registered Connections                               ; 224                   ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; External Connections                                        ;                       ;                                ;
 ;     -- Top                                                  ; 0                     ; 0                              ;
@@ -428,13 +411,13 @@ The pin-out file can be found in C:/Users/briza/Documents/GitHub/HDL/lab6/hw/out
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; clk       ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 89                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; clk       ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 87                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; execute   ; Y16   ; 3B       ; 40           ; 0            ; 17           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; mr        ; AA15  ; 3B       ; 36           ; 0            ; 17           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; ms        ; W15   ; 3B       ; 40           ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; opcode[0] ; AD10  ; 3A       ; 4            ; 0            ; 17           ; 17                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; opcode[1] ; AE12  ; 3A       ; 2            ; 0            ; 57           ; 26                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; reset     ; AA14  ; 3B       ; 36           ; 0            ; 0            ; 37                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; reset     ; AA14  ; 3B       ; 36           ; 0            ; 0            ; 54                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; switch[0] ; AB12  ; 3A       ; 12           ; 0            ; 17           ; 17                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; switch[1] ; AC12  ; 3A       ; 16           ; 0            ; 0            ; 17                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; switch[2] ; AF9   ; 3A       ; 8            ; 0            ; 34           ; 20                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
@@ -1461,21 +1444,21 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 ; Compilation Hierarchy Node                   ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                    ; Entity Name              ; Library Name ;
 +----------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |top                                         ; 199.5 (0.5)          ; 209.0 (0.5)                      ; 11.5 (0.0)                                        ; 2.0 (0.0)                        ; 0.0 (0.0)            ; 380 (1)             ; 88 (0)                    ; 0 (0)         ; 0                 ; 0     ; 1          ; 41   ; 0            ; |top                                                                                                                                   ; top                      ; work         ;
-;    |calculator:calculator_u|                 ; 199.0 (7.1)          ; 208.5 (7.1)                      ; 11.5 (0.0)                                        ; 2.0 (0.0)                        ; 0.0 (0.0)            ; 379 (6)             ; 88 (14)                   ; 0 (0)         ; 0                 ; 0     ; 1          ; 0    ; 0            ; |top|calculator:calculator_u                                                                                                           ; calculator               ; work         ;
-;       |alu:alu_u|                            ; 165.5 (9.6)          ; 165.0 (10.2)                     ; 1.5 (1.1)                                         ; 2.0 (0.4)                        ; 0.0 (0.0)            ; 329 (18)            ; 16 (16)                   ; 0 (0)         ; 0                 ; 0     ; 1          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u                                                                                                 ; alu                      ; work         ;
-;          |lpm_divide:Div0|                   ; 155.9 (0.0)          ; 154.8 (0.0)                      ; 0.4 (0.0)                                         ; 1.6 (0.0)                        ; 0.0 (0.0)            ; 311 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u|lpm_divide:Div0                                                                                 ; lpm_divide               ; work         ;
-;             |lpm_divide_7dm:auto_generated|  ; 155.9 (0.0)          ; 154.8 (0.0)                      ; 0.4 (0.0)                                         ; 1.6 (0.0)                        ; 0.0 (0.0)            ; 311 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated                                                   ; lpm_divide_7dm           ; work         ;
-;                |sign_div_unsign_dnh:divider| ; 155.9 (0.0)          ; 154.8 (0.0)                      ; 0.4 (0.0)                                         ; 1.6 (0.0)                        ; 0.0 (0.0)            ; 311 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh      ; work         ;
-;                   |alt_u_div_03f:divider|    ; 155.9 (155.9)        ; 154.8 (154.8)                    ; 0.4 (0.4)                                         ; 1.6 (1.6)                        ; 0.0 (0.0)            ; 311 (311)           ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider ; alt_u_div_03f            ; work         ;
-;       |bcd_to_seven_seg:hundreds_display|    ; 3.0 (3.0)            ; 4.8 (4.8)                        ; 1.8 (1.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 3 (3)               ; 6 (6)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|bcd_to_seven_seg:hundreds_display                                                                         ; bcd_to_seven_seg         ; work         ;
+; |top                                         ; 199.5 (0.5)          ; 212.5 (0.5)                      ; 14.5 (0.0)                                        ; 1.5 (0.0)                        ; 0.0 (0.0)            ; 374 (1)             ; 87 (0)                    ; 0 (0)         ; 0                 ; 0     ; 1          ; 41   ; 0            ; |top                                                                                                                                   ; top                      ; work         ;
+;    |calculator:calculator_u|                 ; 199.0 (7.8)          ; 212.0 (8.0)                      ; 14.5 (0.2)                                        ; 1.5 (0.0)                        ; 0.0 (0.0)            ; 373 (7)             ; 87 (15)                   ; 0 (0)         ; 0                 ; 0     ; 1          ; 0    ; 0            ; |top|calculator:calculator_u                                                                                                           ; calculator               ; work         ;
+;       |alu:alu_u|                            ; 166.0 (9.2)          ; 164.7 (10.2)                     ; 0.2 (1.0)                                         ; 1.5 (0.0)                        ; 0.0 (0.0)            ; 329 (18)            ; 16 (16)                   ; 0 (0)         ; 0                 ; 0     ; 1          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u                                                                                                 ; alu                      ; work         ;
+;          |lpm_divide:Div0|                   ; 156.0 (0.0)          ; 154.5 (0.0)                      ; 0.0 (0.0)                                         ; 1.5 (0.0)                        ; 0.0 (0.0)            ; 311 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u|lpm_divide:Div0                                                                                 ; lpm_divide               ; work         ;
+;             |lpm_divide_7dm:auto_generated|  ; 156.0 (0.0)          ; 154.5 (0.0)                      ; 0.0 (0.0)                                         ; 1.5 (0.0)                        ; 0.0 (0.0)            ; 311 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated                                                   ; lpm_divide_7dm           ; work         ;
+;                |sign_div_unsign_dnh:divider| ; 156.0 (0.0)          ; 154.5 (0.0)                      ; 0.0 (0.0)                                         ; 1.5 (0.0)                        ; 0.0 (0.0)            ; 311 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh      ; work         ;
+;                   |alt_u_div_03f:divider|    ; 156.0 (156.0)        ; 154.5 (154.5)                    ; 0.0 (0.0)                                         ; 1.5 (1.5)                        ; 0.0 (0.0)            ; 311 (311)           ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider ; alt_u_div_03f            ; work         ;
+;       |bcd_to_seven_seg:hundreds_display|    ; 2.2 (2.2)            ; 3.0 (3.0)                        ; 0.8 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 3 (3)               ; 6 (6)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|bcd_to_seven_seg:hundreds_display                                                                         ; bcd_to_seven_seg         ; work         ;
 ;       |bcd_to_seven_seg:ones_display|        ; 3.5 (3.5)            ; 3.5 (3.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 7 (7)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|bcd_to_seven_seg:ones_display                                                                             ; bcd_to_seven_seg         ; work         ;
 ;       |bcd_to_seven_seg:tens_display|        ; 3.5 (3.5)            ; 3.5 (3.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 7 (7)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|bcd_to_seven_seg:tens_display                                                                             ; bcd_to_seven_seg         ; work         ;
-;       |double_dabble:dd|                     ; 6.3 (6.3)            ; 8.6 (8.6)                        ; 2.2 (2.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 11 (11)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|double_dabble:dd                                                                                          ; double_dabble            ; work         ;
-;       |memory:mem_u|                         ; 7.0 (7.0)            ; 10.1 (10.1)                      ; 3.1 (3.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 24 (24)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|memory:mem_u                                                                                              ; memory                   ; work         ;
-;       |rising_edge_synchronizer:ex_u|        ; 1.0 (1.0)            ; 2.0 (2.0)                        ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|rising_edge_synchronizer:ex_u                                                                             ; rising_edge_synchronizer ; work         ;
-;       |rising_edge_synchronizer:mr_u|        ; 1.0 (1.0)            ; 2.0 (2.0)                        ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|rising_edge_synchronizer:mr_u                                                                             ; rising_edge_synchronizer ; work         ;
-;       |rising_edge_synchronizer:ms_u|        ; 1.0 (1.0)            ; 1.9 (1.9)                        ; 0.9 (0.9)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|rising_edge_synchronizer:ms_u                                                                             ; rising_edge_synchronizer ; work         ;
+;       |double_dabble:dd|                     ; 8.3 (8.3)            ; 10.0 (10.0)                      ; 1.7 (1.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 12 (12)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|double_dabble:dd                                                                                          ; double_dabble            ; work         ;
+;       |memory:mem_u|                         ; 4.6 (4.6)            ; 13.0 (13.0)                      ; 8.4 (8.4)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 24 (24)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|memory:mem_u                                                                                              ; memory                   ; work         ;
+;       |rising_edge_synchronizer:ex_u|        ; 1.2 (1.2)            ; 2.0 (2.0)                        ; 0.8 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|rising_edge_synchronizer:ex_u                                                                             ; rising_edge_synchronizer ; work         ;
+;       |rising_edge_synchronizer:mr_u|        ; 1.0 (1.0)            ; 2.3 (2.3)                        ; 1.3 (1.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|rising_edge_synchronizer:mr_u                                                                             ; rising_edge_synchronizer ; work         ;
+;       |rising_edge_synchronizer:ms_u|        ; 1.0 (1.0)            ; 2.0 (2.0)                        ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top|calculator:calculator_u|rising_edge_synchronizer:ms_u                                                                             ; rising_edge_synchronizer ; work         ;
 +----------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1512,10 +1495,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; led[3]      ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; led[4]      ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; clk         ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; reset       ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; opcode[1]   ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; opcode[0]   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; switch[0]   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; reset       ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; opcode[1]   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; opcode[0]   ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; switch[0]   ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; switch[1]   ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; switch[2]   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; switch[3]   ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
@@ -1523,7 +1506,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; switch[5]   ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; switch[6]   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; switch[7]   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; ms          ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; ms          ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; execute     ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; mr          ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +-------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
@@ -1536,71 +1519,69 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
 ; clk                                                                                                                                                       ;                   ;         ;
 ; reset                                                                                                                                                     ;                   ;         ;
-;      - calculator:calculator_u|rising_edge_synchronizer:ex_u|edge                                                                                         ; 1                 ; 0       ;
-;      - calculator:calculator_u|rising_edge_synchronizer:ms_u|edge                                                                                         ; 1                 ; 0       ;
-;      - calculator:calculator_u|rising_edge_synchronizer:mr_u|edge                                                                                         ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[7]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[5]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[3]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[6]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[0]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[1]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[2]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[4]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|result_reg[3]                                                                                                              ; 1                 ; 0       ;
-;      - calculator:calculator_u|result_reg[6]                                                                                                              ; 1                 ; 0       ;
-;      - calculator:calculator_u|result_reg[5]                                                                                                              ; 1                 ; 0       ;
-;      - calculator:calculator_u|result_reg[7]                                                                                                              ; 1                 ; 0       ;
-;      - calculator:calculator_u|result_reg[4]                                                                                                              ; 1                 ; 0       ;
-;      - calculator:calculator_u|result_reg[2]                                                                                                              ; 1                 ; 0       ;
-;      - calculator:calculator_u|result_reg[1]                                                                                                              ; 1                 ; 0       ;
-;      - calculator:calculator_u|result_reg[0]                                                                                                              ; 1                 ; 0       ;
-;      - calculator:calculator_u|state_reg.write_s                                                                                                          ; 1                 ; 0       ;
-;      - calculator:calculator_u|state_reg.read_s                                                                                                           ; 1                 ; 0       ;
-;      - calculator:calculator_u|state_reg.write_w                                                                                                          ; 1                 ; 0       ;
-;      - calculator:calculator_u|state_reg.read_w                                                                                                           ; 1                 ; 0       ;
-;      - calculator:calculator_u|state_reg.write_w_no_op                                                                                                    ; 1                 ; 0       ;
-;      - calculator:calculator_u|rising_edge_synchronizer:ms_u|input_zz                                                                                     ; 1                 ; 0       ;
-;      - calculator:calculator_u|rising_edge_synchronizer:ms_u|input_zzz                                                                                    ; 1                 ; 0       ;
-;      - calculator:calculator_u|rising_edge_synchronizer:ex_u|input_zz                                                                                     ; 1                 ; 0       ;
-;      - calculator:calculator_u|rising_edge_synchronizer:ex_u|input_zzz                                                                                    ; 1                 ; 0       ;
-;      - calculator:calculator_u|rising_edge_synchronizer:mr_u|input_zz                                                                                     ; 1                 ; 0       ;
-;      - calculator:calculator_u|rising_edge_synchronizer:mr_u|input_zzz                                                                                    ; 1                 ; 0       ;
-;      - calculator:calculator_u|rising_edge_synchronizer:ms_u|input_z                                                                                      ; 1                 ; 0       ;
-;      - calculator:calculator_u|rising_edge_synchronizer:ex_u|input_z                                                                                      ; 1                 ; 0       ;
-;      - calculator:calculator_u|rising_edge_synchronizer:mr_u|input_z                                                                                      ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result_temp[3]~1                                                                                                 ; 1                 ; 0       ;
-;      - calculator:calculator_u|state_reg.read_w~DUPLICATE                                                                                                 ; 1                 ; 0       ;
-;      - calculator:calculator_u|rising_edge_synchronizer:ex_u|edge~DUPLICATE                                                                               ; 1                 ; 0       ;
-;      - calculator:calculator_u|rising_edge_synchronizer:mr_u|edge~DUPLICATE                                                                               ; 1                 ; 0       ;
+;      - calculator:calculator_u|rising_edge_synchronizer:ex_u|edge                                                                                         ; 0                 ; 0       ;
+;      - calculator:calculator_u|rising_edge_synchronizer:ms_u|edge                                                                                         ; 0                 ; 0       ;
+;      - calculator:calculator_u|rising_edge_synchronizer:mr_u|edge                                                                                         ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[3]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[0]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[2]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[4]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[7]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[1]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[5]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[6]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|result_reg[2]                                                                                                              ; 0                 ; 0       ;
+;      - calculator:calculator_u|result_reg[1]                                                                                                              ; 0                 ; 0       ;
+;      - calculator:calculator_u|result_reg[0]                                                                                                              ; 0                 ; 0       ;
+;      - calculator:calculator_u|result_reg[7]                                                                                                              ; 0                 ; 0       ;
+;      - calculator:calculator_u|result_reg[3]                                                                                                              ; 0                 ; 0       ;
+;      - calculator:calculator_u|result_reg[6]                                                                                                              ; 0                 ; 0       ;
+;      - calculator:calculator_u|result_reg[5]                                                                                                              ; 0                 ; 0       ;
+;      - calculator:calculator_u|result_reg[4]                                                                                                              ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[0][1]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[0][6]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[0][3]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[0][5]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[0][7]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[0][4]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[0][2]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[0][0]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[1][6]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[1][3]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[1][5]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[1][7]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[1][4]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[1][2]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[1][1]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[1][0]                                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|state_reg.read_w                                                                                                           ; 0                 ; 0       ;
+;      - calculator:calculator_u|state_reg.read_s                                                                                                           ; 0                 ; 0       ;
+;      - calculator:calculator_u|state_reg.write_w                                                                                                          ; 0                 ; 0       ;
+;      - calculator:calculator_u|state_reg.write_s                                                                                                          ; 0                 ; 0       ;
+;      - calculator:calculator_u|state_reg.write_w_no_op                                                                                                    ; 0                 ; 0       ;
+;      - calculator:calculator_u|rising_edge_synchronizer:ms_u|input_zz                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|rising_edge_synchronizer:ms_u|input_zzz                                                                                    ; 0                 ; 0       ;
+;      - calculator:calculator_u|rising_edge_synchronizer:ex_u|input_zz                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|rising_edge_synchronizer:ex_u|input_zzz                                                                                    ; 0                 ; 0       ;
+;      - calculator:calculator_u|rising_edge_synchronizer:mr_u|input_zz                                                                                     ; 0                 ; 0       ;
+;      - calculator:calculator_u|rising_edge_synchronizer:mr_u|input_zzz                                                                                    ; 0                 ; 0       ;
+;      - calculator:calculator_u|rising_edge_synchronizer:ms_u|input_z                                                                                      ; 0                 ; 0       ;
+;      - calculator:calculator_u|rising_edge_synchronizer:ex_u|input_z                                                                                      ; 0                 ; 0       ;
+;      - calculator:calculator_u|rising_edge_synchronizer:mr_u|input_z                                                                                      ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result_temp[3]~1                                                                                                 ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[1][6]~0                                                                                                   ; 0                 ; 0       ;
+;      - calculator:calculator_u|memory:mem_u|RAM[0][1]~1                                                                                                   ; 0                 ; 0       ;
+;      - calculator:calculator_u|state_reg.read_w~DUPLICATE                                                                                                 ; 0                 ; 0       ;
+;      - calculator:calculator_u|state_reg.write_s~DUPLICATE                                                                                                ; 0                 ; 0       ;
 ; opcode[1]                                                                                                                                                 ;                   ;         ;
-;      - calculator:calculator_u|alu:alu_u|result[7]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[5]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[3]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[6]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[0]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[1]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[2]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result[4]                                                                                                        ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|Add0~34                                                                                                          ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|Add0~1                                                                                                           ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|Add0~5                                                                                                           ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|Add0~9                                                                                                           ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|Add0~13                                                                                                          ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|Add0~17                                                                                                          ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|Add0~21                                                                                                          ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|Add0~25                                                                                                          ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|Add0~29                                                                                                          ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result_temp~0                                                                                                    ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result_temp[3]~1                                                                                                 ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result_temp~2                                                                                                    ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result_temp~3                                                                                                    ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result_temp~4                                                                                                    ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result_temp~5                                                                                                    ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result_temp~6                                                                                                    ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result_temp~7                                                                                                    ; 1                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|result_temp~8                                                                                                    ; 1                 ; 0       ;
-; opcode[0]                                                                                                                                                 ;                   ;         ;
+;      - calculator:calculator_u|alu:alu_u|result[3]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[0]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[2]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[4]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[7]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[1]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[5]                                                                                                        ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result[6]                                                                                                        ; 0                 ; 0       ;
 ;      - calculator:calculator_u|alu:alu_u|Add0~34                                                                                                          ; 0                 ; 0       ;
 ;      - calculator:calculator_u|alu:alu_u|Add0~1                                                                                                           ; 0                 ; 0       ;
 ;      - calculator:calculator_u|alu:alu_u|Add0~5                                                                                                           ; 0                 ; 0       ;
@@ -1611,6 +1592,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - calculator:calculator_u|alu:alu_u|Add0~25                                                                                                          ; 0                 ; 0       ;
 ;      - calculator:calculator_u|alu:alu_u|Add0~29                                                                                                          ; 0                 ; 0       ;
 ;      - calculator:calculator_u|alu:alu_u|result_temp~0                                                                                                    ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result_temp[3]~1                                                                                                 ; 0                 ; 0       ;
 ;      - calculator:calculator_u|alu:alu_u|result_temp~2                                                                                                    ; 0                 ; 0       ;
 ;      - calculator:calculator_u|alu:alu_u|result_temp~3                                                                                                    ; 0                 ; 0       ;
 ;      - calculator:calculator_u|alu:alu_u|result_temp~4                                                                                                    ; 0                 ; 0       ;
@@ -1618,24 +1600,42 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - calculator:calculator_u|alu:alu_u|result_temp~6                                                                                                    ; 0                 ; 0       ;
 ;      - calculator:calculator_u|alu:alu_u|result_temp~7                                                                                                    ; 0                 ; 0       ;
 ;      - calculator:calculator_u|alu:alu_u|result_temp~8                                                                                                    ; 0                 ; 0       ;
+; opcode[0]                                                                                                                                                 ;                   ;         ;
+;      - calculator:calculator_u|alu:alu_u|Add0~34                                                                                                          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|Add0~1                                                                                                           ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|Add0~5                                                                                                           ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|Add0~9                                                                                                           ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|Add0~13                                                                                                          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|Add0~17                                                                                                          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|Add0~21                                                                                                          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|Add0~25                                                                                                          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|Add0~29                                                                                                          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result_temp~0                                                                                                    ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result_temp~2                                                                                                    ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result_temp~3                                                                                                    ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result_temp~4                                                                                                    ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result_temp~5                                                                                                    ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result_temp~6                                                                                                    ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result_temp~7                                                                                                    ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|result_temp~8                                                                                                    ; 1                 ; 0       ;
 ; switch[0]                                                                                                                                                 ;                   ;         ;
-;      - calculator:calculator_u|alu:alu_u|Mult0~8                                                                                                          ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|Add0~1                                                                                                           ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_3~45          ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_4~49          ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_5~53          ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_6~57          ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_7~61          ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_8~66          ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_15~37         ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_16~41         ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_2~9           ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_9~13          ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_10~17         ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_11~21         ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_12~25         ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_13~29         ; 0                 ; 0       ;
-;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_14~33         ; 0                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|Mult0~8                                                                                                          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|Add0~1                                                                                                           ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_3~45          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_4~49          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_5~53          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_6~57          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_7~61          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_8~66          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_15~37         ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_16~41         ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_2~9           ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_9~13          ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_10~17         ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_11~21         ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_12~25         ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_13~29         ; 1                 ; 0       ;
+;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|op_14~33         ; 1                 ; 0       ;
 ; switch[1]                                                                                                                                                 ;                   ;         ;
 ;      - calculator:calculator_u|alu:alu_u|Mult0~8                                                                                                          ; 1                 ; 0       ;
 ;      - calculator:calculator_u|alu:alu_u|Add0~5                                                                                                           ; 1                 ; 0       ;
@@ -1778,7 +1778,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|StageOut[98]~74  ; 0                 ; 0       ;
 ;      - calculator:calculator_u|alu:alu_u|lpm_divide:Div0|lpm_divide_7dm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider|StageOut[98]~77  ; 0                 ; 0       ;
 ; ms                                                                                                                                                        ;                   ;         ;
-;      - calculator:calculator_u|rising_edge_synchronizer:ms_u|input_z~0                                                                                    ; 0                 ; 0       ;
+;      - calculator:calculator_u|rising_edge_synchronizer:ms_u|input_z~0                                                                                    ; 1                 ; 0       ;
 ; execute                                                                                                                                                   ;                   ;         ;
 ;      - calculator:calculator_u|rising_edge_synchronizer:ex_u|input_z~0                                                                                    ; 0                 ; 0       ;
 ; mr                                                                                                                                                        ;                   ;         ;
@@ -1786,20 +1786,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                  ;
-+----------------------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                                               ; Location            ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; calculator:calculator_u|alu:alu_u|result_temp[3]~1 ; LABCELL_X19_Y1_N15  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; calculator:calculator_u|memory:mem_u|RAM~51        ; MLABCELL_X21_Y2_N45 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; calculator:calculator_u|memory:mem_u|RAM~52        ; MLABCELL_X21_Y2_N3  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; calculator:calculator_u|result_reg[3]~2            ; MLABCELL_X25_Y1_N12 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; calculator:calculator_u|state_reg.write_w_no_op    ; FF_X37_Y1_N20       ; 12      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; clk                                                ; PIN_AF14            ; 89      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; opcode[1]                                          ; PIN_AE12            ; 26      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; reset                                              ; PIN_AA14            ; 37      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-+----------------------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                               ;
++----------------------------------------------------+---------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; Name                                               ; Location            ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------------------------------------------+---------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; calculator:calculator_u|addr[0]                    ; LABCELL_X18_Y5_N6   ; 8       ; Sync. load                ; no     ; --                   ; --               ; --                        ;
+; calculator:calculator_u|alu:alu_u|result_temp[3]~1 ; LABCELL_X16_Y3_N51  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; calculator:calculator_u|memory:mem_u|RAM[0][1]~1   ; LABCELL_X18_Y5_N0   ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; calculator:calculator_u|memory:mem_u|RAM[1][6]~0   ; MLABCELL_X15_Y5_N18 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; calculator:calculator_u|result_reg[2]~2            ; LABCELL_X18_Y5_N3   ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; calculator:calculator_u|state_reg.write_w_no_op    ; FF_X18_Y5_N29       ; 13      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
+; clk                                                ; PIN_AF14            ; 87      ; Clock                     ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; opcode[1]                                          ; PIN_AE12            ; 26      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
+; reset                                              ; PIN_AA14            ; 54      ; Async. clear, Sync. clear ; no     ; --                   ; --               ; --                        ;
++----------------------------------------------------+---------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
 +-------------------------------------------------------------------------------------------------+
@@ -1807,7 +1808,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+----------------------+------------------+---------------------------+
-; clk  ; PIN_AF14 ; 89      ; Global Clock         ; GCLK6            ; --                        ;
+; clk  ; PIN_AF14 ; 87      ; Global Clock         ; GCLK6            ; --                        ;
 +------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1828,7 +1829,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------+-----------------+---------------+---------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+-----------------+--------------------------------+---------------------+-------------------------------+------------------------------+------------------------------+
 ; Name                                      ; Mode            ; Location      ; Sign Representation ; Data AX Input Register ; Data AY Input Register ; Data AZ Input Register ; Data BX Input Register ; Data BY Input Register ; Data BZ Input Register ; Output Register ; Dedicated Shift Register Chain ; Dedicated Pre-Adder ; Dedicated Coefficient Storage ; Dedicated Output Adder Chain ; Dedicated Output Accumulator ;
 +-------------------------------------------+-----------------+---------------+---------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+-----------------+--------------------------------+---------------------+-------------------------------+------------------------------+------------------------------+
-; calculator:calculator_u|alu:alu_u|Mult0~8 ; Independent 9x9 ; DSP_X20_Y2_N0 ; Unsigned            ; yes                    ; no                     ; --                     ; --                     ; --                     ; --                     ; no              ; no                             ; no                  ; no                            ; no                           ; no                           ;
+; calculator:calculator_u|alu:alu_u|Mult0~8 ; Independent 9x9 ; DSP_X20_Y4_N0 ; Unsigned            ; no                     ; no                     ; --                     ; --                     ; --                     ; --                     ; no              ; no                             ; no                  ; no                            ; no                           ; no                           ;
 +-------------------------------------------+-----------------+---------------+---------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+-----------------+--------------------------------+---------------------+-------------------------------+------------------------------+------------------------------+
 
 
@@ -1837,14 +1838,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+-------------------------+
 ; Routing Resource Type                       ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Block interconnects                         ; 718 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 6 / 13,420 ( < 1 % )    ;
-; C2 interconnects                            ; 171 / 119,108 ( < 1 % ) ;
-; C4 interconnects                            ; 124 / 56,300 ( < 1 % )  ;
+; Block interconnects                         ; 720 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 8 / 13,420 ( < 1 % )    ;
+; C2 interconnects                            ; 176 / 119,108 ( < 1 % ) ;
+; C4 interconnects                            ; 85 / 56,300 ( < 1 % )   ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )          ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )          ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )          ;
-; Direct links                                ; 140 / 289,320 ( < 1 % ) ;
+; Direct links                                ; 149 / 289,320 ( < 1 % ) ;
 ; Global clocks                               ; 1 / 16 ( 6 % )          ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )           ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )           ;
@@ -1900,13 +1901,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )           ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )          ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )          ;
-; Local interconnects                         ; 102 / 84,580 ( < 1 % )  ;
+; Local interconnects                         ; 88 / 84,580 ( < 1 % )   ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )          ;
-; R14 interconnects                           ; 67 / 12,676 ( < 1 % )   ;
-; R14/C12 interconnect drivers                ; 69 / 20,720 ( < 1 % )   ;
-; R3 interconnects                            ; 265 / 130,992 ( < 1 % ) ;
-; R6 interconnects                            ; 385 / 266,960 ( < 1 % ) ;
-; Spine clocks                                ; 4 / 360 ( 1 % )         ;
+; R14 interconnects                           ; 54 / 12,676 ( < 1 % )   ;
+; R14/C12 interconnect drivers                ; 55 / 20,720 ( < 1 % )   ;
+; R3 interconnects                            ; 247 / 130,992 ( < 1 % ) ;
+; R6 interconnects                            ; 328 / 266,960 ( < 1 % ) ;
+; Spine clocks                                ; 3 / 360 ( < 1 % )       ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )      ;
 +---------------------------------------------+-------------------------+
 
@@ -2062,7 +2063,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; clk             ; clk                  ; 11.6              ;
+; clk             ; clk                  ; 4.7               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
@@ -2073,42 +2074,24 @@ This will disable optimization of problematic paths and expose them for further 
 +-----------------------------------------------------------------+----------------------------------------------------------------+-------------------+
 ; Source Register                                                 ; Destination Register                                           ; Delay Added in ns ;
 +-----------------------------------------------------------------+----------------------------------------------------------------+-------------------+
-; calculator:calculator_u|memory:mem_u|RAM~20                     ; calculator:calculator_u|memory:mem_u|dout[1]                   ; 0.490             ;
-; calculator:calculator_u|memory:mem_u|RAM~22                     ; calculator:calculator_u|memory:mem_u|dout[3]                   ; 0.490             ;
-; calculator:calculator_u|memory:mem_u|RAM~14                     ; calculator:calculator_u|memory:mem_u|dout[3]                   ; 0.476             ;
-; calculator:calculator_u|memory:mem_u|RAM~12                     ; calculator:calculator_u|memory:mem_u|dout[1]                   ; 0.476             ;
-; calculator:calculator_u|rising_edge_synchronizer:ex_u|edge      ; calculator:calculator_u|state_reg.write_w_no_op                ; 0.384             ;
-; calculator:calculator_u|rising_edge_synchronizer:mr_u|edge      ; calculator:calculator_u|state_reg.read_s                       ; 0.371             ;
-; calculator:calculator_u|rising_edge_synchronizer:ex_u|input_zz  ; calculator:calculator_u|rising_edge_synchronizer:ex_u|edge     ; 0.368             ;
-; calculator:calculator_u|state_reg.write_w_no_op                 ; calculator:calculator_u|state_reg.read_w                       ; 0.347             ;
-; calculator:calculator_u|rising_edge_synchronizer:ms_u|input_zz  ; calculator:calculator_u|rising_edge_synchronizer:ms_u|edge     ; 0.343             ;
-; calculator:calculator_u|rising_edge_synchronizer:mr_u|input_zz  ; calculator:calculator_u|rising_edge_synchronizer:mr_u|edge     ; 0.343             ;
-; calculator:calculator_u|state_reg.write_s                       ; calculator:calculator_u|state_reg.read_w                       ; 0.336             ;
-; calculator:calculator_u|state_reg.read_w                        ; calculator:calculator_u|state_reg.write_w_no_op                ; 0.330             ;
-; calculator:calculator_u|rising_edge_synchronizer:ex_u|input_zzz ; calculator:calculator_u|rising_edge_synchronizer:ex_u|edge     ; 0.322             ;
-; calculator:calculator_u|rising_edge_synchronizer:ms_u|edge      ; calculator:calculator_u|state_reg.write_s                      ; 0.316             ;
-; calculator:calculator_u|state_reg.read_s                        ; calculator:calculator_u|state_reg.write_w_no_op                ; 0.315             ;
-; calculator:calculator_u|state_reg.write_w                       ; calculator:calculator_u|state_reg.read_w                       ; 0.309             ;
-; calculator:calculator_u|rising_edge_synchronizer:ms_u|input_zzz ; calculator:calculator_u|rising_edge_synchronizer:ms_u|edge     ; 0.301             ;
-; calculator:calculator_u|rising_edge_synchronizer:mr_u|input_zzz ; calculator:calculator_u|rising_edge_synchronizer:mr_u|edge     ; 0.301             ;
-; calculator:calculator_u|memory:mem_u|RAM~23                     ; calculator:calculator_u|memory:mem_u|dout[4]                   ; 0.299             ;
-; calculator:calculator_u|memory:mem_u|RAM~24                     ; calculator:calculator_u|memory:mem_u|dout[5]                   ; 0.299             ;
-; calculator:calculator_u|memory:mem_u|RAM~16                     ; calculator:calculator_u|memory:mem_u|dout[5]                   ; 0.299             ;
-; calculator:calculator_u|memory:mem_u|RAM~21                     ; calculator:calculator_u|memory:mem_u|dout[2]                   ; 0.283             ;
-; calculator:calculator_u|memory:mem_u|RAM~19                     ; calculator:calculator_u|memory:mem_u|dout[0]                   ; 0.283             ;
-; calculator:calculator_u|memory:mem_u|RAM~15                     ; calculator:calculator_u|memory:mem_u|dout[4]                   ; 0.279             ;
-; calculator:calculator_u|memory:mem_u|RAM~13                     ; calculator:calculator_u|memory:mem_u|dout[2]                   ; 0.263             ;
-; calculator:calculator_u|memory:mem_u|RAM~11                     ; calculator:calculator_u|memory:mem_u|dout[0]                   ; 0.263             ;
-; calculator:calculator_u|memory:mem_u|RAM~26                     ; calculator:calculator_u|memory:mem_u|dout[7]                   ; 0.204             ;
-; calculator:calculator_u|memory:mem_u|RAM~18                     ; calculator:calculator_u|memory:mem_u|dout[7]                   ; 0.204             ;
-; calculator:calculator_u|rising_edge_synchronizer:ms_u|input_z   ; calculator:calculator_u|rising_edge_synchronizer:ms_u|input_zz ; 0.158             ;
-; calculator:calculator_u|rising_edge_synchronizer:mr_u|input_z   ; calculator:calculator_u|rising_edge_synchronizer:mr_u|input_zz ; 0.158             ;
-; calculator:calculator_u|memory:mem_u|RAM~25                     ; calculator:calculator_u|memory:mem_u|dout[6]                   ; 0.118             ;
-; calculator:calculator_u|memory:mem_u|RAM~17                     ; calculator:calculator_u|memory:mem_u|dout[6]                   ; 0.118             ;
-; calculator:calculator_u|alu:alu_u|result[6]                     ; calculator:calculator_u|result_reg[6]                          ; 0.067             ;
-; calculator:calculator_u|alu:alu_u|result[0]                     ; calculator:calculator_u|result_reg[0]                          ; 0.056             ;
+; calculator:calculator_u|rising_edge_synchronizer:ex_u|input_zz  ; calculator:calculator_u|rising_edge_synchronizer:ex_u|edge     ; 0.300             ;
+; calculator:calculator_u|rising_edge_synchronizer:mr_u|input_zz  ; calculator:calculator_u|rising_edge_synchronizer:mr_u|edge     ; 0.290             ;
+; calculator:calculator_u|rising_edge_synchronizer:ms_u|input_zz  ; calculator:calculator_u|rising_edge_synchronizer:ms_u|edge     ; 0.289             ;
+; calculator:calculator_u|state_reg.read_w                        ; calculator:calculator_u|state_reg.write_s                      ; 0.289             ;
+; calculator:calculator_u|state_reg.write_s                       ; calculator:calculator_u|state_reg.read_w                       ; 0.268             ;
+; calculator:calculator_u|state_reg.write_w_no_op                 ; calculator:calculator_u|state_reg.read_w                       ; 0.258             ;
+; calculator:calculator_u|rising_edge_synchronizer:ex_u|input_zzz ; calculator:calculator_u|rising_edge_synchronizer:ex_u|edge     ; 0.254             ;
+; calculator:calculator_u|rising_edge_synchronizer:ms_u|input_zzz ; calculator:calculator_u|rising_edge_synchronizer:ms_u|edge     ; 0.247             ;
+; calculator:calculator_u|rising_edge_synchronizer:mr_u|input_zzz ; calculator:calculator_u|rising_edge_synchronizer:mr_u|edge     ; 0.247             ;
+; calculator:calculator_u|state_reg.read_s                        ; calculator:calculator_u|state_reg.write_w_no_op                ; 0.242             ;
+; calculator:calculator_u|state_reg.write_w                       ; calculator:calculator_u|state_reg.read_w                       ; 0.233             ;
+; calculator:calculator_u|rising_edge_synchronizer:ex_u|edge      ; calculator:calculator_u|state_reg.write_s                      ; 0.175             ;
+; calculator:calculator_u|rising_edge_synchronizer:ms_u|edge      ; calculator:calculator_u|state_reg.read_w                       ; 0.168             ;
+; calculator:calculator_u|rising_edge_synchronizer:mr_u|edge      ; calculator:calculator_u|state_reg.read_w                       ; 0.168             ;
+; calculator:calculator_u|rising_edge_synchronizer:ms_u|input_z   ; calculator:calculator_u|rising_edge_synchronizer:ms_u|input_zz ; 0.152             ;
+; calculator:calculator_u|memory:mem_u|dout[1]                    ; calculator:calculator_u|alu:alu_u|result[7]                    ; 0.113             ;
 +-----------------------------------------------------------------+----------------------------------------------------------------+-------------------+
-Note: This table only shows the top 34 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 16 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -2133,9 +2116,8 @@ Info (332143): No user constrained clock uncertainty found in the design. Callin
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176235): Finished register packing
-    Extra Info (176218): Packed 8 registers into blocks of type DSP block
-    Extra Info (176220): Created 8 register duplicates
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:14
+    Extra Info (176219): No registers were packed into other blocks
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:12
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:02
@@ -2147,19 +2129,19 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
     Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X11_Y0 to location X21_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 0.77 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
+Info (11888): Total time spent on timing analysis during the Fitter is 0.60 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:05
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:04
 Info (144001): Generated suppressed messages file C:/Users/briza/Documents/GitHub/HDL/lab6/hw/output_files/calculator.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 6629 megabytes
-    Info: Processing ended: Sun Nov 24 15:53:15 2019
-    Info: Elapsed time: 00:00:49
-    Info: Total CPU time (on all processors): 00:01:39
+    Info: Peak virtual memory: 6626 megabytes
+    Info: Processing ended: Mon Nov 25 08:52:38 2019
+    Info: Elapsed time: 00:00:41
+    Info: Total CPU time (on all processors): 00:01:19
 
 
 +----------------------------+

@@ -143,11 +143,12 @@ mem_u : memory
     addr_width => 2,
     data_width => 8)
   port map(
-    clk  => clk,
-    we   => we,
-    addr => addr,
-    din  => result_reg,
-    dout => mem_to_alu
+    clk   => clk,
+    we    => we,
+    reset => reset,
+    addr  => addr,
+    din   => result_reg,
+    dout  => mem_to_alu
   );
 
 --------------------------------------------------------------------------------
@@ -155,9 +156,8 @@ mem_u : memory
 -- state register
 process (clk, reset)
 begin
-  -- reset sets save register to 0
   if (reset = '1') then
-    state_reg <= write_s;
+    state_reg <= read_w;
   elsif (clk'event and clk = '1') then
     state_reg <= next_state;
   end if;
