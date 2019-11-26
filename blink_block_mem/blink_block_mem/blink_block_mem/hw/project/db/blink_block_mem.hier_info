@@ -1,0 +1,213 @@
+|top
+clk => blink_block_mem:uut.clk
+reset => blink_block_mem:uut.reset
+led_out[0] <= blink_block_mem:uut.led_out[0]
+led_out[1] <= blink_block_mem:uut.led_out[1]
+led_out[2] <= blink_block_mem:uut.led_out[2]
+led_out[3] <= blink_block_mem:uut.led_out[3]
+led_out[4] <= blink_block_mem:uut.led_out[4]
+led_out[5] <= blink_block_mem:uut.led_out[5]
+led_out[6] <= blink_block_mem:uut.led_out[6]
+
+
+|top|blink_block_mem:uut
+clk => blink_rom:rom_inst.clock
+clk => address_sig[0].CLK
+clk => address_sig[1].CLK
+clk => address_sig[2].CLK
+clk => address_sig[3].CLK
+clk => address_sig[4].CLK
+clk => generic_counter:generic_counter_inst.clk
+reset => generic_counter:generic_counter_inst.reset
+reset => address_sig[0].ACLR
+reset => address_sig[1].ACLR
+reset => address_sig[2].ACLR
+reset => address_sig[3].ACLR
+reset => address_sig[4].ACLR
+led_out[0] <= seven_seg:seven_seg_inst.seven_seg_out[0]
+led_out[1] <= seven_seg:seven_seg_inst.seven_seg_out[1]
+led_out[2] <= seven_seg:seven_seg_inst.seven_seg_out[2]
+led_out[3] <= seven_seg:seven_seg_inst.seven_seg_out[3]
+led_out[4] <= seven_seg:seven_seg_inst.seven_seg_out[4]
+led_out[5] <= seven_seg:seven_seg_inst.seven_seg_out[5]
+led_out[6] <= seven_seg:seven_seg_inst.seven_seg_out[6]
+
+
+|top|blink_block_mem:uut|seven_seg:seven_seg_inst
+bcd[0] => Mux0.IN19
+bcd[0] => Mux1.IN19
+bcd[0] => Mux2.IN19
+bcd[0] => Mux3.IN19
+bcd[0] => Mux4.IN19
+bcd[0] => Mux5.IN19
+bcd[0] => Mux6.IN19
+bcd[1] => Mux0.IN18
+bcd[1] => Mux1.IN18
+bcd[1] => Mux2.IN18
+bcd[1] => Mux3.IN18
+bcd[1] => Mux4.IN18
+bcd[1] => Mux5.IN18
+bcd[1] => Mux6.IN18
+bcd[2] => Mux0.IN17
+bcd[2] => Mux1.IN17
+bcd[2] => Mux2.IN17
+bcd[2] => Mux3.IN17
+bcd[2] => Mux4.IN17
+bcd[2] => Mux5.IN17
+bcd[2] => Mux6.IN17
+bcd[3] => Mux0.IN16
+bcd[3] => Mux1.IN16
+bcd[3] => Mux2.IN16
+bcd[3] => Mux3.IN16
+bcd[3] => Mux4.IN16
+bcd[3] => Mux5.IN16
+bcd[3] => Mux6.IN16
+seven_seg_out[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|blink_block_mem:uut|blink_rom:rom_inst
+address[0] => altsyncram:altsyncram_component.address_a[0]
+address[1] => altsyncram:altsyncram_component.address_a[1]
+address[2] => altsyncram:altsyncram_component.address_a[2]
+address[3] => altsyncram:altsyncram_component.address_a[3]
+address[4] => altsyncram:altsyncram_component.address_a[4]
+clock => altsyncram:altsyncram_component.clock0
+q[0] <= altsyncram:altsyncram_component.q_a[0]
+q[1] <= altsyncram:altsyncram_component.q_a[1]
+q[2] <= altsyncram:altsyncram_component.q_a[2]
+q[3] <= altsyncram:altsyncram_component.q_a[3]
+
+
+|top|blink_block_mem:uut|blink_rom:rom_inst|altsyncram:altsyncram_component
+wren_a => ~NO_FANOUT~
+rden_a => ~NO_FANOUT~
+wren_b => ~NO_FANOUT~
+rden_b => ~NO_FANOUT~
+data_a[0] => ~NO_FANOUT~
+data_a[1] => ~NO_FANOUT~
+data_a[2] => ~NO_FANOUT~
+data_a[3] => ~NO_FANOUT~
+data_b[0] => ~NO_FANOUT~
+address_a[0] => altsyncram_9q14:auto_generated.address_a[0]
+address_a[1] => altsyncram_9q14:auto_generated.address_a[1]
+address_a[2] => altsyncram_9q14:auto_generated.address_a[2]
+address_a[3] => altsyncram_9q14:auto_generated.address_a[3]
+address_a[4] => altsyncram_9q14:auto_generated.address_a[4]
+address_b[0] => ~NO_FANOUT~
+addressstall_a => ~NO_FANOUT~
+addressstall_b => ~NO_FANOUT~
+clock0 => altsyncram_9q14:auto_generated.clock0
+clock1 => ~NO_FANOUT~
+clocken0 => ~NO_FANOUT~
+clocken1 => ~NO_FANOUT~
+clocken2 => ~NO_FANOUT~
+clocken3 => ~NO_FANOUT~
+aclr0 => ~NO_FANOUT~
+aclr1 => ~NO_FANOUT~
+byteena_a[0] => ~NO_FANOUT~
+byteena_b[0] => ~NO_FANOUT~
+q_a[0] <= altsyncram_9q14:auto_generated.q_a[0]
+q_a[1] <= altsyncram_9q14:auto_generated.q_a[1]
+q_a[2] <= altsyncram_9q14:auto_generated.q_a[2]
+q_a[3] <= altsyncram_9q14:auto_generated.q_a[3]
+q_b[0] <= <GND>
+eccstatus[0] <= <GND>
+eccstatus[1] <= <GND>
+eccstatus[2] <= <GND>
+
+
+|top|blink_block_mem:uut|blink_rom:rom_inst|altsyncram:altsyncram_component|altsyncram_9q14:auto_generated
+address_a[0] => ram_block1a0.PORTAADDR
+address_a[0] => ram_block1a1.PORTAADDR
+address_a[0] => ram_block1a2.PORTAADDR
+address_a[0] => ram_block1a3.PORTAADDR
+address_a[1] => ram_block1a0.PORTAADDR1
+address_a[1] => ram_block1a1.PORTAADDR1
+address_a[1] => ram_block1a2.PORTAADDR1
+address_a[1] => ram_block1a3.PORTAADDR1
+address_a[2] => ram_block1a0.PORTAADDR2
+address_a[2] => ram_block1a1.PORTAADDR2
+address_a[2] => ram_block1a2.PORTAADDR2
+address_a[2] => ram_block1a3.PORTAADDR2
+address_a[3] => ram_block1a0.PORTAADDR3
+address_a[3] => ram_block1a1.PORTAADDR3
+address_a[3] => ram_block1a2.PORTAADDR3
+address_a[3] => ram_block1a3.PORTAADDR3
+address_a[4] => ram_block1a0.PORTAADDR4
+address_a[4] => ram_block1a1.PORTAADDR4
+address_a[4] => ram_block1a2.PORTAADDR4
+address_a[4] => ram_block1a3.PORTAADDR4
+clock0 => ram_block1a0.CLK0
+clock0 => ram_block1a1.CLK0
+clock0 => ram_block1a2.CLK0
+clock0 => ram_block1a3.CLK0
+q_a[0] <= ram_block1a0.PORTADATAOUT
+q_a[1] <= ram_block1a1.PORTADATAOUT
+q_a[2] <= ram_block1a2.PORTADATAOUT
+q_a[3] <= ram_block1a3.PORTADATAOUT
+
+
+|top|blink_block_mem:uut|generic_counter:generic_counter_inst
+clk => output~reg0.CLK
+clk => count_sig[0].CLK
+clk => count_sig[1].CLK
+clk => count_sig[2].CLK
+clk => count_sig[3].CLK
+clk => count_sig[4].CLK
+clk => count_sig[5].CLK
+clk => count_sig[6].CLK
+clk => count_sig[7].CLK
+clk => count_sig[8].CLK
+clk => count_sig[9].CLK
+clk => count_sig[10].CLK
+clk => count_sig[11].CLK
+clk => count_sig[12].CLK
+clk => count_sig[13].CLK
+clk => count_sig[14].CLK
+clk => count_sig[15].CLK
+clk => count_sig[16].CLK
+clk => count_sig[17].CLK
+clk => count_sig[18].CLK
+clk => count_sig[19].CLK
+clk => count_sig[20].CLK
+clk => count_sig[21].CLK
+clk => count_sig[22].CLK
+clk => count_sig[23].CLK
+clk => count_sig[24].CLK
+clk => count_sig[25].CLK
+reset => output~reg0.ACLR
+reset => count_sig[0].ACLR
+reset => count_sig[1].ACLR
+reset => count_sig[2].ACLR
+reset => count_sig[3].ACLR
+reset => count_sig[4].ACLR
+reset => count_sig[5].ACLR
+reset => count_sig[6].ACLR
+reset => count_sig[7].ACLR
+reset => count_sig[8].ACLR
+reset => count_sig[9].ACLR
+reset => count_sig[10].ACLR
+reset => count_sig[11].ACLR
+reset => count_sig[12].ACLR
+reset => count_sig[13].ACLR
+reset => count_sig[14].ACLR
+reset => count_sig[15].ACLR
+reset => count_sig[16].ACLR
+reset => count_sig[17].ACLR
+reset => count_sig[18].ACLR
+reset => count_sig[19].ACLR
+reset => count_sig[20].ACLR
+reset => count_sig[21].ACLR
+reset => count_sig[22].ACLR
+reset => count_sig[23].ACLR
+reset => count_sig[24].ACLR
+reset => count_sig[25].ACLR
+output <= output~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
