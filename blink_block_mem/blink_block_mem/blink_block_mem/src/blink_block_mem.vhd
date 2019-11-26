@@ -45,7 +45,7 @@ port (
 );  
 end component; 
 
-signal address_sig  : std_logic_vector(4 downto 0) := "00001";
+signal address_sig  : std_logic_vector(4 downto 0) := "00000";
 signal q_sig        : std_logic_vector(3 downto 0);
 signal enable       : std_logic;
 
