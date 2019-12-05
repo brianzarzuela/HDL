@@ -1,0 +1,38 @@
+# do sim.do
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap altera_mf ../../src/altera_mf 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:57:16 on Dec 05,2019
+# vcom -reportprogress 300 -93 -work work ../../src/rom_data/rom_data.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Error: (vcom-13) Recompile altera_mf.altera_mf_components because ieee.std_logic_1164 has changed.
+# ** Error (suppressible): ../../src/rom_data/rom_data.vhd(41): (vcom-1195) Cannot find expanded name "altera_mf.altera_mf_components".
+# ** Error: ../../src/rom_data/rom_data.vhd(41): Unknown expanded name.
+# ** Error: ../../src/rom_data/rom_data.vhd(43): VHDL Compiler exiting
+# End time: 11:57:16 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+# ** Error: C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./sim.do line 3
+# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work ../../src/rom_data/rom_data.vhd"
+vlog -work {$MODEL_TECH/../altera/vhdl/altera} -refresh -force_refresh
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:57:30 on Dec 05,2019
+# vlog -reportprogress 300 -work $MODEL_TECH/../altera/vhdl/altera -refresh -force_refresh 
+# ** Error: (vlog-66) Execution of vlib.exe failed. Please check the error log for more details.
+# End time: 11:57:30 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vlog failed.
+vcom -work {$MODEL_TECH/../altera/vhdl/altera} -refresh -force_refresh
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:57:30 on Dec 05,2019
+# vcom -reportprogress 300 -work $MODEL_TECH/../altera/vhdl/altera -refresh -force_refresh 
+# ** Error: (vcom-66) Execution of vlib.exe failed. Please check the error log for more details.
+# End time: 11:57:30 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
