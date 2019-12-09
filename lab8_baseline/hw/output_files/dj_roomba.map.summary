@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Thu Dec 05 13:03:53 2019
-Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Analysis & Synthesis Status : Successful - Sun Dec 08 21:56:34 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : dj_roomba
 Top-level Entity Name : top
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 450
+Total registers : 462
 Total pins : 22
 Total virtual pins : 0
 Total block memory bits : 268,544
