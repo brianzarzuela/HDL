@@ -211,7 +211,7 @@ end process;
 ----------------------------------------------------------------------------------
 
 -- function unit modules
-data_address_play <= (others => '1') when data_address_reg = "111111111111111" else
+data_address_play <= data_address_reg when data_address_reg = "111111111111111" else
                      std_logic_vector(unsigned(data_address_reg) + 1);
 
 data_address_play_repeat <= std_logic_vector(unsigned(data_address_reg) + 1);
