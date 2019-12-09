@@ -4,23 +4,33 @@
 --
 --  DESIGNER NAME:  Brian Zarzuela
 --
---          LAB 8:  Simple Audio Processor
+--          LAB 9:  Simple Audio Processor [2 Channel Mixer]
 --
 --      FILE NAME:  dj_roomba_3000.vhd
 --
 ----------------------------------------------------------------------------------
 --
 --  DESCRIPTION
---    Embedded VHDL based audio processor that can process 8 bit instruction sets
---    Bits 7 and 6 are the operation codes:
+--    Embedded VHDL based audio processor that can process 10 bit instruction sets
+--
+--  NOTE
+--    This is the modified version of previous dj_roomba_3000 created for Lab 8
+--    Allows for the playback and mixing up of up to two audio files
+--
+--    Bits 9 and 8 are the operation codes:
 --      00 : Play
 --      01 : Pause
 --      10 : Seek
 --      11 : Stop
+--    Bits 7 and 6 are the channel selection:
+--      00 : don't play channel 1 & don't play channel 0
+--      01 : don't play channel 1 &       play channel 0
+--      10 :       play channel 1 & don't play channel 0
+--      11 :       play channel 1 &       play channel 0
 --    Bit 5 is the repeat bit
 --      0  : don't repeat
 --      1  : repeat
---    Bits 5 through 0 are the seek address which is prepended to trailing zeros
+--    Bits 4 through 0 are the seek address which is prepended to trailing zeros
 --    to arrive at a 14 bit memory address.
 --
 --********************************************************************************
