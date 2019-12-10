@@ -31,7 +31,7 @@
 --      0  : don't repeat
 --      1  : repeat
 --    Bits 4 through 0 are the seek address which is prepended to trailing zeros
---    to arrive at a 14 bit memory address.
+--    to arrive at a 15 bit memory address.
 --
 --********************************************************************************
 --********************************************************************************
@@ -49,7 +49,7 @@ entity dj_roomba_3000 is
     reset               : in std_logic;
     execute_btn         : in std_logic;
     sync                : in std_logic;
-    led                 : out std_logic_vector(7 downto 0);
+    led                 : out std_logic_vector(9 downto 0);
     audio_out           : out std_logic_vector(15 downto 0)
   );
 end dj_roomba_3000;
@@ -79,46 +79,48 @@ constant fetch                  : std_logic_vector(4 downto 0) := "00010";
 constant decode                 : std_logic_vector(4 downto 0) := "00100";
 constant execute                : std_logic_vector(4 downto 0) := "01000";
 constant decode_error           : std_logic_vector(4 downto 0) := "10000";
--- constant fetch_wait1  : std_logic_vector(6 downto 0) := "0100000";
--- constant fetch_wait2  : std_logic_vector(6 downto 0) := "1000000";
+
+-- channel state machine states
+constant ch_idle                : std_logic_vector(4 downto 0) := "00001";
+constant ch0_da                 : std_logic_vector(4 downto 0) := "00010";
+constant ch0_audio              : std_logic_vector(4 downto 0) := "00100";
+constant ch1_da                 : std_logic_vector(4 downto 0) := "01000";
+constant ch1_audio              : std_logic_vector(4 downto 0) := "10000";
 
 -- program counter (instruction memory address)
 signal pc                       : std_logic_vector(4 downto 0);
 
 -- instruction signal
-signal instruction              : std_logic_vector(7 downto 0);
-alias  opcode                   : std_logic_vector(1 downto 0) is instruction(7 downto 6);
+signal instruction              : std_logic_vector(9 downto 0);
+alias  opcode                   : std_logic_vector(1 downto 0) is instruction(9 downto 8);
+alias  ch1                      : std_logic                    is instruction(7);
+alias  ch0                      : std_logic                    is instruction(6);
 alias  repeat                   : std_logic                    is instruction(5);
 alias  seek_address             : std_logic_vector(4 downto 0) is instruction(4 downto 0);
 
 -- data address signals
-signal data_address             : std_logic_vector(13 downto 0);
+signal data_address             : std_logic_vector(15 downto 0);
 signal data_address_reg         : std_logic_vector(13 downto 0);
-signal data_address_play        : std_logic_vector(13 downto 0);
-signal data_address_play_repeat : std_logic_vector(13 downto 0);
-signal data_address_pause       : std_logic_vector(13 downto 0);
-signal data_address_seek        : std_logic_vector(13 downto 0);
-signal data_address_stop        : std_logic_vector(13 downto 0);
 
 ----------------------------------------------------------------------------------
 
-  -- data memory
-  component rom_data
-    port(
-      address  : in std_logic_vector (13 DOWNTO 0);
-      clock    : in std_logic  := '1';
-      q        : out std_logic_vector (15 DOWNTO 0)
-    );
-  end component;
+-- data memory
+component rom_data
+  port(
+    address  : in std_logic_vector (15 DOWNTO 0);
+    clock    : in std_logic  := '1';
+    q        : out std_logic_vector (15 DOWNTO 0)
+  );
+end component;
 
-  -- instruction memory
-  component rom_instructions
-    port(
-      address    : in std_logic_vector (4 DOWNTO 0);
-      clock      : in std_logic  := '1';
-      q          : out std_logic_vector (7 DOWNTO 0)
-    );
-  end component;
+-- instruction memory
+component rom_instructions
+  port(
+    address    : in std_logic_vector (4 DOWNTO 0);
+    clock      : in std_logic  := '1';
+    q          : out std_logic_vector (9 DOWNTO 0)
+  );
+end component;
 
 -- execute edge detector
 component rising_edge_synchronizer is
@@ -127,6 +129,18 @@ component rising_edge_synchronizer is
     reset             : in std_logic;
     input             : in std_logic;
     edge              : out std_logic
+  );
+end component;
+
+-- channel routing
+component channel is
+  port(
+    clk           : in     std_logic;
+    reset         : in     std_logic;
+    enable        : in     std_logic;
+    instruction   : in     std_logic_vector(9 downto 0);
+    state_reg     : in     std_logic_vector(4 downto 0);
+    data_address  : buffer std_logic_vector(14 downto 0);
   );
 end component;
 
@@ -159,6 +173,34 @@ execute_u : rising_edge_synchronizer
     reset => reset,
     input => execute_btn,
     edge  => edge
+  );
+
+-- channel 1
+ch1_inst : channel
+  generic map(
+    ch_index      => 1
+  )
+  port map(
+    clk           => clk,
+    reset         => reset,
+    enable        => sync,
+    instruction   => instruction,
+    state_reg     => state_reg,
+    data_address  => da1
+  );
+
+-- channel 0
+ch0_inst : channel
+  generic map(
+    ch_index      => 0
+  )
+  port map(
+    clk           => clk,
+    reset         => reset,
+    enable        => sync,
+    instruction   => instruction,
+    state_reg     => state_reg,
+    data_address  => da0
   );
 
 ----------------------------------------------------------------------------------
@@ -201,57 +243,6 @@ end process;
 
 ----------------------------------------------------------------------------------
 
--- increment program counter when in fetch state
-process (clk, reset, state_reg)
-begin
-  if (reset = '1') then
-    pc <= (others => '1');
-  elsif (clk'event and clk = '1') then
-    if state_reg = fetch then
-      -- only 10 instructions given in instructions.mif
-      if (pc = "01001") then
-        pc <= (others => '0');
-      else
-        pc <= std_logic_vector(unsigned(pc) + 1);
-      end if;
-    end if;
-  end if;
-end process;
-
-----------------------------------------------------------------------------------
-
--- function unit modules
-data_address_play <= data_address_reg when data_address_reg = "111111111111111" else
-                     std_logic_vector(unsigned(data_address_reg) + 1);
-
-data_address_play_repeat <= std_logic_vector(unsigned(data_address_reg) + 1);
-data_address_pause       <= data_address_reg;
-data_address_seek        <= seek_address & "000000000";
-data_address_stop        <= (others => '0');
-
--- data address routing multiplexer
-process (reset, opcode, repeat)
-begin
-  if (reset = '1') then
-    data_address <= (others => '0');
-  else
-    case opcode is
-      when play =>
-        if (repeat = '1') then
-          data_address <= data_address_play_repeat;
-        else
-          data_address <= data_address_play;
-        end if;
-      when pause  => data_address <= data_address_pause;
-      when seek   => data_address <= data_address_seek;
-      when stop   => data_address <= data_address_stop;
-      when others => data_address <= data_address_pause;
-    end case;
-  end if;
-end process;
-
-----------------------------------------------------------------------------------
-
 -- data register
 process (clk, reset)
 begin
@@ -261,6 +252,25 @@ begin
     if (state_reg = execute) then
       if (sync = '1') then
         data_address_reg <= data_address;
+      end if;
+    end if;
+  end if;
+end process;
+
+----------------------------------------------------------------------------------
+
+-- increment program counter when in fetch state
+process (clk, reset, state_reg)
+begin
+  if (reset = '1') then
+    pc <= (others => '1');
+  elsif (clk'event and clk = '1') then
+    if state_reg = fetch then
+      -- only 9 instructions given in instructions.mif
+      if (pc = "01000") then
+        pc <= (others => '0');
+      else
+        pc <= std_logic_vector(unsigned(pc) + 1);
       end if;
     end if;
   end if;
