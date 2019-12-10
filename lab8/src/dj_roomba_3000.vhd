@@ -69,8 +69,6 @@ constant fetch                  : std_logic_vector(4 downto 0) := "00010";
 constant decode                 : std_logic_vector(4 downto 0) := "00100";
 constant execute                : std_logic_vector(4 downto 0) := "01000";
 constant decode_error           : std_logic_vector(4 downto 0) := "10000";
--- constant fetch_wait1  : std_logic_vector(6 downto 0) := "0100000";
--- constant fetch_wait2  : std_logic_vector(6 downto 0) := "1000000";
 
 -- program counter (instruction memory address)
 signal pc                       : std_logic_vector(4 downto 0);

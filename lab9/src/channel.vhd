@@ -53,34 +53,20 @@ begin
 
 -- function unit modules
 
--- play
-process (data_address)
-begin
-  if (data_address = "111111111111111") then
-    data_address_play <= (others => '1');
-  else
-    data_address_play <= std_logic_vector(unsigned(data_address) + 1);
-  end if;
-end process;
+-- execution unit
+data_address_play <=
+  (others => '1') when data_address_reg = "11111111111111" else
+  std_logic_vector(unsigned(data_address_reg) + 1);
 
--- repeat
-process (data_address)
-begin
-  if (data_address = "111111111111111") then
-    data_address_repeat <= (others => '0');
-  else
-    data_address_repeat <= std_logic_vector(unsigned(data_address) + 1);
-  end if;
-end process;
-
-----------------------------------------------------------------------------------
-
-
-
+data_address_play_repeat <=
+  (others => '0') when data_address_reg = "11111111111111"
+  else std_logic_vector(unsigned(data_address_reg) + 1);
 
 data_address_pause       <= data_address_reg;
 data_address_seek        <= seek_address & "000000000";
 data_address_stop        <= (others => '0');
+
+----------------------------------------------------------------------------------
 
 -- data address routing multiplexer
 process (reset, opcode, repeat)
