@@ -63,7 +63,12 @@ output <= output~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|dj_roomba_3000:dj_roomba
-clk => rom_data:data_mem_u.clock
+clk => rom_data:u_rom_data_inst.clock
+clk => pc[0].CLK
+clk => pc[1].CLK
+clk => pc[2].CLK
+clk => pc[3].CLK
+clk => pc[4].CLK
 clk => data_address_reg[0].CLK
 clk => data_address_reg[1].CLK
 clk => data_address_reg[2].CLK
@@ -78,18 +83,8 @@ clk => data_address_reg[10].CLK
 clk => data_address_reg[11].CLK
 clk => data_address_reg[12].CLK
 clk => data_address_reg[13].CLK
-clk => pc[0].CLK
-clk => pc[1].CLK
-clk => pc[2].CLK
-clk => pc[3].CLK
-clk => pc[4].CLK
-clk => state_reg[0].CLK
-clk => state_reg[1].CLK
-clk => state_reg[2].CLK
-clk => state_reg[3].CLK
-clk => state_reg[4].CLK
-clk => rom_instructions:instruction_mem.clock
-clk => rising_edge_synchronizer:execute_u.clk
+clk => rom_instructions:u_rom_instr_inst.clock
+clk => rising_edge_synchronizer:sync_execute.clk
 reset => data_address[13].OUTPUTSELECT
 reset => data_address[12].OUTPUTSELECT
 reset => data_address[11].OUTPUTSELECT
@@ -104,7 +99,12 @@ reset => data_address[3].OUTPUTSELECT
 reset => data_address[2].OUTPUTSELECT
 reset => data_address[1].OUTPUTSELECT
 reset => data_address[0].OUTPUTSELECT
-reset => rising_edge_synchronizer:execute_u.reset
+reset => rising_edge_synchronizer:sync_execute.reset
+reset => pc[0].ACLR
+reset => pc[1].ACLR
+reset => pc[2].ACLR
+reset => pc[3].ACLR
+reset => pc[4].ACLR
 reset => data_address_reg[0].ACLR
 reset => data_address_reg[1].ACLR
 reset => data_address_reg[2].ACLR
@@ -119,58 +119,48 @@ reset => data_address_reg[10].ACLR
 reset => data_address_reg[11].ACLR
 reset => data_address_reg[12].ACLR
 reset => data_address_reg[13].ACLR
-reset => pc[0].PRESET
-reset => pc[1].PRESET
-reset => pc[2].PRESET
-reset => pc[3].PRESET
-reset => pc[4].PRESET
-reset => state_reg[0].ACLR
-reset => state_reg[1].PRESET
-reset => state_reg[2].ACLR
-reset => state_reg[3].ACLR
-reset => state_reg[4].ACLR
-execute_btn => rising_edge_synchronizer:execute_u.input
-sync => data_address_reg.OUTPUTSELECT
-sync => data_address_reg.OUTPUTSELECT
-sync => data_address_reg.OUTPUTSELECT
-sync => data_address_reg.OUTPUTSELECT
-sync => data_address_reg.OUTPUTSELECT
-sync => data_address_reg.OUTPUTSELECT
-sync => data_address_reg.OUTPUTSELECT
-sync => data_address_reg.OUTPUTSELECT
-sync => data_address_reg.OUTPUTSELECT
-sync => data_address_reg.OUTPUTSELECT
-sync => data_address_reg.OUTPUTSELECT
-sync => data_address_reg.OUTPUTSELECT
-sync => data_address_reg.OUTPUTSELECT
-sync => data_address_reg.OUTPUTSELECT
-led[0] <= rom_instructions:instruction_mem.q[0]
-led[1] <= rom_instructions:instruction_mem.q[1]
-led[2] <= rom_instructions:instruction_mem.q[2]
-led[3] <= rom_instructions:instruction_mem.q[3]
-led[4] <= rom_instructions:instruction_mem.q[4]
-led[5] <= rom_instructions:instruction_mem.q[5]
-led[6] <= rom_instructions:instruction_mem.q[6]
-led[7] <= rom_instructions:instruction_mem.q[7]
-audio_out[0] <= rom_data:data_mem_u.q[0]
-audio_out[1] <= rom_data:data_mem_u.q[1]
-audio_out[2] <= rom_data:data_mem_u.q[2]
-audio_out[3] <= rom_data:data_mem_u.q[3]
-audio_out[4] <= rom_data:data_mem_u.q[4]
-audio_out[5] <= rom_data:data_mem_u.q[5]
-audio_out[6] <= rom_data:data_mem_u.q[6]
-audio_out[7] <= rom_data:data_mem_u.q[7]
-audio_out[8] <= rom_data:data_mem_u.q[8]
-audio_out[9] <= rom_data:data_mem_u.q[9]
-audio_out[10] <= rom_data:data_mem_u.q[10]
-audio_out[11] <= rom_data:data_mem_u.q[11]
-audio_out[12] <= rom_data:data_mem_u.q[12]
-audio_out[13] <= rom_data:data_mem_u.q[13]
-audio_out[14] <= rom_data:data_mem_u.q[14]
-audio_out[15] <= rom_data:data_mem_u.q[15]
+execute_btn => rising_edge_synchronizer:sync_execute.input
+sync => data_address_reg[13].ENA
+sync => data_address_reg[12].ENA
+sync => data_address_reg[11].ENA
+sync => data_address_reg[10].ENA
+sync => data_address_reg[9].ENA
+sync => data_address_reg[8].ENA
+sync => data_address_reg[7].ENA
+sync => data_address_reg[6].ENA
+sync => data_address_reg[5].ENA
+sync => data_address_reg[4].ENA
+sync => data_address_reg[3].ENA
+sync => data_address_reg[2].ENA
+sync => data_address_reg[1].ENA
+sync => data_address_reg[0].ENA
+led[0] <= rom_instructions:u_rom_instr_inst.q[0]
+led[1] <= rom_instructions:u_rom_instr_inst.q[1]
+led[2] <= rom_instructions:u_rom_instr_inst.q[2]
+led[3] <= rom_instructions:u_rom_instr_inst.q[3]
+led[4] <= rom_instructions:u_rom_instr_inst.q[4]
+led[5] <= rom_instructions:u_rom_instr_inst.q[5]
+led[6] <= rom_instructions:u_rom_instr_inst.q[6]
+led[7] <= rom_instructions:u_rom_instr_inst.q[7]
+audio_out[0] <= rom_data:u_rom_data_inst.q[0]
+audio_out[1] <= rom_data:u_rom_data_inst.q[1]
+audio_out[2] <= rom_data:u_rom_data_inst.q[2]
+audio_out[3] <= rom_data:u_rom_data_inst.q[3]
+audio_out[4] <= rom_data:u_rom_data_inst.q[4]
+audio_out[5] <= rom_data:u_rom_data_inst.q[5]
+audio_out[6] <= rom_data:u_rom_data_inst.q[6]
+audio_out[7] <= rom_data:u_rom_data_inst.q[7]
+audio_out[8] <= rom_data:u_rom_data_inst.q[8]
+audio_out[9] <= rom_data:u_rom_data_inst.q[9]
+audio_out[10] <= rom_data:u_rom_data_inst.q[10]
+audio_out[11] <= rom_data:u_rom_data_inst.q[11]
+audio_out[12] <= rom_data:u_rom_data_inst.q[12]
+audio_out[13] <= rom_data:u_rom_data_inst.q[13]
+audio_out[14] <= rom_data:u_rom_data_inst.q[14]
+audio_out[15] <= rom_data:u_rom_data_inst.q[15]
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
 address[2] => altsyncram:altsyncram_component.address_a[2]
@@ -204,7 +194,7 @@ q[14] <= altsyncram:altsyncram_component.q_a[14]
 q[15] <= altsyncram:altsyncram_component.q_a[15]
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -275,7 +265,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated
 address_a[0] => altsyncram_ms33:altsyncram1.address_a[0]
 address_a[1] => altsyncram_ms33:altsyncram1.address_a[1]
 address_a[2] => altsyncram_ms33:altsyncram1.address_a[2]
@@ -309,7 +299,7 @@ q_a[14] <= altsyncram_ms33:altsyncram1.q_a[14]
 q_a[15] <= altsyncram_ms33:altsyncram1.q_a[15]
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1
 address_a[0] => ram_block3a0.PORTAADDR
 address_a[0] => ram_block3a1.PORTAADDR
 address_a[0] => ram_block3a2.PORTAADDR
@@ -1282,7 +1272,7 @@ q_b[15] <= mux_4hb:mux7.result[15]
 wren_b => decode_5la:decode5.enable
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_5la:decode4
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_5la:decode4
 data[0] => eq_node[1].IN0
 data[0] => eq_node[0].IN0
 enable => eq_node[1].IN1
@@ -1291,7 +1281,7 @@ eq[0] <= eq_node[0].DB_MAX_OUTPUT_PORT_TYPE
 eq[1] <= eq_node[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_5la:decode5
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_5la:decode5
 data[0] => eq_node[1].IN0
 data[0] => eq_node[0].IN0
 enable => eq_node[1].IN1
@@ -1300,21 +1290,21 @@ eq[0] <= eq_node[0].DB_MAX_OUTPUT_PORT_TYPE
 eq[1] <= eq_node[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_u0a:rden_decode_a
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_u0a:rden_decode_a
 data[0] => eq_node[1].IN0
 data[0] => eq_node[0].IN0
 eq[0] <= eq_node[0].DB_MAX_OUTPUT_PORT_TYPE
 eq[1] <= eq_node[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_u0a:rden_decode_b
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_u0a:rden_decode_b
 data[0] => eq_node[1].IN0
 data[0] => eq_node[0].IN0
 eq[0] <= eq_node[0].DB_MAX_OUTPUT_PORT_TYPE
 eq[1] <= eq_node[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|mux_4hb:mux6
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|mux_4hb:mux6
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -1397,7 +1387,7 @@ sel[0] => l1_w9_n0_mux_dataout.IN0
 sel[0] => _.IN0
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|mux_4hb:mux7
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|mux_4hb:mux7
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -1480,7 +1470,7 @@ sel[0] => l1_w9_n0_mux_dataout.IN0
 sel[0] => _.IN0
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2
 tck_usr <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_tck
 address[0] <= ram_rom_addr_reg[0].DB_MAX_OUTPUT_PORT_TYPE
 address[1] <= ram_rom_addr_reg[1].DB_MAX_OUTPUT_PORT_TYPE
@@ -1570,7 +1560,7 @@ ir_out[7] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.ir_out[7]
 tdo <= sld_jtag_endpoint_adapter:jtag_signal_adapter.tdo
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter
 raw_tck => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.raw_tck
 raw_tms => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.raw_tms
 tdi => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.tdi
@@ -1653,7 +1643,7 @@ adapted_ir_out[6] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_im
 adapted_ir_out[7] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_out[7]
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst
 raw_tck => adapted_tck.DATAIN
 raw_tms => adapted_tms.DATAIN
 tdi => adapted_tdi.DATAIN
@@ -1736,7 +1726,7 @@ adapted_ir_out[6] => ir_out[6].DATAIN
 adapted_ir_out[7] => ir_out[7].DATAIN
 
 
-|top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr
+|top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr
 ROM_DATA[0] => Mux3.IN131
 ROM_DATA[1] => Mux2.IN131
 ROM_DATA[2] => Mux1.IN131
@@ -1858,7 +1848,7 @@ TDI => WORD_SR.DATAA
 TDO <= WORD_SR[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem
+|top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
 address[2] => altsyncram:altsyncram_component.address_a[2]
@@ -1875,7 +1865,7 @@ q[6] <= altsyncram:altsyncram_component.q_a[6]
 q[7] <= altsyncram:altsyncram_component.q_a[7]
 
 
-|top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component
+|top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -1921,7 +1911,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated
+|top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated
 address_a[0] => altsyncram_92h2:altsyncram1.address_a[0]
 address_a[1] => altsyncram_92h2:altsyncram1.address_a[1]
 address_a[2] => altsyncram_92h2:altsyncram1.address_a[2]
@@ -1938,7 +1928,7 @@ q_a[6] <= altsyncram_92h2:altsyncram1.q_a[6]
 q_a[7] <= altsyncram_92h2:altsyncram1.q_a[7]
 
 
-|top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|altsyncram_92h2:altsyncram1
+|top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|altsyncram_92h2:altsyncram1
 address_a[0] => ram_block3a0.PORTAADDR
 address_a[0] => ram_block3a1.PORTAADDR
 address_a[0] => ram_block3a2.PORTAADDR
@@ -2069,7 +2059,7 @@ wren_b => ram_block3a6.PORTBWE
 wren_b => ram_block3a7.PORTBWE
 
 
-|top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2
+|top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2
 tck_usr <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_tck
 address[0] <= ram_rom_addr_reg[0].DB_MAX_OUTPUT_PORT_TYPE
 address[1] <= ram_rom_addr_reg[1].DB_MAX_OUTPUT_PORT_TYPE
@@ -2134,7 +2124,7 @@ ir_out[7] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.ir_out[7]
 tdo <= sld_jtag_endpoint_adapter:jtag_signal_adapter.tdo
 
 
-|top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter
+|top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter
 raw_tck => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.raw_tck
 raw_tms => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.raw_tms
 tdi => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.tdi
@@ -2217,7 +2207,7 @@ adapted_ir_out[6] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_im
 adapted_ir_out[7] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_out[7]
 
 
-|top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst
+|top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst
 raw_tck => adapted_tck.DATAIN
 raw_tms => adapted_tms.DATAIN
 tdi => adapted_tdi.DATAIN
@@ -2300,7 +2290,7 @@ adapted_ir_out[6] => ir_out[6].DATAIN
 adapted_ir_out[7] => ir_out[7].DATAIN
 
 
-|top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr
+|top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr
 ROM_DATA[0] => Mux3.IN131
 ROM_DATA[1] => Mux2.IN131
 ROM_DATA[2] => Mux1.IN131
@@ -2422,7 +2412,7 @@ TDI => WORD_SR.DATAA
 TDO <= WORD_SR[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|dj_roomba_3000:dj_roomba|rising_edge_synchronizer:execute_u
+|top|dj_roomba_3000:dj_roomba|rising_edge_synchronizer:sync_execute
 clk => input_zz.CLK
 clk => input_z.CLK
 clk => edge~reg0.CLK

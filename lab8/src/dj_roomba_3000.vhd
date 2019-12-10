@@ -210,12 +210,14 @@ end process;
 
 ----------------------------------------------------------------------------------
 
--- function unit modules
-data_address_play <= data_address_reg when data_address_reg = "111111111111111" else
-                     std_logic_vector(unsigned(data_address_reg) + 1);
+-- execution unit
+data_address_play <=
+  (others => '1') when data_address_reg = "11111111111111" else
+  std_logic_vector(unsigned(data_address_reg) + 1);
 
-data_address_play_repeat <= (others => '0') when data_address_reg = "111111111111111"
-                            else std_logic_vector(unsigned(data_address_reg) + 1);
+data_address_play_repeat <=
+  (others => '0') when data_address_reg = "11111111111111"
+  else std_logic_vector(unsigned(data_address_reg) + 1);
 
 data_address_pause       <= data_address_reg;
 data_address_seek        <= seek_address & "000000000";
