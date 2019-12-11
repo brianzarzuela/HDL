@@ -23,8 +23,8 @@ set_global_assignment -name VHDL_FILE ../../src/gen_add_sub.vhd
 set_global_assignment -name VHDL_FILE ../../src/components.vhd
 set_global_assignment -name VHDL_FILE ../../src/top.vhd
 
-set_location_assignment PIN_AB12 -to reset
 set_location_assignment PIN_AF14 -to clk
+set_location_assignment PIN_AA14 -to reset
 
 set_location_assignment PIN_Y16  -to add_btn
 set_location_assignment PIN_W15  -to sub_btn

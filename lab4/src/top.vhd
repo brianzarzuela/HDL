@@ -11,6 +11,11 @@
 --------------------------------------------------------------------------------
 --
 --  DESCRIPTION
+--    3 bit add/subtract circuit that displays both the first and second inputs
+--    and the result on seven segment displays. The result will be of addition
+--    when the add button is pressed and subtraction when the subtract button is
+--    pressed. Operates with unsigned based 16 numbers so that:
+--    1 + 2 = 3 and 1 - 2 = F
 --
 --******************************************************************************
 --******************************************************************************
@@ -48,7 +53,6 @@ signal a_sync_bcd : std_logic_vector(3 downto 0);
 signal b_sync_bcd : std_logic_vector(3 downto 0);
 
 signal result      : std_logic_vector(3 downto 0) := (others => '0');
-signal result_sync : std_logic_vector(3 downto 0);
 
 --------------------------------------------------------------------------------
 
@@ -76,16 +80,6 @@ b_sync_u : gen_synchronizer
     sync_out => b_sync
   );
 
-result_sync_u : gen_synchronizer
-  generic map(
-    bits     => 4)
-  port map(
-    clk      => clk,
-    reset    => reset,
-    async_in => result,
-    sync_out => result_sync
-  );
-
 --------------------------------------------------------------------------------
 
 add_sync : rising_edge_synchronizer
@@ -106,8 +100,20 @@ sub_sync : rising_edge_synchronizer
 
 --------------------------------------------------------------------------------
 
-a_sync_bcd <= '0' & a_sync;
-b_sync_bcd <= '0' & b_sync;
+addsub_u : gen_add_sub
+  generic map(
+    bits => 3)
+  port map(
+    a    => a_sync,
+    b    => b_sync,
+    flag => flag,
+    c    => result
+  );
+
+--------------------------------------------------------------------------------
+
+a_sync_bcd <= std_logic_vector(unsigned('0' & a_sync));
+b_sync_bcd <= std_logic_vector(unsigned('0' & b_sync));
 
 --------------------------------------------------------------------------------
 
@@ -128,7 +134,7 @@ b_display_u : bcd_to_seven_seg
 result_display_u : bcd_to_seven_seg
   port map(
     clk     => clk,
-    input   => result_sync,
+    input   => result,
     display => result_ssd
   );
 
@@ -147,18 +153,6 @@ begin
     end if;
   end if;
 end process;
-
---------------------------------------------------------------------------------
-
-addsub_u : gen_add_sub
-  generic map(
-    bits => 3)
-  port map(
-    a    => a_sync,
-    b    => b_sync,
-    flag => flag,
-    c    => result
-  );
 
 --------------------------------------------------------------------------------
 

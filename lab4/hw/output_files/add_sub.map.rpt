@@ -1,5 +1,5 @@
 Analysis & Synthesis report for add_sub
-Thu Nov 21 03:32:01 2019
+Wed Dec 11 13:16:11 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -17,13 +17,12 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   9. Inverted Register Statistics
  10. Parameter Settings for User Entity Instance: gen_synchronizer:a_sync_u
  11. Parameter Settings for User Entity Instance: gen_synchronizer:b_sync_u
- 12. Parameter Settings for User Entity Instance: gen_synchronizer:result_sync_u
- 13. Parameter Settings for User Entity Instance: gen_add_sub:addsub_u
- 14. Port Connectivity Checks: "bcd_to_seven_seg:b_display_u"
- 15. Port Connectivity Checks: "bcd_to_seven_seg:a_display_u"
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+ 12. Parameter Settings for User Entity Instance: gen_add_sub:addsub_u
+ 13. Port Connectivity Checks: "bcd_to_seven_seg:b_display_u"
+ 14. Port Connectivity Checks: "bcd_to_seven_seg:a_display_u"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -49,13 +48,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Nov 21 03:32:01 2019       ;
+; Analysis & Synthesis Status     ; Successful - Wed Dec 11 13:16:11 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; add_sub                                     ;
 ; Top-level Entity Name           ; top                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 50                                          ;
+; Total registers                 ; 42                                          ;
 ; Total pins                      ; 31                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -192,7 +191,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 26        ;
+; Estimate of Logic utilization (ALMs needed) ; 22        ;
 ;                                             ;           ;
 ; Combinational ALUT usage for logic          ; 31        ;
 ;     -- 7 input functions                    ; 0         ;
@@ -201,16 +200,16 @@ refer to the applicable agreement for further details.
 ;     -- 4 input functions                    ; 7         ;
 ;     -- <=3 input functions                  ; 24        ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 50        ;
+; Dedicated logic registers                   ; 42        ;
 ;                                             ;           ;
 ; I/O pins                                    ; 31        ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 50        ;
-; Total fan-out                               ; 275       ;
-; Average fan-out                             ; 1.92      ;
+; Maximum fan-out                             ; 42        ;
+; Total fan-out                               ; 251       ;
+; Average fan-out                             ; 1.86      ;
 +---------------------------------------------+-----------+
 
 
@@ -219,14 +218,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+--------------------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Entity Name              ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+--------------------------+--------------+
-; |top                                   ; 31 (1)              ; 50 (1)                    ; 0                 ; 0          ; 31   ; 0            ; |top                                   ; top                      ; work         ;
+; |top                                   ; 31 (1)              ; 42 (1)                    ; 0                 ; 0          ; 31   ; 0            ; |top                                   ; top                      ; work         ;
 ;    |bcd_to_seven_seg:a_display_u|      ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |top|bcd_to_seven_seg:a_display_u      ; bcd_to_seven_seg         ; work         ;
 ;    |bcd_to_seven_seg:b_display_u|      ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |top|bcd_to_seven_seg:b_display_u      ; bcd_to_seven_seg         ; work         ;
 ;    |bcd_to_seven_seg:result_display_u| ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |top|bcd_to_seven_seg:result_display_u ; bcd_to_seven_seg         ; work         ;
 ;    |gen_add_sub:addsub_u|              ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|gen_add_sub:addsub_u              ; gen_add_sub              ; work         ;
 ;    |gen_synchronizer:a_sync_u|         ; 0 (0)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |top|gen_synchronizer:a_sync_u         ; gen_synchronizer         ; work         ;
 ;    |gen_synchronizer:b_sync_u|         ; 0 (0)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |top|gen_synchronizer:b_sync_u         ; gen_synchronizer         ; work         ;
-;    |gen_synchronizer:result_sync_u|    ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |top|gen_synchronizer:result_sync_u    ; gen_synchronizer         ; work         ;
 ;    |rising_edge_synchronizer:add_sync| ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top|rising_edge_synchronizer:add_sync ; rising_edge_synchronizer ; work         ;
 ;    |rising_edge_synchronizer:sub_sync| ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top|rising_edge_synchronizer:sub_sync ; rising_edge_synchronizer ; work         ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+--------------------------+--------------+
@@ -238,10 +236,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 50    ;
+; Total registers                              ; 42    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 29    ;
+; Number of registers using Asynchronous Clear ; 21    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -283,16 +281,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: gen_synchronizer:result_sync_u ;
-+----------------+-------+----------------------------------------------------+
-; Parameter Name ; Value ; Type                                               ;
-+----------------+-------+----------------------------------------------------+
-; bits           ; 4     ; Signed Integer                                     ;
-+----------------+-------+----------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: gen_add_sub:addsub_u ;
 +----------------+-------+------------------------------------------+
@@ -326,8 +314,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 50                          ;
-;     CLR               ; 29                          ;
+; arriav_ff             ; 42                          ;
+;     CLR               ; 21                          ;
 ;     plain             ; 21                          ;
 ; arriav_lcell_comb     ; 31                          ;
 ;     arith             ; 5                           ;
@@ -340,8 +328,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         4 data inputs ; 7                           ;
 ; boundary_port         ; 31                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.40                        ;
-; Average LUT depth     ; 0.61                        ;
+; Max LUT depth         ; 2.40                        ;
+; Average LUT depth     ; 0.91                        ;
 +-----------------------+-----------------------------+
 
 
@@ -360,7 +348,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Nov 21 03:31:51 2019
+    Info: Processing started: Wed Dec 11 13:16:00 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off add_sub -c add_sub
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -371,33 +359,32 @@ Info (12021): Found 2 design units, including 1 entities, in source file /users/
     Info (12022): Found design unit 1: gen_synchronizer-beh File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/gen_synchronizer.vhd Line: 21
     Info (12023): Found entity 1: gen_synchronizer File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/gen_synchronizer.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file /users/briza/documents/github/hdl/lab4/src/bcd_to_seven_seg.vhd
-    Info (12022): Found design unit 1: bcd_to_seven_seg-arc File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/bcd_to_seven_seg.vhd Line: 53
-    Info (12023): Found entity 1: bcd_to_seven_seg File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/bcd_to_seven_seg.vhd Line: 41
+    Info (12022): Found design unit 1: bcd_to_seven_seg-arc File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/bcd_to_seven_seg.vhd Line: 59
+    Info (12023): Found entity 1: bcd_to_seven_seg File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/bcd_to_seven_seg.vhd Line: 47
 Info (12021): Found 2 design units, including 1 entities, in source file /users/briza/documents/github/hdl/lab4/src/gen_add_sub.vhd
     Info (12022): Found design unit 1: gen_add_sub-arc File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/gen_add_sub.vhd Line: 34
     Info (12023): Found entity 1: gen_add_sub File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/gen_add_sub.vhd Line: 22
 Info (12021): Found 1 design units, including 0 entities, in source file /users/briza/documents/github/hdl/lab4/src/components.vhd
     Info (12022): Found design unit 1: components File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/components.vhd Line: 25
 Info (12021): Found 2 design units, including 1 entities, in source file /users/briza/documents/github/hdl/lab4/src/top.vhd
-    Info (12022): Found design unit 1: top-implementation File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/top.vhd Line: 38
-    Info (12023): Found entity 1: top File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/top.vhd Line: 23
+    Info (12022): Found design unit 1: top-implementation File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/top.vhd Line: 43
+    Info (12023): Found entity 1: top File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/top.vhd Line: 28
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Info (12128): Elaborating entity "gen_synchronizer" for hierarchy "gen_synchronizer:a_sync_u" File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/top.vhd Line: 59
-Info (12128): Elaborating entity "gen_synchronizer" for hierarchy "gen_synchronizer:result_sync_u" File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/top.vhd Line: 79
-Info (12128): Elaborating entity "rising_edge_synchronizer" for hierarchy "rising_edge_synchronizer:add_sync" File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/top.vhd Line: 91
-Info (12128): Elaborating entity "bcd_to_seven_seg" for hierarchy "bcd_to_seven_seg:a_display_u" File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/top.vhd Line: 114
-Info (12128): Elaborating entity "gen_add_sub" for hierarchy "gen_add_sub:addsub_u" File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/top.vhd Line: 153
+Info (12128): Elaborating entity "gen_synchronizer" for hierarchy "gen_synchronizer:a_sync_u" File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/top.vhd Line: 63
+Info (12128): Elaborating entity "rising_edge_synchronizer" for hierarchy "rising_edge_synchronizer:add_sync" File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/top.vhd Line: 85
+Info (12128): Elaborating entity "gen_add_sub" for hierarchy "gen_add_sub:addsub_u" File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/top.vhd Line: 103
+Info (12128): Elaborating entity "bcd_to_seven_seg" for hierarchy "bcd_to_seven_seg:a_display_u" File: C:/Users/briza/Documents/GitHub/HDL/lab4/src/top.vhd Line: 120
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 82 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 78 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 21 output pins
-    Info (21061): Implemented 51 logic cells
+    Info (21061): Implemented 47 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4864 megabytes
-    Info: Processing ended: Thu Nov 21 03:32:01 2019
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Processing ended: Wed Dec 11 13:16:11 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:22
 
 

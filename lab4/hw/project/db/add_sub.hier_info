@@ -8,7 +8,6 @@ b[2] => gen_synchronizer:b_sync_u.async_in[2]
 clk => gen_synchronizer:a_sync_u.clk
 clk => flag.CLK
 clk => gen_synchronizer:b_sync_u.clk
-clk => gen_synchronizer:result_sync_u.clk
 clk => rising_edge_synchronizer:add_sync.clk
 clk => rising_edge_synchronizer:sub_sync.clk
 clk => bcd_to_seven_seg:a_display_u.clk
@@ -16,7 +15,6 @@ clk => bcd_to_seven_seg:b_display_u.clk
 clk => bcd_to_seven_seg:result_display_u.clk
 reset => gen_synchronizer:a_sync_u.reset
 reset => gen_synchronizer:b_sync_u.reset
-reset => gen_synchronizer:result_sync_u.reset
 reset => rising_edge_synchronizer:add_sync.reset
 reset => rising_edge_synchronizer:sub_sync.reset
 reset => flag.ACLR
@@ -87,33 +85,6 @@ sync_out[1] <= flop2[1].DB_MAX_OUTPUT_PORT_TYPE
 sync_out[2] <= flop2[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|gen_synchronizer:result_sync_u
-clk => flop2[0].CLK
-clk => flop2[1].CLK
-clk => flop2[2].CLK
-clk => flop2[3].CLK
-clk => flop1[0].CLK
-clk => flop1[1].CLK
-clk => flop1[2].CLK
-clk => flop1[3].CLK
-reset => flop2[0].ACLR
-reset => flop2[1].ACLR
-reset => flop2[2].ACLR
-reset => flop2[3].ACLR
-reset => flop1[0].ACLR
-reset => flop1[1].ACLR
-reset => flop1[2].ACLR
-reset => flop1[3].ACLR
-async_in[0] => flop1[0].DATAIN
-async_in[1] => flop1[1].DATAIN
-async_in[2] => flop1[2].DATAIN
-async_in[3] => flop1[3].DATAIN
-sync_out[0] <= flop2[0].DB_MAX_OUTPUT_PORT_TYPE
-sync_out[1] <= flop2[1].DB_MAX_OUTPUT_PORT_TYPE
-sync_out[2] <= flop2[2].DB_MAX_OUTPUT_PORT_TYPE
-sync_out[3] <= flop2[3].DB_MAX_OUTPUT_PORT_TYPE
-
-
 |top|rising_edge_synchronizer:add_sync
 clk => input_zzz.CLK
 clk => edge~reg0.CLK
@@ -138,6 +109,29 @@ reset => input_zz.PRESET
 reset => input_z.PRESET
 input => input_z.DATAIN
 edge <= edge~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|gen_add_sub:addsub_u
+a[0] => Add0.IN3
+a[0] => Add1.IN6
+a[1] => Add0.IN2
+a[1] => Add1.IN5
+a[2] => Add0.IN1
+a[2] => Add1.IN4
+b[0] => Add0.IN6
+b[0] => Add1.IN3
+b[1] => Add0.IN5
+b[1] => Add1.IN2
+b[2] => Add0.IN4
+b[2] => Add1.IN1
+flag => c.OUTPUTSELECT
+flag => c.OUTPUTSELECT
+flag => c.OUTPUTSELECT
+flag => c.OUTPUTSELECT
+c[0] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[1] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[2] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[3] <= c.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|bcd_to_seven_seg:a_display_u
@@ -273,28 +267,5 @@ display[3] <= display[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 display[4] <= display[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 display[5] <= display[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 display[6] <= display[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top|gen_add_sub:addsub_u
-a[0] => Add0.IN3
-a[0] => Add1.IN6
-a[1] => Add0.IN2
-a[1] => Add1.IN5
-a[2] => Add0.IN1
-a[2] => Add1.IN4
-b[0] => Add0.IN6
-b[0] => Add1.IN3
-b[1] => Add0.IN5
-b[1] => Add1.IN2
-b[2] => Add0.IN4
-b[2] => Add1.IN1
-flag => c.OUTPUTSELECT
-flag => c.OUTPUTSELECT
-flag => c.OUTPUTSELECT
-flag => c.OUTPUTSELECT
-c[0] <= c.DB_MAX_OUTPUT_PORT_TYPE
-c[1] <= c.DB_MAX_OUTPUT_PORT_TYPE
-c[2] <= c.DB_MAX_OUTPUT_PORT_TYPE
-c[3] <= c.DB_MAX_OUTPUT_PORT_TYPE
 
 
