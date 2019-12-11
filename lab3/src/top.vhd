@@ -11,7 +11,7 @@
 -------------------------------------------------------------------------------
 --
 --  DESCRIPTION
---    Top-level implementation of a seven segment display counter.
+--    Seven segment dipslay counter that counts from 0 through 9 repeating.
 --
 --******************************************************************************
 --******************************************************************************
@@ -56,6 +56,8 @@ adder_u : generic_adder_beh
   );
 
 counter_u : generic_counter
+  -- set to 1 Hz by default
+  -- change count to 10 for best modelsim simulation
   generic map(
     max_count => 50000000)
   port map(

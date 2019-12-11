@@ -1,0 +1,235 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/briza/Documents/GitHub/HDL/lab3/sim/script
+Ebcd_to_seven_seg
+Z1 w1574311423
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8../../src/bcd_to_seven_seg.vhd
+Z5 F../../src/bcd_to_seven_seg.vhd
+l0
+L41
+VAacSHal?ni1j^ddKdVa:13
+!s100 g0:8?2ReQzYYC;?kR>>H_2
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1576084318
+!i10b 1
+Z8 !s108 1576084318.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|../../src/bcd_to_seven_seg.vhd|
+Z10 !s107 ../../src/bcd_to_seven_seg.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aarc
+R2
+R3
+DEx4 work 16 bcd_to_seven_seg 0 22 AacSHal?ni1j^ddKdVa:13
+l54
+L53
+VNSblmI3GDAARn>@i0iZc82
+!s100 ;Sk4YL4n4Q=>h9cEVnO3N2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Pcomponents
+Z13 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+w1574313447
+R0
+8../../src/components.vhd
+F../../src/components.vhd
+l0
+L27
+V>YG@P?CgL542O8o9A]]>A3
+!s100 Xm^dVA:JjRP9]7Kka<U0:0
+R6
+31
+Z14 !s110 1576084319
+!i10b 1
+Z15 !s108 1576084319.000000
+!s90 -reportprogress|300|-93|-work|work|../../src/components.vhd|
+!s107 ../../src/components.vhd|
+!i113 1
+R11
+R12
+Egeneric_adder_beh
+Z16 w1572903320
+R13
+R2
+R3
+R0
+Z17 8../../src/generic_adder_beh.vhd
+Z18 F../../src/generic_adder_beh.vhd
+l0
+L9
+VZM:m22W6n_OU0[flII;@<2
+!s100 OOaH7j]OJo2FNLlk`2n1j2
+R6
+31
+R7
+!i10b 1
+R8
+Z19 !s90 -reportprogress|300|-93|-work|work|../../src/generic_adder_beh.vhd|
+Z20 !s107 ../../src/generic_adder_beh.vhd|
+!i113 1
+R11
+R12
+Abeh
+R13
+R2
+R3
+DEx4 work 17 generic_adder_beh 0 22 ZM:m22W6n_OU0[flII;@<2
+l27
+L22
+VXiACzM[7Kd];V;iL`X2`K1
+!s100 J0QDzX5NX;aLCSO9EOMGC0
+R6
+31
+R7
+!i10b 1
+R8
+R19
+R20
+!i113 1
+R11
+R12
+Egeneric_counter
+Z21 w1576083765
+R2
+R3
+R0
+Z22 8../../src/generic_counter.vhd
+Z23 F../../src/generic_counter.vhd
+l0
+L8
+V^`<KMAE]`_5EGCAHV]bZ72
+!s100 b;7GBWdQ5cL8<UCk3lILB1
+R6
+31
+R7
+!i10b 1
+R8
+Z24 !s90 -reportprogress|300|-93|-work|work|../../src/generic_counter.vhd|
+Z25 !s107 ../../src/generic_counter.vhd|
+!i113 1
+R11
+R12
+Abeh
+R2
+R3
+DEx4 work 15 generic_counter 0 22 ^`<KMAE]`_5EGCAHV]bZ72
+l23
+L19
+V1;dJkSBDZdWkVhY@]Ndi<3
+!s100 0ZEGQ^j=GeSg:bcSQ8b0X2
+R6
+31
+R7
+!i10b 1
+R8
+R24
+R25
+!i113 1
+R11
+R12
+Etop
+Z26 w1576084066
+Z27 DPx4 work 10 components 0 22 >YG@P?CgL542O8o9A]]>A3
+R13
+R2
+R3
+R0
+Z28 8../../src/top.vhd
+Z29 F../../src/top.vhd
+l0
+L24
+V4jTo8D6K^<o[`@GIQ02<93
+!s100 1Q[6n:kz5ScM3DOnRNh@T1
+R6
+31
+R14
+!i10b 1
+R15
+Z30 !s90 -reportprogress|300|-93|-work|work|../../src/top.vhd|
+Z31 !s107 ../../src/top.vhd|
+!i113 1
+R11
+R12
+Aimplementation
+R27
+R13
+R2
+R3
+DEx4 work 3 top 0 22 4jTo8D6K^<o[`@GIQ02<93
+l43
+L32
+VCZ9UMD70R4=QPb_l`Da^E2
+!s100 R3ZR>e<`i_>DGN1hJB<G30
+R6
+31
+R14
+!i10b 1
+R15
+R30
+R31
+!i113 1
+R11
+R12
+Etop_tb
+Z32 w1576084155
+R13
+R2
+R3
+R0
+Z33 8../src/top_tb.vhd
+Z34 F../src/top_tb.vhd
+l0
+L23
+VFOEkHF[CSS1k[oCnf9idS0
+!s100 kLWX`iSARh5LYahPKkS?z3
+R6
+31
+R14
+!i10b 1
+R15
+Z35 !s90 -reportprogress|300|-93|-work|work|../src/top_tb.vhd|
+Z36 !s107 ../src/top_tb.vhd|
+!i113 1
+R11
+R12
+Aarch
+R13
+R2
+R3
+Z37 DEx4 work 6 top_tb 0 22 FOEkHF[CSS1k[oCnf9idS0
+l41
+L26
+Z38 VYQPK4JlMNW?>6kIBU;kZ81
+Z39 !s100 74JZSgLXh6iM[1hFAzKMN2
+R6
+31
+R14
+!i10b 1
+R15
+R35
+R36
+!i113 1
+R11
+R12

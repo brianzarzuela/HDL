@@ -1,5 +1,5 @@
 Analysis & Synthesis report for counter
-Thu Nov 21 01:38:51 2019
+Wed Dec 11 12:24:36 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -45,7 +45,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Nov 21 01:38:51 2019       ;
+; Analysis & Synthesis Status     ; Successful - Wed Dec 11 12:24:36 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; counter                                     ;
 ; Top-level Entity Name           ; top                                         ;
@@ -309,7 +309,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Nov 21 01:38:40 2019
+    Info: Processing started: Wed Dec 11 12:24:26 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off counter -c counter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -331,13 +331,13 @@ Info (12127): Elaborating entity "top" for the top level hierarchy
 Info (12128): Elaborating entity "generic_adder_beh" for hierarchy "generic_adder_beh:adder_u" File: C:/Users/briza/Documents/GitHub/HDL/lab3/src/top.vhd Line: 47
 Warning (10540): VHDL Signal Declaration warning at generic_adder_beh.vhd(25): used explicit default value for signal "cin_guard" because signal was never assigned a value File: C:/Users/briza/Documents/GitHub/HDL/lab3/src/generic_adder_beh.vhd Line: 25
 Info (12128): Elaborating entity "generic_counter" for hierarchy "generic_counter:counter_u" File: C:/Users/briza/Documents/GitHub/HDL/lab3/src/top.vhd Line: 58
-Info (12128): Elaborating entity "bcd_to_seven_seg" for hierarchy "bcd_to_seven_seg:display_u" File: C:/Users/briza/Documents/GitHub/HDL/lab3/src/top.vhd Line: 67
+Info (12128): Elaborating entity "bcd_to_seven_seg" for hierarchy "bcd_to_seven_seg:display_u" File: C:/Users/briza/Documents/GitHub/HDL/lab3/src/top.vhd Line: 69
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register sum_sig[0] will power up to Low File: C:/Users/briza/Documents/GitHub/HDL/lab3/src/top.vhd Line: 79
-    Critical Warning (18010): Register sum_sig[1] will power up to Low File: C:/Users/briza/Documents/GitHub/HDL/lab3/src/top.vhd Line: 79
-    Critical Warning (18010): Register sum_sig[2] will power up to Low File: C:/Users/briza/Documents/GitHub/HDL/lab3/src/top.vhd Line: 79
-    Critical Warning (18010): Register sum_sig[3] will power up to Low File: C:/Users/briza/Documents/GitHub/HDL/lab3/src/top.vhd Line: 79
+    Critical Warning (18010): Register sum_sig[0] will power up to Low File: C:/Users/briza/Documents/GitHub/HDL/lab3/src/top.vhd Line: 81
+    Critical Warning (18010): Register sum_sig[1] will power up to Low File: C:/Users/briza/Documents/GitHub/HDL/lab3/src/top.vhd Line: 81
+    Critical Warning (18010): Register sum_sig[2] will power up to Low File: C:/Users/briza/Documents/GitHub/HDL/lab3/src/top.vhd Line: 81
+    Critical Warning (18010): Register sum_sig[3] will power up to Low File: C:/Users/briza/Documents/GitHub/HDL/lab3/src/top.vhd Line: 81
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 56 device resources after synthesis - the final resource count might be different
@@ -346,8 +346,8 @@ Info (21057): Implemented 56 device resources after synthesis - the final resour
     Info (21061): Implemented 47 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
     Info: Peak virtual memory: 4864 megabytes
-    Info: Processing ended: Thu Nov 21 01:38:51 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Processing ended: Wed Dec 11 12:24:36 2019
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:22
 
 

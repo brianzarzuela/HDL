@@ -1,51 +1,80 @@
-# //  ModelSim SE-64 2019.2 Apr 17 2019
-# //
-# //  Copyright 1991-2019 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  ModelSim SE-64 and its associated documentation contain trade
-# //  secrets and commercial or financial information that are the property of
-# //  Mentor Graphics Corporation and are privileged, confidential,
-# //  and exempt from disclosure under the Freedom of Information Act,
-# //  5 U.S.C. Section 552. Furthermore, this information
-# //  is prohibited from disclosure under the Trade Secrets Act,
-# //  18 U.S.C. Section 1905.
-# //
 # do sim.do
-# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
-# Start time: 10:59:07 on Sep 12,2019
-# vcom -reportprogress 300 -93 -work work ../../src/blink.vhd 
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:11:58 on Dec 11,2019
+# vcom -reportprogress 300 -93 -work work ../../src/bcd_to_seven_seg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity blink
-# -- Compiling architecture behavioral of blink
-# End time: 10:59:22 on Sep 12,2019, Elapsed time: 0:00:15
+# -- Compiling entity bcd_to_seven_seg
+# -- Compiling architecture arc of bcd_to_seven_seg
+# End time: 12:11:58 on Dec 11,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
-# Start time: 10:59:22 on Sep 12,2019
-# vcom -reportprogress 300 -93 -work work ../src/blink_tb.vhd 
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:11:58 on Dec 11,2019
+# vcom -reportprogress 300 -93 -work work ../../src/generic_adder_beh.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity blink_tb
-# -- Compiling architecture arch of blink_tb
-# ** Warning: ../src/blink_tb.vhd(48): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# End time: 10:59:26 on Sep 12,2019, Elapsed time: 0:00:04
-# Errors: 0, Warnings: 1
-# vsim -voptargs="+acc=rnbp" blink_tb 
-# Start time: 10:59:26 on Sep 12,2019
-# ** Note: (vsim-3812) Design is being optimized...
+# -- Loading package NUMERIC_STD
+# -- Compiling entity generic_adder_beh
+# -- Compiling architecture beh of generic_adder_beh
+# End time: 12:11:58 on Dec 11,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:11:58 on Dec 11,2019
+# vcom -reportprogress 300 -93 -work work ../../src/generic_counter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity generic_counter
+# -- Compiling architecture beh of generic_counter
+# End time: 12:11:59 on Dec 11,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:11:59 on Dec 11,2019
+# vcom -reportprogress 300 -93 -work work ../../src/components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package components
+# End time: 12:11:59 on Dec 11,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:11:59 on Dec 11,2019
+# vcom -reportprogress 300 -93 -work work ../../src/top.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package components
+# -- Compiling entity top
+# -- Compiling architecture implementation of top
+# End time: 12:11:59 on Dec 11,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:11:59 on Dec 11,2019
+# vcom -reportprogress 300 -93 -work work ../src/top_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity top_tb
+# -- Compiling architecture arch of top_tb
+# End time: 12:11:59 on Dec 11,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" top_tb 
+# Start time: 12:11:59 on Dec 11,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.blink_tb(arch)#1
-# Loading work.blink(behavioral)#1
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# End time: 11:00:28 on Sep 12,2019, Elapsed time: 0:01:02
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(arch)
+# Loading work.components
+# Loading work.top(implementation)
+# Loading work.generic_adder_beh(beh)
+# Loading work.generic_counter(beh)
+# Loading work.bcd_to_seven_seg(arc)
+# End time: 12:13:50 on Dec 11,2019, Elapsed time: 0:01:51
 # Errors: 0, Warnings: 0

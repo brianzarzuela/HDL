@@ -9,14 +9,16 @@ radix define States {
     "7'b0000010" "6" -color "red",
     "7'b1111000" "7" -color "red",
     "7'b0000000" "8" -color "red",
-    "7'b0011000" "9" -color "red",
+    "7'b0010000" "9" -color "red",
     -default default
 }
 quietly WaveActivateNextPane {} 0
-add wave -noupdate /seven_seg_tb/uut/clk
-add wave -noupdate /seven_seg_tb/uut/reset
-add wave -noupdate /seven_seg_tb/uut/bcd
-add wave -noupdate -radix States /seven_seg_tb/uut/seven_seg_out
+add wave -noupdate /top_tb/uut/clk
+add wave -noupdate /top_tb/uut/reset
+add wave -noupdate -radix States /top_tb/uut/display
+add wave -noupdate /top_tb/uut/enable
+add wave -noupdate /top_tb/uut/sum
+add wave -noupdate /top_tb/uut/sum_sig
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {50000 ps} 0}
 quietly wave cursor active 1
@@ -34,4 +36,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {400250 ps} {505250 ps}
+WaveRestoreZoom {0 ns} {2000 ns}
