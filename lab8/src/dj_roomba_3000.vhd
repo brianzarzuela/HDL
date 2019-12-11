@@ -59,16 +59,10 @@ constant pause                  : std_logic_vector(1 downto 0) := "01";
 constant seek                   : std_logic_vector(1 downto 0) := "10";
 constant stop                   : std_logic_vector(1 downto 0) := "11";
 
--- state machine signals
-signal state_reg                : std_logic_vector(4 downto 0);
-signal state_next               : std_logic_vector(4 downto 0);
-
--- state machine states
-constant idle                   : std_logic_vector(4 downto 0) := "00001";
-constant fetch                  : std_logic_vector(4 downto 0) := "00010";
-constant decode                 : std_logic_vector(4 downto 0) := "00100";
-constant execute                : std_logic_vector(4 downto 0) := "01000";
-constant decode_error           : std_logic_vector(4 downto 0) := "10000";
+-- state machine
+type   state is (idle, fetch, decode, execute, decode_error);
+signal state_reg                : state := idle;
+signal state_next               : state;
 
 -- program counter (instruction memory address)
 signal pc                       : std_logic_vector(4 downto 0);

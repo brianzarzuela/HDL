@@ -1,5 +1,5 @@
 Analysis & Synthesis report for dj_roomba
-Tue Dec 10 16:31:32 2019
+Wed Dec 11 10:58:22 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -17,50 +17,51 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   9. Analysis & Synthesis IP Cores Summary
  10. State Machine - |top|audio_and_video_config:cfg|Altera_UP_I2C:I2C_Controller|s_i2c_transceiver
  11. State Machine - |top|audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize|s_i2c_auto_init
- 12. Registers Removed During Synthesis
- 13. Removed Registers Triggering Further Register Optimizations
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Source assignments for dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1
- 18. Source assignments for dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|altsyncram_92h2:altsyncram1
- 19. Source assignments for audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_8ba1:auto_generated|a_dpfifo_r2a1:dpfifo|altsyncram_p3i1:FIFOram
- 20. Source assignments for audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_8ba1:auto_generated|a_dpfifo_r2a1:dpfifo|altsyncram_p3i1:FIFOram
- 21. Source assignments for audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_8ba1:auto_generated|a_dpfifo_r2a1:dpfifo|altsyncram_p3i1:FIFOram
- 22. Source assignments for audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_8ba1:auto_generated|a_dpfifo_r2a1:dpfifo|altsyncram_p3i1:FIFOram
- 23. Parameter Settings for User Entity Instance: generic_counter:uut
- 24. Parameter Settings for User Entity Instance: dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component
- 25. Parameter Settings for User Entity Instance: dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component
- 26. Parameter Settings for User Entity Instance: clock_generator:my_clock_gen
- 27. Parameter Settings for User Entity Instance: clock_generator:my_clock_gen|altpll:DE_Clock_Generator_Audio
- 28. Parameter Settings for User Entity Instance: audio_and_video_config:cfg
- 29. Parameter Settings for User Entity Instance: audio_and_video_config:cfg|Altera_UP_Slow_Clock_Generator:Clock_Generator_400KHz
- 30. Parameter Settings for User Entity Instance: audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize
- 31. Parameter Settings for User Entity Instance: audio_and_video_config:cfg|Altera_UP_I2C:I2C_Controller
- 32. Parameter Settings for User Entity Instance: audio_codec:codec
- 33. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer
- 34. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter
- 35. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Left_Channel_FIFO
- 36. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO
- 37. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Right_Channel_FIFO
- 38. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO
- 39. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer
- 40. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO
- 41. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO
- 42. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Right_Channel_FIFO
- 43. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO
- 44. altsyncram Parameter Settings by Entity Instance
- 45. altpll Parameter Settings by Entity Instance
- 46. scfifo Parameter Settings by Entity Instance
- 47. Port Connectivity Checks: "audio_codec:codec"
- 48. Port Connectivity Checks: "audio_and_video_config:cfg|Altera_UP_I2C:I2C_Controller"
- 49. Port Connectivity Checks: "audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize"
- 50. Port Connectivity Checks: "audio_and_video_config:cfg|Altera_UP_Slow_Clock_Generator:Clock_Generator_400KHz"
- 51. In-System Memory Content Editor Settings
- 52. Post-Synthesis Netlist Statistics for Top Partition
- 53. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
- 54. Elapsed Time Per Partition
- 55. Analysis & Synthesis Messages
+ 12. State Machine - |top|dj_roomba_3000:dj_roomba|state_reg
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Source assignments for dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1
+ 19. Source assignments for dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|altsyncram_92h2:altsyncram1
+ 20. Source assignments for audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_8ba1:auto_generated|a_dpfifo_r2a1:dpfifo|altsyncram_p3i1:FIFOram
+ 21. Source assignments for audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_8ba1:auto_generated|a_dpfifo_r2a1:dpfifo|altsyncram_p3i1:FIFOram
+ 22. Source assignments for audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_8ba1:auto_generated|a_dpfifo_r2a1:dpfifo|altsyncram_p3i1:FIFOram
+ 23. Source assignments for audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_8ba1:auto_generated|a_dpfifo_r2a1:dpfifo|altsyncram_p3i1:FIFOram
+ 24. Parameter Settings for User Entity Instance: generic_counter:uut
+ 25. Parameter Settings for User Entity Instance: dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component
+ 26. Parameter Settings for User Entity Instance: dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component
+ 27. Parameter Settings for User Entity Instance: clock_generator:my_clock_gen
+ 28. Parameter Settings for User Entity Instance: clock_generator:my_clock_gen|altpll:DE_Clock_Generator_Audio
+ 29. Parameter Settings for User Entity Instance: audio_and_video_config:cfg
+ 30. Parameter Settings for User Entity Instance: audio_and_video_config:cfg|Altera_UP_Slow_Clock_Generator:Clock_Generator_400KHz
+ 31. Parameter Settings for User Entity Instance: audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize
+ 32. Parameter Settings for User Entity Instance: audio_and_video_config:cfg|Altera_UP_I2C:I2C_Controller
+ 33. Parameter Settings for User Entity Instance: audio_codec:codec
+ 34. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer
+ 35. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter
+ 36. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Left_Channel_FIFO
+ 37. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO
+ 38. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Right_Channel_FIFO
+ 39. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO
+ 40. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer
+ 41. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO
+ 42. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO
+ 43. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Right_Channel_FIFO
+ 44. Parameter Settings for User Entity Instance: audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO
+ 45. altsyncram Parameter Settings by Entity Instance
+ 46. altpll Parameter Settings by Entity Instance
+ 47. scfifo Parameter Settings by Entity Instance
+ 48. Port Connectivity Checks: "audio_codec:codec"
+ 49. Port Connectivity Checks: "audio_and_video_config:cfg|Altera_UP_I2C:I2C_Controller"
+ 50. Port Connectivity Checks: "audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize"
+ 51. Port Connectivity Checks: "audio_and_video_config:cfg|Altera_UP_Slow_Clock_Generator:Clock_Generator_400KHz"
+ 52. In-System Memory Content Editor Settings
+ 53. Post-Synthesis Netlist Statistics for Top Partition
+ 54. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
+ 55. Elapsed Time Per Partition
+ 56. Analysis & Synthesis Messages
 
 
 
@@ -86,13 +87,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Dec 10 16:31:32 2019       ;
+; Analysis & Synthesis Status     ; Successful - Wed Dec 11 10:58:22 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; dj_roomba                                   ;
 ; Top-level Entity Name           ; top                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 458                                         ;
+; Total registers                 ; 461                                         ;
 ; Total pins                      ; 22                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 268,544                                     ;
@@ -290,16 +291,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 377            ;
+; Estimate of Logic utilization (ALMs needed) ; 380            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 582            ;
+; Combinational ALUT usage for logic          ; 589            ;
 ;     -- 7 input functions                    ; 7              ;
-;     -- 6 input functions                    ; 115            ;
-;     -- 5 input functions                    ; 161            ;
-;     -- 4 input functions                    ; 58             ;
-;     -- <=3 input functions                  ; 241            ;
+;     -- 6 input functions                    ; 114            ;
+;     -- 5 input functions                    ; 164            ;
+;     -- 4 input functions                    ; 55             ;
+;     -- <=3 input functions                  ; 249            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 458            ;
+; Dedicated logic registers                   ; 461            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 22             ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -311,9 +312,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 347            ;
-; Total fan-out                               ; 5968           ;
-; Average fan-out                             ; 5.04           ;
+; Maximum fan-out                             ; 350            ;
+; Total fan-out                               ; 5987           ;
+; Average fan-out                             ; 5.02           ;
 +---------------------------------------------+----------------+
 
 
@@ -322,7 +323,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                             ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |top                                                                                                                                    ; 582 (2)             ; 458 (0)                   ; 268544            ; 0          ; 22   ; 0            ; |top                                                                                                                                                                                                                                                                                                                                            ; top                               ; work         ;
+; |top                                                                                                                                    ; 589 (2)             ; 461 (0)                   ; 268544            ; 0          ; 22   ; 0            ; |top                                                                                                                                                                                                                                                                                                                                            ; top                               ; work         ;
 ;    |audio_and_video_config:cfg|                                                                                                         ; 98 (2)              ; 65 (9)                    ; 0                 ; 0          ; 0    ; 0            ; |top|audio_and_video_config:cfg                                                                                                                                                                                                                                                                                                                 ; audio_and_video_config            ; work         ;
 ;       |Altera_UP_I2C:I2C_Controller|                                                                                                    ; 19 (19)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |top|audio_and_video_config:cfg|Altera_UP_I2C:I2C_Controller                                                                                                                                                                                                                                                                                    ; Altera_UP_I2C                     ; work         ;
 ;       |Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize|                                                                                ; 62 (62)             ; 25 (25)                   ; 0                 ; 0          ; 0    ; 0            ; |top|audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize                                                                                                                                                                                                                                                                ; Altera_UP_I2C_AV_Auto_Initialize  ; work         ;
@@ -363,29 +364,29 @@ refer to the applicable agreement for further details.
 ;    |clock_generator:my_clock_gen|                                                                                                       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|clock_generator:my_clock_gen                                                                                                                                                                                                                                                                                                               ; clock_generator                   ; work         ;
 ;       |altpll:DE_Clock_Generator_Audio|                                                                                                 ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|clock_generator:my_clock_gen|altpll:DE_Clock_Generator_Audio                                                                                                                                                                                                                                                                               ; altpll                            ; work         ;
 ;          |altpll_1uu1:auto_generated|                                                                                                   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|clock_generator:my_clock_gen|altpll:DE_Clock_Generator_Audio|altpll_1uu1:auto_generated                                                                                                                                                                                                                                                    ; altpll_1uu1                       ; work         ;
-;    |dj_roomba_3000:dj_roomba|                                                                                                           ; 162 (45)            ; 109 (19)                  ; 262400            ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba                                                                                                                                                                                                                                                                                                                   ; dj_roomba_3000                    ; work         ;
-;       |rising_edge_synchronizer:sync_execute|                                                                                           ; 1 (1)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rising_edge_synchronizer:sync_execute                                                                                                                                                                                                                                                                             ; rising_edge_synchronizer          ; work         ;
-;       |rom_data:u_rom_data_inst|                                                                                                        ; 79 (0)              ; 55 (0)                    ; 262144            ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst                                                                                                                                                                                                                                                                                          ; rom_data                          ; work         ;
-;          |altsyncram:altsyncram_component|                                                                                              ; 79 (0)              ; 55 (0)                    ; 262144            ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component                                                                                                                                                                                                                                                          ; altsyncram                        ; work         ;
-;             |altsyncram_6834:auto_generated|                                                                                            ; 79 (0)              ; 55 (0)                    ; 262144            ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated                                                                                                                                                                                                                           ; altsyncram_6834                   ; work         ;
-;                |altsyncram_ms33:altsyncram1|                                                                                            ; 18 (0)              ; 3 (3)                     ; 262144            ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1                                                                                                                                                                                               ; altsyncram_ms33                   ; work         ;
-;                   |decode_5la:decode5|                                                                                                  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_5la:decode5                                                                                                                                                                            ; decode_5la                        ; work         ;
-;                   |mux_4hb:mux6|                                                                                                        ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|mux_4hb:mux6                                                                                                                                                                                  ; mux_4hb                           ; work         ;
-;                |sld_mod_ram_rom:mgl_prim2|                                                                                              ; 61 (45)             ; 52 (43)                   ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2                                                                                                                                                                                                 ; sld_mod_ram_rom                   ; work         ;
-;                   |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|                                                                  ; 16 (16)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr                                                                                                                                              ; sld_rom_sr                        ; work         ;
-;       |rom_instructions:u_rom_instr_inst|                                                                                               ; 37 (0)              ; 32 (0)                    ; 256               ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst                                                                                                                                                                                                                                                                                 ; rom_instructions                  ; work         ;
-;          |altsyncram:altsyncram_component|                                                                                              ; 37 (0)              ; 32 (0)                    ; 256               ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component                                                                                                                                                                                                                                                 ; altsyncram                        ; work         ;
-;             |altsyncram_ivh1:auto_generated|                                                                                            ; 37 (0)              ; 32 (0)                    ; 256               ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated                                                                                                                                                                                                                  ; altsyncram_ivh1                   ; work         ;
-;                |altsyncram_92h2:altsyncram1|                                                                                            ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|altsyncram_92h2:altsyncram1                                                                                                                                                                                      ; altsyncram_92h2                   ; work         ;
-;                |sld_mod_ram_rom:mgl_prim2|                                                                                              ; 37 (20)             ; 32 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                                                                                                                                                        ; sld_mod_ram_rom                   ; work         ;
-;                   |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|                                                                  ; 17 (17)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr                                                                                                                                     ; sld_rom_sr                        ; work         ;
+;    |dj_roomba_3000:dj_roomba|                                                                                                           ; 171 (54)            ; 112 (22)                  ; 262400            ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba                                                                                                                                                                                                                                                                                                                   ; dj_roomba_3000                    ; work         ;
+;       |rising_edge_synchronizer:execute_u|                                                                                              ; 1 (1)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rising_edge_synchronizer:execute_u                                                                                                                                                                                                                                                                                ; rising_edge_synchronizer          ; work         ;
+;       |rom_data:data_mem_u|                                                                                                             ; 79 (0)              ; 55 (0)                    ; 262144            ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u                                                                                                                                                                                                                                                                                               ; rom_data                          ; work         ;
+;          |altsyncram:altsyncram_component|                                                                                              ; 79 (0)              ; 55 (0)                    ; 262144            ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component                                                                                                                                                                                                                                                               ; altsyncram                        ; work         ;
+;             |altsyncram_6834:auto_generated|                                                                                            ; 79 (0)              ; 55 (0)                    ; 262144            ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated                                                                                                                                                                                                                                ; altsyncram_6834                   ; work         ;
+;                |altsyncram_ms33:altsyncram1|                                                                                            ; 18 (0)              ; 3 (3)                     ; 262144            ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1                                                                                                                                                                                                    ; altsyncram_ms33                   ; work         ;
+;                   |decode_5la:decode5|                                                                                                  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_5la:decode5                                                                                                                                                                                 ; decode_5la                        ; work         ;
+;                   |mux_4hb:mux6|                                                                                                        ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|mux_4hb:mux6                                                                                                                                                                                       ; mux_4hb                           ; work         ;
+;                |sld_mod_ram_rom:mgl_prim2|                                                                                              ; 61 (45)             ; 52 (43)                   ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2                                                                                                                                                                                                      ; sld_mod_ram_rom                   ; work         ;
+;                   |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|                                                                  ; 16 (16)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr                                                                                                                                                   ; sld_rom_sr                        ; work         ;
+;       |rom_instructions:instruction_mem|                                                                                                ; 37 (0)              ; 32 (0)                    ; 256               ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem                                                                                                                                                                                                                                                                                  ; rom_instructions                  ; work         ;
+;          |altsyncram:altsyncram_component|                                                                                              ; 37 (0)              ; 32 (0)                    ; 256               ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component                                                                                                                                                                                                                                                  ; altsyncram                        ; work         ;
+;             |altsyncram_ivh1:auto_generated|                                                                                            ; 37 (0)              ; 32 (0)                    ; 256               ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated                                                                                                                                                                                                                   ; altsyncram_ivh1                   ; work         ;
+;                |altsyncram_92h2:altsyncram1|                                                                                            ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|altsyncram_92h2:altsyncram1                                                                                                                                                                                       ; altsyncram_92h2                   ; work         ;
+;                |sld_mod_ram_rom:mgl_prim2|                                                                                              ; 37 (20)             ; 32 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                                                                                                                                                         ; sld_mod_ram_rom                   ; work         ;
+;                   |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|                                                                  ; 17 (17)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr                                                                                                                                      ; sld_rom_sr                        ; work         ;
 ;    |generic_counter:uut|                                                                                                                ; 16 (16)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |top|generic_counter:uut                                                                                                                                                                                                                                                                                                                        ; generic_counter                   ; work         ;
-;    |sld_hub:auto_hub|                                                                                                                   ; 112 (1)             ; 114 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
-;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 111 (0)             ; 114 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
-;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 111 (0)             ; 114 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
-;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 111 (1)             ; 114 (6)                   ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab  ;
-;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 110 (0)             ; 108 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab  ;
-;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 110 (77)            ; 108 (80)                  ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work         ;
+;    |sld_hub:auto_hub|                                                                                                                   ; 110 (1)             ; 114 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
+;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 109 (0)             ; 114 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
+;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 109 (0)             ; 114 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
+;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 109 (1)             ; 114 (6)                   ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab  ;
+;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 108 (0)             ; 108 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab  ;
+;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 108 (75)            ; 108 (80)                  ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work         ;
 ;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 14 (14)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ; sld_rom_sr                        ; work         ;
 ;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 19 (19)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                    ; altera_sld   ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
@@ -399,8 +400,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------------+--------------+--------------+--------------+--------------+--------+------------------+
 ; audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_8ba1:auto_generated|a_dpfifo_r2a1:dpfifo|altsyncram_p3i1:FIFOram|ALTSYNCRAM  ; AUTO       ; Simple Dual Port ; 128          ; 24           ; 128          ; 24           ; 3072   ; None             ;
 ; audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_8ba1:auto_generated|a_dpfifo_r2a1:dpfifo|altsyncram_p3i1:FIFOram|ALTSYNCRAM ; AUTO       ; Simple Dual Port ; 128          ; 24           ; 128          ; 24           ; 3072   ; None             ;
-; dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|ALTSYNCRAM                                                                    ; M10K block ; True Dual Port   ; 16384        ; 16           ; 16384        ; 16           ; 262144 ; data.mif         ;
-; dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|altsyncram_92h2:altsyncram1|ALTSYNCRAM                                                           ; AUTO       ; True Dual Port   ; 32           ; 8            ; 32           ; 8            ; 256    ; instructions.mif ;
+; dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|ALTSYNCRAM                                                                         ; M10K block ; True Dual Port   ; 16384        ; 16           ; 16384        ; 16           ; 262144 ; data.mif         ;
+; dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|altsyncram_92h2:altsyncram1|ALTSYNCRAM                                                            ; AUTO       ; True Dual Port   ; 32           ; 8            ; 32           ; 8            ; 256    ; instructions.mif ;
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------------+--------------+--------------+--------------+--------------+--------+------------------+
 
 
@@ -414,8 +415,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                                                 ;
 ; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                                                 ;
 ; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                                                 ;
-; Altera ; ROM: 1-PORT  ; 14.0    ; N/A          ; N/A          ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst                                                                                                                                                                                                                   ; ../../src/rom_data/rom_data.vhd                 ;
-; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst                                                                                                                                                                                                          ; ../../src/rom_instructions/rom_instructions.vhd ;
+; Altera ; ROM: 1-PORT  ; 14.0    ; N/A          ; N/A          ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u                                                                                                                                                                                                                        ; ../../src/rom_data/rom_data.vhd                 ;
+; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem                                                                                                                                                                                                           ; ../../src/rom_instructions/rom_instructions.vhd ;
 +--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
 
 
@@ -452,6 +453,20 @@ Encoding Type:  One-Hot
 +-----------------------------------------------+-----------------------------------+-----------------------------------------------+--------------------------------------------+-----------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------------------+-------------------------------------------+
 
 
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|dj_roomba_3000:dj_roomba|state_reg                                                                   ;
++------------------------+------------------------+-------------------+------------------+----------------+-----------------+
+; Name                   ; state_reg.decode_error ; state_reg.execute ; state_reg.decode ; state_reg.idle ; state_reg.fetch ;
++------------------------+------------------------+-------------------+------------------+----------------+-----------------+
+; state_reg.fetch        ; 0                      ; 0                 ; 0                ; 0              ; 0               ;
+; state_reg.idle         ; 0                      ; 0                 ; 0                ; 1              ; 1               ;
+; state_reg.decode       ; 0                      ; 0                 ; 1                ; 0              ; 1               ;
+; state_reg.execute      ; 0                      ; 1                 ; 0                ; 0              ; 1               ;
+; state_reg.decode_error ; 1                      ; 0                 ; 0                ; 0              ; 1               ;
++------------------------+------------------------+-------------------+------------------+----------------+-----------------+
+
+
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                                                                                                                                                                                                                                  ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
@@ -475,21 +490,25 @@ Encoding Type:  One-Hot
 ; audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize|s_i2c_auto_init~2                                                                                                                                      ; Lost fanout                                                    ;
 ; audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize|s_i2c_auto_init~3                                                                                                                                      ; Lost fanout                                                    ;
 ; audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize|s_i2c_auto_init~4                                                                                                                                      ; Lost fanout                                                    ;
-; dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[4]                                                          ; Stuck at GND due to stuck port data_in                         ;
-; dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]                                                 ; Stuck at GND due to stuck port data_in                         ;
-; Total Number of Removed Registers = 82                                                                                                                                                                                             ;                                                                ;
+; dj_roomba_3000:dj_roomba|state_reg.decode_error                                                                                                                                                                                    ; Stuck at GND due to stuck port data_in                         ;
+; dj_roomba_3000:dj_roomba|state_reg.idle                                                                                                                                                                                            ; Stuck at GND due to stuck port data_in                         ;
+; dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[4]                                                               ; Stuck at GND due to stuck port data_in                         ;
+; dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]                                                  ; Stuck at GND due to stuck port data_in                         ;
+; Total Number of Removed Registers = 84                                                                                                                                                                                             ;                                                                ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                   ;
-+----------------------------------------------------------------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                ; Reason for Removal ; Registers Removed due to This Register                                                                                                    ;
-+----------------------------------------------------------------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-; audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|data_in_shift_reg[1] ; Lost Fanouts       ; audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter|counting,       ;
-;                                                                                              ;                    ; audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter|bit_counter[3], ;
-;                                                                                              ;                    ; audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter|bit_counter[4]  ;
-+----------------------------------------------------------------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                          ;
++----------------------------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                ; Reason for Removal        ; Registers Removed due to This Register                                                                                                    ;
++----------------------------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|data_in_shift_reg[1] ; Lost Fanouts              ; audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter|counting,       ;
+;                                                                                              ;                           ; audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter|bit_counter[3], ;
+;                                                                                              ;                           ; audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter|bit_counter[4]  ;
+; dj_roomba_3000:dj_roomba|state_reg.decode_error                                              ; Stuck at GND              ; dj_roomba_3000:dj_roomba|state_reg.idle                                                                                                   ;
+;                                                                                              ; due to stuck port data_in ;                                                                                                                                           ;
++----------------------------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -497,12 +516,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 458   ;
+; Total registers                              ; 461   ;
 ; Number of registers using Synchronous Clear  ; 192   ;
 ; Number of registers using Synchronous Load   ; 62    ;
-; Number of registers using Asynchronous Clear ; 139   ;
+; Number of registers using Asynchronous Clear ; 142   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 295   ;
+; Number of registers using Clock Enable       ; 298   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -512,9 +531,14 @@ Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; dj_roomba_3000:dj_roomba|pc[0]                                                                                                                                                                                                                                                                                                  ; 6       ;
+; dj_roomba_3000:dj_roomba|pc[1]                                                                                                                                                                                                                                                                                                  ; 5       ;
+; dj_roomba_3000:dj_roomba|pc[2]                                                                                                                                                                                                                                                                                                  ; 5       ;
+; dj_roomba_3000:dj_roomba|pc[3]                                                                                                                                                                                                                                                                                                  ; 4       ;
+; dj_roomba_3000:dj_roomba|pc[4]                                                                                                                                                                                                                                                                                                  ; 4       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 3       ;
-; Total number of inverted registers = 2                                                                                                                                                                                                                                                                                          ;         ;
+; Total number of inverted registers = 7                                                                                                                                                                                                                                                                                          ;         ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -523,26 +547,26 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                                                                                                                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize|rom_address_counter[3]                                                                                                                                                                                                                                                       ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[0]                                                                                                                                                                                ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[1]                                                                                                                                                                                  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]                                                                                                                                                                       ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[2]                                                                                                                                                                                  ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 0 LEs                ; 28 LEs                 ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[10]                                                                                                                                                                                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top|audio_and_video_config:cfg|Altera_UP_I2C:I2C_Controller|current_byte[2]                                                                                                                                                                                                                                                                                  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top|audio_and_video_config:cfg|data_to_transfer[1]                                                                                                                                                                                                                                                                                                           ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |top|audio_and_video_config:cfg|Altera_UP_Slow_Clock_Generator:Clock_Generator_400KHz|clk_counter[10]                                                                                                                                                                                                                                                         ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[11]                                                                                                                                                                                          ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[0]                                                                                                                                            ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[2]                                                                                                                                   ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |top|audio_and_video_config:cfg|Altera_UP_I2C:I2C_Controller|current_bit[2]                                                                                                                                                                                                                                                                                   ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize|rom_address_counter[1]                                                                                                                                                                                                                                                       ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[1]                                                                                                                                                                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[3]                                                                                                                                                                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[0]                                                                                                                                                                        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[4]                                                                                                                                                                                   ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 0 LEs                ; 28 LEs                 ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[4]                                                                                                                                                                                                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top|audio_and_video_config:cfg|Altera_UP_I2C:I2C_Controller|current_byte[1]                                                                                                                                                                                                                                                                                  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top|audio_and_video_config:cfg|data_to_transfer[0]                                                                                                                                                                                                                                                                                                           ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |top|audio_and_video_config:cfg|Altera_UP_Slow_Clock_Generator:Clock_Generator_400KHz|clk_counter[7]                                                                                                                                                                                                                                                          ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[3]                                                                                                                                                                                                ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[4]                                                                                                                                                 ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[3]                                                                                                                                    ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |top|audio_and_video_config:cfg|Altera_UP_I2C:I2C_Controller|current_bit[0]                                                                                                                                                                                                                                                                                   ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |top|audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize|data_out[7]                                                                                                                                                                                                                                                                  ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |top|audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize|data_out[2]                                                                                                                                                                                                                                                                  ;
-; 6:1                ; 23 bits   ; 92 LEs        ; 46 LEs               ; 46 LEs                 ; Yes        ; |top|audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|data_out_shift_reg[12]                                                                                                                                                                                                                                                             ;
-; 26:1               ; 4 bits    ; 68 LEs        ; 48 LEs               ; 20 LEs                 ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[1]                                                                                                                                                 ;
-; 26:1               ; 4 bits    ; 68 LEs        ; 48 LEs               ; 20 LEs                 ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[2]                                                                                                                                        ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |top|audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize|data_out[6]                                                                                                                                                                                                                                                                  ;
+; 6:1                ; 23 bits   ; 92 LEs        ; 46 LEs               ; 46 LEs                 ; Yes        ; |top|audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|data_out_shift_reg[19]                                                                                                                                                                                                                                                             ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 48 LEs               ; 20 LEs                 ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[2]                                                                                                                                                      ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 48 LEs               ; 20 LEs                 ; Yes        ; |top|dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[2]                                                                                                                                         ;
 ; 6:1                ; 9 bits    ; 36 LEs        ; 27 LEs               ; 9 LEs                  ; No         ; |top|dj_roomba_3000:dj_roomba|data_address[8]                                                                                                                                                                                                                                                                                                                 ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |top|dj_roomba_3000:dj_roomba|data_address[12]                                                                                                                                                                                                                                                                                                                ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |top|dj_roomba_3000:dj_roomba|data_address[13]                                                                                                                                                                                                                                                                                                                ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[1][2]                    ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[2][2]                    ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[2]                    ;
@@ -552,27 +576,27 @@ Encoding Type:  One-Hot
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[4]              ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[0] ;
 ; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[7]                             ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 60 LEs               ; 28 LEs                 ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[0]                      ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 64 LEs               ; 24 LEs                 ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[0]                      ;
 ; 28:1               ; 4 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1 ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                    ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                     ;
-+---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1 ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                               ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|altsyncram_92h2:altsyncram1 ;
-+---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                             ;
-+---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                              ;
-+---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|altsyncram_92h2:altsyncram1 ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                            ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                             ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -621,125 +645,125 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+--------------------------------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                                               ;
-+------------------------------------+----------------------+--------------------------------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                            ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                         ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                       ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                       ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                     ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                            ;
-; OPERATION_MODE                     ; ROM                  ; Untyped                                                            ;
-; WIDTH_A                            ; 16                   ; Signed Integer                                                     ;
-; WIDTHAD_A                          ; 14                   ; Signed Integer                                                     ;
-; NUMWORDS_A                         ; 16384                ; Signed Integer                                                     ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                            ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                            ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                            ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                            ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                            ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                            ;
-; WIDTH_B                            ; 1                    ; Signed Integer                                                     ;
-; WIDTHAD_B                          ; 1                    ; Signed Integer                                                     ;
-; NUMWORDS_B                         ; 0                    ; Signed Integer                                                     ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                            ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                            ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                            ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                            ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                            ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                            ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                            ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                            ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                            ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                            ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                            ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                            ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                     ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                                                     ;
-; RAM_BLOCK_TYPE                     ; M10K                 ; Untyped                                                            ;
-; BYTE_SIZE                          ; 8                    ; Signed Integer                                                     ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                            ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                            ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                            ;
-; INIT_FILE                          ; data.mif             ; Untyped                                                            ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                            ;
-; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                                                     ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                            ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                            ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                            ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                            ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                            ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                            ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                                            ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                            ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                                                     ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                            ;
-; CBXI_PARAMETER                     ; altsyncram_6834      ; Untyped                                                            ;
-+------------------------------------+----------------------+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                          ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                       ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                  ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                       ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                       ;
+; WIDTH_A                            ; 16                   ; Signed Integer                                                ;
+; WIDTHAD_A                          ; 14                   ; Signed Integer                                                ;
+; NUMWORDS_A                         ; 16384                ; Signed Integer                                                ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                       ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                       ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                       ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; WIDTH_B                            ; 1                    ; Signed Integer                                                ;
+; WIDTHAD_B                          ; 1                    ; Signed Integer                                                ;
+; NUMWORDS_B                         ; 0                    ; Signed Integer                                                ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                       ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                       ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                       ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                       ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                       ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                       ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                       ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                                                ;
+; RAM_BLOCK_TYPE                     ; M10K                 ; Untyped                                                       ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                                                ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                       ;
+; INIT_FILE                          ; data.mif             ; Untyped                                                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                       ;
+; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                                                ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                       ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                       ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                                                ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                       ;
+; CBXI_PARAMETER                     ; altsyncram_6834      ; Untyped                                                       ;
++------------------------------------+----------------------+---------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+-----------------------------------------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                                                        ;
-+------------------------------------+----------------------+-----------------------------------------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                                     ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                                  ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                                ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                                ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                              ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                                     ;
-; OPERATION_MODE                     ; ROM                  ; Untyped                                                                     ;
-; WIDTH_A                            ; 8                    ; Signed Integer                                                              ;
-; WIDTHAD_A                          ; 5                    ; Signed Integer                                                              ;
-; NUMWORDS_A                         ; 32                   ; Signed Integer                                                              ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                                     ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                                     ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                                     ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                                     ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                                     ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                                     ;
-; WIDTH_B                            ; 1                    ; Untyped                                                                     ;
-; WIDTHAD_B                          ; 1                    ; Untyped                                                                     ;
-; NUMWORDS_B                         ; 1                    ; Untyped                                                                     ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                                     ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                                     ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                                     ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                                     ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                                     ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                                     ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                                     ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                     ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                                     ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                                     ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                     ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                                     ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                              ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                                     ;
-; RAM_BLOCK_TYPE                     ; M4K                  ; Untyped                                                                     ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                                                     ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                                     ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                     ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                     ;
-; INIT_FILE                          ; instructions.mif     ; Untyped                                                                     ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                                     ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                                     ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                                     ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                                     ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                                     ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                                     ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                                     ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                                     ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                                                     ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                                     ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                                     ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                                     ;
-; CBXI_PARAMETER                     ; altsyncram_ivh1      ; Untyped                                                                     ;
-+------------------------------------+----------------------+-----------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+----------------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                       ;
++------------------------------------+----------------------+----------------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                                    ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                               ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                             ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                                    ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                                    ;
+; WIDTH_A                            ; 8                    ; Signed Integer                                                             ;
+; WIDTHAD_A                          ; 5                    ; Signed Integer                                                             ;
+; NUMWORDS_A                         ; 32                   ; Signed Integer                                                             ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                                    ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                                    ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                                    ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                                    ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                                    ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                                    ;
+; WIDTH_B                            ; 1                    ; Untyped                                                                    ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                                    ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                                    ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                                    ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                                    ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                                    ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                                    ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                                    ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                    ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                                    ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                                    ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                    ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                                    ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                                    ;
+; RAM_BLOCK_TYPE                     ; M4K                  ; Untyped                                                                    ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                    ;
+; INIT_FILE                          ; instructions.mif     ; Untyped                                                                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                                    ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                                    ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                                    ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                                    ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                                    ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                                    ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                                    ;
+; CBXI_PARAMETER                     ; altsyncram_ivh1      ; Untyped                                                                    ;
++------------------------------------+----------------------+----------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1399,35 +1423,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                                                       ;
-+-------------------------------------------+--------------------------------------------------------------------------------------------+
-; Name                                      ; Value                                                                                      ;
-+-------------------------------------------+--------------------------------------------------------------------------------------------+
-; Number of entity instances                ; 2                                                                                          ;
-; Entity Instance                           ; dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component          ;
-;     -- OPERATION_MODE                     ; ROM                                                                                        ;
-;     -- WIDTH_A                            ; 16                                                                                         ;
-;     -- NUMWORDS_A                         ; 16384                                                                                      ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                                                                     ;
-;     -- WIDTH_B                            ; 1                                                                                          ;
-;     -- NUMWORDS_B                         ; 0                                                                                          ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                     ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                               ;
-;     -- RAM_BLOCK_TYPE                     ; M10K                                                                                       ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                  ;
-; Entity Instance                           ; dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; ROM                                                                                        ;
-;     -- WIDTH_A                            ; 8                                                                                          ;
-;     -- NUMWORDS_A                         ; 32                                                                                         ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                                                                     ;
-;     -- WIDTH_B                            ; 1                                                                                          ;
-;     -- NUMWORDS_B                         ; 1                                                                                          ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                     ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                               ;
-;     -- RAM_BLOCK_TYPE                     ; M4K                                                                                        ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                  ;
-+-------------------------------------------+--------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                                      ;
++-------------------------------------------+-------------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                                     ;
++-------------------------------------------+-------------------------------------------------------------------------------------------+
+; Number of entity instances                ; 2                                                                                         ;
+; Entity Instance                           ; dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component              ;
+;     -- OPERATION_MODE                     ; ROM                                                                                       ;
+;     -- WIDTH_A                            ; 16                                                                                        ;
+;     -- NUMWORDS_A                         ; 16384                                                                                     ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                                    ;
+;     -- WIDTH_B                            ; 1                                                                                         ;
+;     -- NUMWORDS_B                         ; 0                                                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                              ;
+;     -- RAM_BLOCK_TYPE                     ; M10K                                                                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                 ;
+; Entity Instance                           ; dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                                       ;
+;     -- WIDTH_A                            ; 8                                                                                         ;
+;     -- NUMWORDS_A                         ; 32                                                                                        ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                                    ;
+;     -- WIDTH_B                            ; 1                                                                                         ;
+;     -- NUMWORDS_B                         ; 1                                                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                              ;
+;     -- RAM_BLOCK_TYPE                     ; M4K                                                                                       ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                 ;
++-------------------------------------------+-------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------+
@@ -1524,14 +1548,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+--------+----------+---------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; In-System Memory Content Editor Settings                                                                                                                                              ;
-+----------------+-------------+-------+-------+------------+---------------------------------------------------------------------------------------------------------------------------+
-; Instance Index ; Instance ID ; Width ; Depth ; Mode       ; Hierarchy Location                                                                                                        ;
-+----------------+-------------+-------+-------+------------+---------------------------------------------------------------------------------------------------------------------------+
-; 0              ; DATA        ; 16    ; 16384 ; Read/Write ; dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated          ;
-; 1              ; INST        ; 8     ; 32    ; Read/Write ; dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated ;
-+----------------+-------------+-------+-------+------------+---------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; In-System Memory Content Editor Settings                                                                                                                                             ;
++----------------+-------------+-------+-------+------------+--------------------------------------------------------------------------------------------------------------------------+
+; Instance Index ; Instance ID ; Width ; Depth ; Mode       ; Hierarchy Location                                                                                                       ;
++----------------+-------------+-------+-------+------------+--------------------------------------------------------------------------------------------------------------------------+
+; 0              ; DATA        ; 16    ; 16384 ; Read/Write ; dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated              ;
+; 1              ; INST        ; 8     ; 32    ; Read/Write ; dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated ;
++----------------+-------------+-------+-------+------------+--------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -1539,38 +1563,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 344                         ;
+; arriav_ff             ; 347                         ;
 ;     CLR               ; 19                          ;
 ;     CLR SCLR          ; 13                          ;
 ;     CLR SLD           ; 1                           ;
 ;     ENA               ; 46                          ;
-;     ENA CLR           ; 31                          ;
+;     ENA CLR           ; 34                          ;
 ;     ENA CLR SLD       ; 14                          ;
 ;     ENA SCLR          ; 110                         ;
 ;     ENA SLD           ; 8                           ;
 ;     SCLR              ; 62                          ;
 ;     plain             ; 40                          ;
 ; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 469                         ;
+; arriav_lcell_comb     ; 478                         ;
 ;     arith             ; 121                         ;
 ;         1 data inputs ; 97                          ;
 ;         2 data inputs ; 24                          ;
 ;     extend            ; 5                           ;
 ;         7 data inputs ; 5                           ;
-;     normal            ; 343                         ;
+;     normal            ; 352                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
+;         1 data inputs ; 8                           ;
 ;         2 data inputs ; 28                          ;
-;         3 data inputs ; 44                          ;
+;         3 data inputs ; 45                          ;
 ;         4 data inputs ; 45                          ;
-;         5 data inputs ; 132                         ;
+;         5 data inputs ; 133                         ;
 ;         6 data inputs ; 92                          ;
 ; boundary_port         ; 76                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 88                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.50                        ;
-; Average LUT depth     ; 1.89                        ;
+; Average LUT depth     ; 1.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1586,21 +1610,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR SLD       ; 39                                       ;
 ;     SCLR              ; 7                                        ;
 ;     plain             ; 16                                       ;
-; arriav_lcell_comb     ; 112                                      ;
+; arriav_lcell_comb     ; 110                                      ;
 ;     extend            ; 2                                        ;
 ;         7 data inputs ; 2                                        ;
-;     normal            ; 110                                      ;
+;     normal            ; 108                                      ;
 ;         0 data inputs ; 1                                        ;
 ;         1 data inputs ; 4                                        ;
 ;         2 data inputs ; 24                                       ;
 ;         3 data inputs ; 16                                       ;
-;         4 data inputs ; 13                                       ;
-;         5 data inputs ; 29                                       ;
-;         6 data inputs ; 23                                       ;
+;         4 data inputs ; 10                                       ;
+;         5 data inputs ; 31                                       ;
+;         6 data inputs ; 22                                       ;
 ; boundary_port         ; 165                                      ;
 ;                       ;                                          ;
 ; Max LUT depth         ; 3.00                                     ;
-; Average LUT depth     ; 1.35                                     ;
+; Average LUT depth     ; 1.33                                     ;
 +-----------------------+------------------------------------------+
 
 
@@ -1620,7 +1644,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Dec 10 16:30:58 2019
+    Info: Processing started: Wed Dec 11 10:57:51 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dj_roomba -c dj_roomba
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1663,8 +1687,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file /users/
     Info (12022): Found design unit 1: generic_counter-beh File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/generic_counter.vhd Line: 19
     Info (12023): Found entity 1: generic_counter File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/generic_counter.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file /users/briza/documents/github/hdl/lab8/src/dj_roomba_3000.vhd
-    Info (12022): Found design unit 1: dj_roomba_3000-beh File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 16
-    Info (12023): Found entity 1: dj_roomba_3000 File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 5
+    Info (12022): Found design unit 1: dj_roomba_3000-beh File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 49
+    Info (12023): Found entity 1: dj_roomba_3000 File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 36
 Info (12021): Found 2 design units, including 1 entities, in source file /users/briza/documents/github/hdl/lab8/src/top.vhd
     Info (12022): Found design unit 1: top-beh File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/top.vhd Line: 22
     Info (12023): Found entity 1: top File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/top.vhd Line: 5
@@ -1673,11 +1697,16 @@ Warning (10036): Verilog HDL or VHDL warning at top.vhd(88): object "writedata_l
 Warning (10036): Verilog HDL or VHDL warning at top.vhd(89): object "writedata_right" assigned a value but never read File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/top.vhd Line: 89
 Info (12128): Elaborating entity "generic_counter" for hierarchy "generic_counter:uut" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/top.vhd Line: 109
 Info (12128): Elaborating entity "dj_roomba_3000" for hierarchy "dj_roomba_3000:dj_roomba" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/top.vhd Line: 119
-Warning (10036): Verilog HDL or VHDL warning at dj_roomba_3000.vhd(65): object "instruction" assigned a value but never read File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 65
-Info (12128): Elaborating entity "rom_data" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 82
-Info (12128): Elaborating entity "altsyncram" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_data/rom_data.vhd Line: 60
-Info (12130): Elaborated megafunction instantiation "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_data/rom_data.vhd Line: 60
-Info (12133): Instantiated megafunction "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_data/rom_data.vhd Line: 60
+Warning (10492): VHDL Process Statement warning at dj_roomba_3000.vhd(227): signal "data_address_play_repeat" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 227
+Warning (10492): VHDL Process Statement warning at dj_roomba_3000.vhd(229): signal "data_address_play" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 229
+Warning (10492): VHDL Process Statement warning at dj_roomba_3000.vhd(231): signal "data_address_pause" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 231
+Warning (10492): VHDL Process Statement warning at dj_roomba_3000.vhd(232): signal "data_address_seek" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 232
+Warning (10492): VHDL Process Statement warning at dj_roomba_3000.vhd(233): signal "data_address_stop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 233
+Warning (10492): VHDL Process Statement warning at dj_roomba_3000.vhd(234): signal "data_address_pause" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 234
+Info (12128): Elaborating entity "rom_data" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 122
+Info (12128): Elaborating entity "altsyncram" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_data/rom_data.vhd Line: 60
+Info (12130): Elaborated megafunction instantiation "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_data/rom_data.vhd Line: 60
+Info (12133): Instantiated megafunction "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_data/rom_data.vhd Line: 60
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1730,22 +1759,22 @@ Info (12133): Instantiated megafunction "dj_roomba_3000:dj_roomba|rom_data:u_rom
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_6834.tdf
     Info (12023): Found entity 1: altsyncram_6834 File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_6834.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_6834" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "altsyncram_6834" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ms33.tdf
     Info (12023): Found entity 1: altsyncram_ms33 File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ms33.tdf Line: 33
-Info (12128): Elaborating entity "altsyncram_ms33" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_6834.tdf Line: 34
+Info (12128): Elaborating entity "altsyncram_ms33" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_6834.tdf Line: 34
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_5la.tdf
     Info (12023): Found entity 1: decode_5la File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/decode_5la.tdf Line: 22
-Info (12128): Elaborating entity "decode_5la" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_5la:decode4" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ms33.tdf Line: 48
+Info (12128): Elaborating entity "decode_5la" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_5la:decode4" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ms33.tdf Line: 48
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_u0a.tdf
     Info (12023): Found entity 1: decode_u0a File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/decode_u0a.tdf Line: 22
-Info (12128): Elaborating entity "decode_u0a" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_u0a:rden_decode_a" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ms33.tdf Line: 50
+Info (12128): Elaborating entity "decode_u0a" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|decode_u0a:rden_decode_a" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ms33.tdf Line: 50
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_4hb.tdf
     Info (12023): Found entity 1: mux_4hb File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/mux_4hb.tdf Line: 22
-Info (12128): Elaborating entity "mux_4hb" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|mux_4hb:mux6" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ms33.tdf Line: 52
-Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_6834.tdf Line: 35
-Info (12130): Elaborated megafunction instantiation "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_6834.tdf Line: 35
-Info (12133): Instantiated megafunction "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter: File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_6834.tdf Line: 35
+Info (12128): Elaborating entity "mux_4hb" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|altsyncram_ms33:altsyncram1|mux_4hb:mux6" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ms33.tdf Line: 52
+Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_6834.tdf Line: 35
+Info (12130): Elaborated megafunction instantiation "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_6834.tdf Line: 35
+Info (12133): Instantiated megafunction "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter: File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_6834.tdf Line: 35
     Info (12134): Parameter "CVALUE" = "0000000000000000"
     Info (12134): Parameter "IS_DATA_IN_RAM" = "1"
     Info (12134): Parameter "IS_READABLE" = "1"
@@ -1754,15 +1783,15 @@ Info (12133): Instantiated megafunction "dj_roomba_3000:dj_roomba|rom_data:u_rom
     Info (12134): Parameter "SHIFT_COUNT_BITS" = "5"
     Info (12134): Parameter "WIDTH_WORD" = "16"
     Info (12134): Parameter "WIDTHAD" = "14"
-Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 302
-Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
-Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:u_rom_data_inst|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 828
-Info (12128): Elaborating entity "rom_instructions" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 89
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 302
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
+Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component|altsyncram_6834:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 828
+Info (12128): Elaborating entity "rom_instructions" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 130
 Warning (272007): Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_instructions/rom_instructions.vhd Line: 85
 Warning (272007): Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_instructions/rom_instructions.vhd Line: 85
-Info (12128): Elaborating entity "altsyncram" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_instructions/rom_instructions.vhd Line: 85
-Info (12130): Elaborated megafunction instantiation "dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_instructions/rom_instructions.vhd Line: 85
-Info (12133): Instantiated megafunction "dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_instructions/rom_instructions.vhd Line: 85
+Info (12128): Elaborating entity "altsyncram" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_instructions/rom_instructions.vhd Line: 85
+Info (12130): Elaborated megafunction instantiation "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_instructions/rom_instructions.vhd Line: 85
+Info (12133): Instantiated megafunction "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rom_instructions/rom_instructions.vhd Line: 85
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "instructions.mif"
@@ -1781,13 +1810,13 @@ Warning (287001): Assertion warning: Device family Cyclone V does not have M4K b
 Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ivh1.tdf Line: 59
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ivh1.tdf
     Info (12023): Found entity 1: altsyncram_ivh1 File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ivh1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_ivh1" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "altsyncram_ivh1" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_92h2.tdf
     Info (12023): Found entity 1: altsyncram_92h2 File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_92h2.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_92h2" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|altsyncram_92h2:altsyncram1" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ivh1.tdf Line: 34
-Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ivh1.tdf Line: 35
-Info (12130): Elaborated megafunction instantiation "dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ivh1.tdf Line: 35
-Info (12133): Instantiated megafunction "dj_roomba_3000:dj_roomba|rom_instructions:u_rom_instr_inst|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter: File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ivh1.tdf Line: 35
+Info (12128): Elaborating entity "altsyncram_92h2" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|altsyncram_92h2:altsyncram1" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ivh1.tdf Line: 34
+Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ivh1.tdf Line: 35
+Info (12130): Elaborated megafunction instantiation "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ivh1.tdf Line: 35
+Info (12133): Instantiated megafunction "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_ivh1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter: File: C:/Users/briza/Documents/GitHub/HDL/lab8/hw/project/db/altsyncram_ivh1.tdf Line: 35
     Info (12134): Parameter "CVALUE" = "00000000"
     Info (12134): Parameter "IS_DATA_IN_RAM" = "1"
     Info (12134): Parameter "IS_READABLE" = "1"
@@ -1796,7 +1825,7 @@ Info (12133): Instantiated megafunction "dj_roomba_3000:dj_roomba|rom_instructio
     Info (12134): Parameter "SHIFT_COUNT_BITS" = "4"
     Info (12134): Parameter "WIDTH_WORD" = "8"
     Info (12134): Parameter "WIDTHAD" = "5"
-Info (12128): Elaborating entity "rising_edge_synchronizer" for hierarchy "dj_roomba_3000:dj_roomba|rising_edge_synchronizer:sync_execute" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 96
+Info (12128): Elaborating entity "rising_edge_synchronizer" for hierarchy "dj_roomba_3000:dj_roomba|rising_edge_synchronizer:execute_u" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/dj_roomba_3000.vhd Line: 138
 Info (12128): Elaborating entity "clock_generator" for hierarchy "clock_generator:my_clock_gen" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/top.vhd Line: 129
 Info (12128): Elaborating entity "altpll" for hierarchy "clock_generator:my_clock_gen|altpll:DE_Clock_Generator_Audio" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/audio_ip/clock_generator.v Line: 134
 Info (12130): Elaborated megafunction instantiation "clock_generator:my_clock_gen|altpll:DE_Clock_Generator_Audio" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/audio_ip/clock_generator.v Line: 134
@@ -1907,7 +1936,7 @@ Info (12128): Elaborating entity "cntr_i2b" for hierarchy "audio_codec:codec|Alt
 Info (12128): Elaborating entity "Altera_UP_Audio_Out_Serializer" for hierarchy "audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/audio_ip/audio_codec.v Line: 267
 Warning (12030): Port "clk" on the entity instantiation of "DE_Clock_Generator_Audio" is connected to a signal of width 1. The formal width of the signal in the module is 6.  The extra bits will be left dangling without any fan-out logic. File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/audio_ip/clock_generator.v Line: 134
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2019.12.10.16:31:16 Progress: Loading sld0ef9f1e8/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2019.12.11.10:58:10 Progress: Loading sld0ef9f1e8/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1987,25 +2016,25 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/top.vhd Line: 18
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register dj_roomba_3000:dj_roomba|rising_edge_synchronizer:sync_execute|input_z will power up to Low File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rising_edge_synchronizer.vhd Line: 19
-    Critical Warning (18010): Register dj_roomba_3000:dj_roomba|rising_edge_synchronizer:sync_execute|input_zz will power up to Low File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rising_edge_synchronizer.vhd Line: 20
+    Critical Warning (18010): Register dj_roomba_3000:dj_roomba|rising_edge_synchronizer:execute_u|input_z will power up to Low File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rising_edge_synchronizer.vhd Line: 19
+    Critical Warning (18010): Register dj_roomba_3000:dj_roomba|rising_edge_synchronizer:execute_u|input_zz will power up to Low File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/rising_edge_synchronizer.vhd Line: 20
 Info (17049): 78 registers lost all their fanouts during netlist optimizations.
 Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 16 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "AUD_ADCDAT" File: C:/Users/briza/Documents/GitHub/HDL/lab8/src/top.vhd Line: 12
-Info (21057): Implemented 830 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 837 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 14 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 714 logic cells
+    Info (21061): Implemented 721 logic cells
     Info (21064): Implemented 88 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 72 warnings
     Info: Peak virtual memory: 4917 megabytes
-    Info: Processing ended: Tue Dec 10 16:31:32 2019
-    Info: Elapsed time: 00:00:34
-    Info: Total CPU time (on all processors): 00:01:01
+    Info: Processing ended: Wed Dec 11 10:58:22 2019
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:00:55
 
 
