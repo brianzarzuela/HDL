@@ -80,6 +80,10 @@ constant decode                 : std_logic_vector(4 downto 0) := "00100";
 constant execute                : std_logic_vector(4 downto 0) := "01000";
 constant decode_error           : std_logic_vector(4 downto 0) := "10000";
 
+-- channel state machine signals
+signal ch_state_reg             : std_logic_vector(4 downto 0);
+signal ch_state_next            : std_logic_vector(4 downto 0);
+
 -- channel state machine states
 constant ch_idle                : std_logic_vector(4 downto 0) := "00001";
 constant ch0_da                 : std_logic_vector(4 downto 0) := "00010";
@@ -100,7 +104,9 @@ alias  seek_address             : std_logic_vector(4 downto 0) is instruction(4 
 
 -- data address signals
 signal data_address             : std_logic_vector(15 downto 0);
-signal data_address_reg         : std_logic_vector(13 downto 0);
+signal data_address_reg         : std_logic_vector(15 downto 0);
+signal data_address_0           : std_logic_vector(14 downto 0);
+signal data_address_1           : std_logic_vector(14 downto 0);
 
 ----------------------------------------------------------------------------------
 
@@ -134,13 +140,16 @@ end component;
 
 -- channel routing
 component channel is
+  generic(
+    ch_index      : integer
+  );
   port(
     clk           : in     std_logic;
     reset         : in     std_logic;
-    enable        : in     std_logic;
+    sync          : in     std_logic;
     instruction   : in     std_logic_vector(9 downto 0);
     state_reg     : in     std_logic_vector(4 downto 0);
-    data_address  : buffer std_logic_vector(14 downto 0);
+    data_address  : buffer std_logic_vector(14 downto 0)
   );
 end component;
 
@@ -183,10 +192,10 @@ ch1_inst : channel
   port map(
     clk           => clk,
     reset         => reset,
-    enable        => sync,
+    sync          => sync,
     instruction   => instruction,
     state_reg     => state_reg,
-    data_address  => da1
+    data_address  => data_address_1
   );
 
 -- channel 0
@@ -197,10 +206,10 @@ ch0_inst : channel
   port map(
     clk           => clk,
     reset         => reset,
-    enable        => sync,
+    sync          => sync,
     instruction   => instruction,
     state_reg     => state_reg,
-    data_address  => da0
+    data_address  => data_address_0
   );
 
 ----------------------------------------------------------------------------------
@@ -238,6 +247,35 @@ begin
       end if;
     when decode_error =>   state_next <= idle;
     when others       =>   state_next <= idle;
+  end case;
+end process;
+
+----------------------------------------------------------------------------------
+
+-- channel state register
+process (clk, reset)
+begin
+  if (reset = '1') then
+    ch_state_reg <= idle;
+  elsif (clk'event and clk = '1') then
+    ch_state_reg <= ch_state_next;
+  end if;
+end process;
+
+-- channel next state logic
+process(ch_state_next, sync)
+begin
+  -- prevent latch
+  ch_state_next <= ch_state_reg;
+  case ch_state_reg is
+    when ch_idle   =>
+      if (sync = '1') then ch_state_next <= ch0_da;
+      end if;
+    when ch0_da    => ch_state_next <= ch0_audio;
+    when ch0_audio => ch_state_next <= ch1_da;
+    when ch1_da    => ch_state_next <= ch1_audio;
+    when ch1_audio => ch_state_next <= ch_idle;
+    when others    => ch_state_next <= ch_idle;
   end case;
 end process;
 
