@@ -1,5 +1,5 @@
 Flow report for add_sub_state_machine
-Sat Nov 23 10:52:40 2019
+Thu Dec 12 13:59:28 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Nov 23 10:52:32 2019       ;
+; Flow Status                     ; Successful - Thu Dec 12 13:59:21 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; add_sub_state_machine                       ;
 ; Top-level Entity Name           ; add_sub_state_machine                       ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+-----------------------+
 ; Option            ; Setting               ;
 +-------------------+-----------------------+
-; Start date & time ; 11/23/2019 10:51:04   ;
+; Start date & time ; 12/12/2019 13:58:00   ;
 ; Main task         ; Compilation           ;
 ; Revision Name     ; add_sub_state_machine ;
 +-------------------+-----------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +--------------------------+---------------------------------+---------------+-------------+------------+
 ; Assignment Name          ; Value                           ; Default Value ; Entity Name ; Section Id ;
 +--------------------------+---------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID    ; 140926354296819.157452426434736 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID    ; 140926354296819.157617708014008 ; --            ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY ; ../output_files                 ; --            ; --          ; --         ;
 +--------------------------+---------------------------------+---------------+-------------+------------+
 
@@ -88,11 +88,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4863 MB             ; 00:00:22                           ;
-; Fitter               ; 00:01:05     ; 1.0                     ; 6635 MB             ; 00:01:41                           ;
-; Assembler            ; 00:00:10     ; 1.0                     ; 4834 MB             ; 00:00:09                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.1                     ; 5139 MB             ; 00:00:08                           ;
-; Total                ; 00:01:33     ; --                      ; --                  ; 00:02:20                           ;
+; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 4863 MB             ; 00:00:24                           ;
+; Fitter               ; 00:00:50     ; 1.0                     ; 6614 MB             ; 00:01:21                           ;
+; Assembler            ; 00:00:09     ; 1.0                     ; 4834 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 5139 MB             ; 00:00:06                           ;
+; Total                ; 00:01:24     ; --                      ; --                  ; 00:01:58                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
