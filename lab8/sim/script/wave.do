@@ -16,6 +16,7 @@ add wave -noupdate /dj_roomba_3000_tb/dj_roomba/sync
 add wave -noupdate /dj_roomba_3000_tb/dj_roomba/led
 add wave -noupdate /dj_roomba_3000_tb/dj_roomba/audio_out
 add wave -noupdate /dj_roomba_3000_tb/dj_roomba/data_address
+add wave -noupdate -radix States /top_tb/uut/instruction
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {2012 ns} 0}
 quietly wave cursor active 1
