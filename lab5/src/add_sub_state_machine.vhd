@@ -11,6 +11,12 @@
 -------------------------------------------------------------------------------
 --
 --  DESCRIPTION
+--    System for adding and subtracting two 8-bit numbers using a state machine
+--    to manage the current state:
+--    - load input a
+--    - load input b
+--    - add
+--    - subtract
 --
 --******************************************************************************
 --******************************************************************************
