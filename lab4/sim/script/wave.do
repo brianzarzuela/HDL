@@ -22,10 +22,15 @@ radix define States {
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /top_tb/uut/clk
 add wave -noupdate /top_tb/uut/reset
-add wave -noupdate -radix States /top_tb/uut/display
-add wave -noupdate /top_tb/uut/enable
-add wave -noupdate /top_tb/uut/sum
-add wave -noupdate /top_tb/uut/sum_sig
+add wave -noupdate /top_tb/uut/a_sync
+add wave -noupdate /top_tb/uut/b_sync
+add wave -noupdate /top_tb/uut/add_btn
+add wave -noupdate /top_tb/uut/add_en
+add wave -noupdate /top_tb/uut/sub_btn
+add wave -noupdate /top_tb/uut/sub_en
+add wave -noupdate -radix States /top_tb/uut/a_ssd
+add wave -noupdate -radix States /top_tb/uut/b_ssd
+add wave -noupdate -radix States /top_tb/uut/result_ssd
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {50000 ps} 0}
 quietly wave cursor active 1
@@ -43,4 +48,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {2000 ns}
+WaveRestoreZoom {0 ns} {15000 ns}

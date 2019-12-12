@@ -40,8 +40,8 @@ component top is
   );
 end component;
 
-constant wait_time  : time := 50 ns;
-constant period     : time := 20 ns;
+constant wait_time  : time := 30 ns;
+constant period     : time := 10 ns;
 signal clk          : std_logic := '0';
 signal reset        : std_logic := '0';
 
@@ -59,7 +59,7 @@ uut: top
   port map(
     a           => a,
     b           => b,
-    clk         = clk,
+    clk         => clk,
     reset       => reset,
     add_btn     => add_btn,
     sub_btn     => sub_btn,
