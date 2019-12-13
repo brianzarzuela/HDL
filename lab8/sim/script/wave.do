@@ -12,11 +12,22 @@ quietly WaveActivateNextPane {} 0
 add wave -noupdate /dj_roomba_3000_tb/dj_roomba/clk
 add wave -noupdate /dj_roomba_3000_tb/dj_roomba/reset
 add wave -noupdate /dj_roomba_3000_tb/dj_roomba/execute_btn
+add wave -noupdate /dj_roomba_3000_tb/dj_roomba/edge
 add wave -noupdate /dj_roomba_3000_tb/dj_roomba/sync
 add wave -noupdate /dj_roomba_3000_tb/dj_roomba/led
 add wave -noupdate /dj_roomba_3000_tb/dj_roomba/audio_out
 add wave -noupdate /dj_roomba_3000_tb/dj_roomba/data_address
-add wave -noupdate -radix States /top_tb/uut/instruction
+add wave -noupdate -radix States /dj_roomba_3000_tb/dj_roomba/led
+add wave -noupdate /dj_roomba_3000_tb/dj_roomba/repeat
+add wave -noupdate -radix unsigned /dj_roomba_3000_tb/dj_roomba/pc
+add wave -noupdate -radix unsigned /dj_roomba_3000_tb/dj_roomba/opcode
+add wave -noupdate -radix unsigned /dj_roomba_3000_tb/dj_roomba/data_address
+add wave -noupdate -radix unsigned /dj_roomba_3000_tb/dj_roomba/data_address_reg
+add wave -noupdate -radix unsigned /dj_roomba_3000_tb/dj_roomba/data_address_play
+add wave -noupdate -radix unsigned /dj_roomba_3000_tb/dj_roomba/data_address_play_repeat
+add wave -noupdate -radix unsigned /dj_roomba_3000_tb/dj_roomba/data_address_stop
+add wave -noupdate -radix unsigned /dj_roomba_3000_tb/dj_roomba/data_address_seek
+add wave -noupdate -radix unsigned /dj_roomba_3000_tb/dj_roomba/data_address_pause
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {2012 ns} 0}
 quietly wave cursor active 1

@@ -1,128 +1,108 @@
+# //  ModelSim SE-64 2019.2 Apr 17 2019
+# //
+# //  Copyright 1991-2019 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
 # do sim.do
 # ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# Model Technology ModelSim SE-64 vmap 2019.2 Lib Mapping Utility 2019.04 Apr 17 2019
 # vmap altera_mf ../../src/altera_mf 
 # Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:28:21 on Dec 12,2019
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 13:09:09 on Dec 13,2019
 # vcom -reportprogress 300 -93 -work work ../../src/rom_data/rom_data.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# ** Error: (vcom-13) Recompile altera_mf.altera_mf_components because ieee.std_logic_1164 has changed.
-# ** Error (suppressible): ../../src/rom_data/rom_data.vhd(41): (vcom-1195) Cannot find expanded name "altera_mf.altera_mf_components".
-# ** Error: ../../src/rom_data/rom_data.vhd(41): Unknown expanded name.
-# ** Error: ../../src/rom_data/rom_data.vhd(43): VHDL Compiler exiting
-# End time: 17:28:21 on Dec 12,2019, Elapsed time: 0:00:00
-# Errors: 4, Warnings: 0
-# ** Error: C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./sim.do line 3
-# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom -93 -work work ../../src/rom_data/rom_data.vhd"
-vlog -work ../../src/altera_mf -refresh -force_refresh
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:29:19 on Dec 12,2019
-# vlog -reportprogress 300 -work ../../src/altera_mf -refresh -force_refresh 
-# -- Skipping entity a_graycounter
-# -- Skipping entity alt3pram
-# -- Skipping entity alt_aeq_s4
-# -- Skipping package alt_aeq_s4_func
-# -- Skipping entity alt_cal
-# -- Skipping entity alt_cal_av
-# -- Skipping entity alt_cal_c3gxb
-# -- Skipping entity alt_cal_mm
-# -- Skipping entity alt_cal_sv
-# -- Skipping entity alt_dfe
-# -- Skipping package alt_dfe_func
-# -- Skipping entity alt_eyemon
-# -- Skipping package alt_eyemon_func
-# -- Skipping entity alt_fault_injection
-# -- Skipping entity altaccumulate
-# -- Skipping entity altclklock
-# -- Skipping entity altddio_bidir
-# -- Skipping entity altddio_in
-# -- Skipping entity altddio_out
-# -- Skipping entity altdpram
-# -- Skipping package altera_common_conversion
-# -- Skipping package altera_device_families
-# -- Skipping package altera_mf_components
-# -- Skipping package altera_mf_hint_evaluation
-# -- Skipping entity altera_std_synchronizer
-# -- Skipping entity altera_std_synchronizer_bundle
-# -- Skipping entity altfp_mult
-# -- Skipping entity altlvds_rx
-# -- Skipping entity altlvds_tx
-# -- Skipping entity altmult_accum
-# -- Skipping entity altmult_add
-# -- Skipping entity altparallel_flash_loader
-# -- Skipping entity altpll
-# -- Skipping entity altserial_flash_loader
-# -- Skipping entity altshift_taps
-# -- Skipping entity altsource_probe
-# -- Skipping entity altsqrt
-# -- Skipping entity altsquare
-# -- Skipping entity altstratixii_oct
-# -- Skipping entity altsyncram
-# -- Skipping entity arm_m_cntr
-# -- Skipping entity arm_n_cntr
-# -- Skipping entity arm_scale_cntr
-# -- Skipping entity dcfifo
-# -- Skipping entity dcfifo_async
-# -- Skipping entity dcfifo_dffpipe
-# -- Skipping entity dcfifo_fefifo
-# -- Skipping entity dcfifo_low_latency
-# -- Skipping entity dcfifo_mixed_widths
-# -- Skipping entity dcfifo_sync
-# -- Skipping entity dffp
-# -- Skipping entity dummy_hub
-# -- Skipping entity flexible_lvds_rx
-# -- Skipping entity flexible_lvds_tx
-# -- Skipping entity jtag_tap_controller
-# -- Skipping entity lcell
-# -- Skipping entity mf_cda_mn_cntr
-# -- Skipping entity mf_cda_scale_cntr
-# -- Skipping entity mf_cycloneiii_pll
-# -- Skipping entity mf_cycloneiiigl_pll
-# -- Skipping entity mf_m_cntr
-# -- Skipping entity mf_n_cntr
-# -- Skipping entity mf_pll_reg
-# -- Skipping package mf_pllpack
-# -- Skipping entity mf_stingray_mn_cntr
-# -- Skipping entity mf_stingray_post_divider
-# -- Skipping entity mf_stingray_scale_cntr
-# -- Skipping entity mf_stratix_pll
-# -- Skipping entity mf_stratixii_pll
-# -- Skipping entity mf_stratixiii_pll
-# -- Skipping entity mf_ttn_mn_cntr
-# -- Skipping entity mf_ttn_scale_cntr
-# -- Skipping entity parallel_add
-# -- Skipping entity pll_iobuf
-# -- Skipping entity scfifo
-# -- Skipping entity signal_gen
-# -- Skipping package sld_node
-# -- Skipping entity sld_signaltap
-# -- Skipping entity sld_virtual_jtag
-# -- Skipping entity sld_virtual_jtag_basic
-# -- Skipping entity stratix_tx_outclk
-# -- Skipping entity stratixii_lvds_rx
-# -- Skipping entity stratixii_tx_outclk
-# -- Skipping entity stratixiii_lvds_rx
-# -- Skipping entity stratixiii_lvds_rx_channel
-# -- Skipping entity stratixiii_lvds_rx_dpa
-# -- Skipping entity stratixv_local_clk_divider
-# -- Skipping entity stx_scale_cntr
-# End time: 17:29:19 on Dec 12,2019, Elapsed time: 0:00:00
+# -- Loading package altera_mf_components
+# -- Compiling entity rom_data
+# -- Compiling architecture SYN of rom_data
+# End time: 13:09:10 on Dec 13,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-vcom -work ../../src/altera_mf -refresh -force_refresh
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:29:19 on Dec 12,2019
-# vcom -reportprogress 300 -work ../../src/altera_mf -refresh -force_refresh 
-# ** Error: c:/intelfpga/18.1/quartus/eda/sim_lib/altera_mf.vhd: This version of the compiler is incompatible with the library .dat file.
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 13:09:10 on Dec 13,2019
+# vcom -reportprogress 300 -93 -work work ../../src/rom_instructions/rom_instructions.vhd 
 # -- Loading package STANDARD
-# ** Error: c:/intelfpga/18.1/quartus/eda/sim_lib/altera_mf.vhd(1): near "<byte 0x01>": illegal character found in source
-# ** Error: c:/intelfpga/18.1/quartus/eda/sim_lib/altera_mf.vhd(1): near "p ": Identifier may not contain non-graphic character.
-# ** Error: c:/intelfpga/18.1/quartus/eda/sim_lib/altera_mf.vhd(1): VHDL Compiler exiting
-# End time: 17:29:19 on Dec 12,2019, Elapsed time: 0:00:00
-# Errors: 4, Warnings: 0
-# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity rom_instructions
+# -- Compiling architecture SYN of rom_instructions
+# End time: 13:09:10 on Dec 13,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 13:09:10 on Dec 13,2019
+# vcom -reportprogress 300 -93 -work work ../../src/rising_edge_synchronizer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity rising_edge_synchronizer
+# -- Compiling architecture beh of rising_edge_synchronizer
+# End time: 13:09:10 on Dec 13,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 13:09:11 on Dec 13,2019
+# vcom -reportprogress 300 -93 -work work ../../src/dj_roomba_3000.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dj_roomba_3000
+# -- Compiling architecture beh of dj_roomba_3000
+# End time: 13:09:11 on Dec 13,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 13:09:11 on Dec 13,2019
+# vcom -reportprogress 300 -93 -work work ../src/dj_roomba_3000_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dj_roomba_3000_tb
+# -- Compiling architecture arch of dj_roomba_3000_tb
+# ** Warning: ../src/dj_roomba_3000_tb.vhd(25): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# End time: 13:09:11 on Dec 13,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vsim -voptargs="+acc" dj_roomba_3000_tb 
+# Start time: 13:09:11 on Dec 13,2019
+# ** Error: (vsim-7) Failed to open  file "S:/2019 Fall/HDL Lab/HDL/lab8/sim/script/work/@_opt/_deps" in read mode.
+# No such file or directory. (errno = ENOENT)
+# ** Warning: (vsim-56) Problem with optimized design dependency file "S:/2019 Fall/HDL Lab/HDL/lab8/sim/script/work/@_opt/_deps" - file open failed.
+# No such file or directory. (errno = ENOENT)
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.dj_roomba_3000_tb(arch)#1
+# Loading work.dj_roomba_3000(beh)#1
+# Loading altera_mf.altera_mf_components
+# Loading work.rom_data(syn)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)#1
+# Loading work.rom_instructions(syn)#1
+# Loading altera_mf.altsyncram(translated)#2
+# Loading work.rising_edge_synchronizer(beh)#1
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: ****************** TB Start ****************
+#    Time: 0 ps  Iteration: 0  Instance: /dj_roomba_3000_tb
+# ** Note: ****************** TB Finish ****************
+#    Time: 2 us  Iteration: 0  Instance: /dj_roomba_3000_tb
+# Causality operation skipped due to absence of debug database file
+# End time: 13:17:32 on Dec 13,2019, Elapsed time: 0:08:21
+# Errors: 3, Warnings: 2

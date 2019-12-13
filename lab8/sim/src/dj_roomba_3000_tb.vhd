@@ -25,7 +25,7 @@ end component;
 constant period     : time := 20ns;                                              
 signal clk          : std_logic := '0';
 signal reset        : std_logic := '1';
-signal sync         : std_logic := '0';
+signal execute_btn  : std_logic := '1';
 
 begin
 
@@ -33,8 +33,8 @@ dj_roomba : dj_roomba_3000
   port map(
     clk         => clk,
     reset       => reset,
-    execute_btn => '0',
-    sync        => sync,
+    execute_btn => execute_btn,
+    sync        => '1',
     led         => open,
     audio_out   => open
   );
@@ -59,45 +59,45 @@ main: process
   begin
     report "****************** TB Start ****************" severity note;
     wait for 100 ns;     
-    sync <= '1';
+    execute_btn <= '1';
     wait for 100 ns;     
-    sync <= '0';
+    execute_btn <= '0';
     wait for 100 ns;     
-    sync <= '1';
+    execute_btn <= '1';
     wait for 100 ns;     
-    sync <= '0';
+    execute_btn <= '0';
     wait for 100 ns;     
-    sync <= '1';
+    execute_btn <= '1';
     wait for 100 ns;     
-    sync <= '0';
+    execute_btn <= '0';
     wait for 100 ns;     
-    sync <= '1';
+    execute_btn <= '1';
     wait for 100 ns;     
-    sync <= '0';
+    execute_btn <= '0';
     wait for 100 ns;     
-    sync <= '1';
+    execute_btn <= '1';
     wait for 100 ns;     
-    sync <= '0';
+    execute_btn <= '0';
     wait for 100 ns;     
-    sync <= '1';
+    execute_btn <= '1';
     wait for 100 ns;     
-    sync <= '0';
+    execute_btn <= '0';
     wait for 100 ns;     
-    sync <= '1';
+    execute_btn <= '1';
     wait for 100 ns;     
-    sync <= '0';
+    execute_btn <= '0';
     wait for 100 ns;     
-    sync <= '1';
+    execute_btn <= '1';
     wait for 100 ns;     
-    sync <= '0';
+    execute_btn <= '0';
     wait for 100 ns;     
-    sync <= '1';
+    execute_btn <= '1';
     wait for 100 ns;     
-    sync <= '0';
+    execute_btn <= '0';
     wait for 100 ns;     
-    sync <= '1';
+    execute_btn <= '1';
     wait for 100 ns;     
-    sync <= '0';
+    execute_btn <= '0';
     report "****************** TB Finish ****************" severity note;
     wait;
   end process; 
