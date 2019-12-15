@@ -33,6 +33,12 @@
 --    Bits 4 through 0 are the seek address which is prepended to trailing zeros
 --    to arrive at a 15 bit memory address.
 --
+--    Two channel instances are created to retreive corresponding data addresses.
+--    Channel data addresses are passed through a 2:1 multiplexer to retreive the
+--    audio data. The audio data is then passed though a 1:2 demultiplexer to
+--    separate the two auido signals. The audio signals are added together to form
+--    an audio playback matching the current set of instructions.
+--
 --********************************************************************************
 --********************************************************************************
 
