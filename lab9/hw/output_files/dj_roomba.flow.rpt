@@ -1,5 +1,5 @@
 Flow report for dj_roomba
-Wed Dec 11 09:04:32 2019
+Sun Dec 15 14:26:51 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,24 +37,29 @@ refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Flow Summary                                                              ;
-+-----------------------------+---------------------------------------------+
-; Flow Status                 ; Flow Failed - Wed Dec 11 09:04:32 2019      ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name               ; dj_roomba                                   ;
-; Top-level Entity Name       ; top                                         ;
-; Family                      ; Cyclone V                                   ;
-; Device                      ; 5CSEMA5F31C6                                ;
-; Timing Models               ; Final                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Sun Dec 15 14:26:33 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; dj_roomba                                   ;
+; Top-level Entity Name           ; top                                         ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CSEMA5F31C6                                ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 513 / 32,070 ( 2 % )                        ;
+; Total registers                 ; 556                                         ;
+; Total pins                      ; 22 / 457 ( 5 % )                            ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 1,055,040 / 4,065,280 ( 26 % )              ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 1 / 6 ( 17 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -62,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/11/2019 09:04:24 ;
+; Start date & time ; 12/15/2019 14:24:56 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; dj_roomba           ;
 +-------------------+---------------------+
@@ -73,7 +78,7 @@ refer to the applicable agreement for further details.
 +--------------------------+------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name          ; Value                                                ; Default Value ; Entity Name ; Section Id ;
 +--------------------------+------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID    ; 140926354296819.157607306341728                      ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID    ; 140926354296819.157643789623312                      ; --            ; --          ; --         ;
 ; MISC_FILE                ; ../../src/rom_data/rom_data.cmp                      ; --            ; --          ; --         ;
 ; MISC_FILE                ; ../../src/rom_instructions/rom_instructions_inst.vhd ; --            ; --          ; --         ;
 ; MISC_FILE                ; ../../src/rom_instructions/rom_instructions.cmp      ; --            ; --          ; --         ;
@@ -87,8 +92,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4849 MB             ; 00:00:20                           ;
-; Total                ; 00:00:09     ; --                      ; --                  ; 00:00:20                           ;
+; Analysis & Synthesis ; 00:00:28     ; 1.0                     ; 4946 MB             ; 00:00:49                           ;
+; Fitter               ; 00:00:58     ; 1.2                     ; 6749 MB             ; 00:02:12                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4875 MB             ; 00:00:08                           ;
+; Timing Analyzer      ; 00:00:17     ; 1.6                     ; 5240 MB             ; 00:00:25                           ;
+; Total                ; 00:01:50     ; --                      ; --                  ; 00:03:34                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -98,6 +106,9 @@ refer to the applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; LAPTOP-CD05AGIL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; LAPTOP-CD05AGIL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; LAPTOP-CD05AGIL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; LAPTOP-CD05AGIL  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -105,6 +116,9 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off dj_roomba -c dj_roomba
+quartus_fit --read_settings_files=off --write_settings_files=off dj_roomba -c dj_roomba
+quartus_asm --read_settings_files=off --write_settings_files=off dj_roomba -c dj_roomba
+quartus_sta dj_roomba -c dj_roomba
 
 
 

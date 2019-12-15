@@ -69,11 +69,11 @@ constant pause                  : std_logic_vector(1 downto 0) := "01";
 constant seek                   : std_logic_vector(1 downto 0) := "10";
 constant stop                   : std_logic_vector(1 downto 0) := "11";
 
--- state machine signals
+-- instruction state machine signals
 signal state_reg                : std_logic_vector(4 downto 0);
 signal state_next               : std_logic_vector(4 downto 0);
 
--- state machine states
+-- instruction state machine states
 constant idle                   : std_logic_vector(4 downto 0) := "00001";
 constant fetch                  : std_logic_vector(4 downto 0) := "00010";
 constant decode                 : std_logic_vector(4 downto 0) := "00100";
@@ -86,10 +86,10 @@ signal ch_state_next            : std_logic_vector(4 downto 0);
 
 -- channel state machine states
 constant ch_idle                : std_logic_vector(4 downto 0) := "00001";
-constant ch0_da                 : std_logic_vector(4 downto 0) := "00010";
-constant ch0_audio              : std_logic_vector(4 downto 0) := "00100";
-constant ch1_da                 : std_logic_vector(4 downto 0) := "01000";
-constant ch1_audio              : std_logic_vector(4 downto 0) := "10000";
+constant ch0_send_da            : std_logic_vector(4 downto 0) := "00010";
+constant ch0_get_audio          : std_logic_vector(4 downto 0) := "00100";
+constant ch1_send_da            : std_logic_vector(4 downto 0) := "01000";
+constant ch1_get_audio          : std_logic_vector(4 downto 0) := "10000";
 
 -- program counter (instruction memory address)
 signal pc                       : std_logic_vector(4 downto 0);
@@ -104,9 +104,14 @@ alias  seek_address             : std_logic_vector(4 downto 0) is instruction(4 
 
 -- data address signals
 signal data_address             : std_logic_vector(15 downto 0);
-signal data_address_reg         : std_logic_vector(15 downto 0);
 signal data_address_0           : std_logic_vector(14 downto 0);
 signal data_address_1           : std_logic_vector(14 downto 0);
+
+-- audio signals
+signal ch0_audio                : std_logic_vector(15 downto 0);
+signal ch1_audio                : std_logic_vector(15 downto 0);
+signal mix_audio                : std_logic_vector(15 downto 0);
+signal audio_sig                : std_logic_vector(15 downto 0);
 
 ----------------------------------------------------------------------------------
 
@@ -159,23 +164,7 @@ begin
 
 ----------------------------------------------------------------------------------
 
--- data memory instantiation
-data_mem_u : rom_data
-  port map (
-    address    => data_address,
-    clock      => clk,
-    q          => audio_out
-  );
-
--- instruction memory instantiation
-instruction_mem : rom_instructions
-  port map(
-    address => pc,
-    clock   => clk,
-    q       => instruction
-  );
-
--- execute edge
+-- execute button to execute edge
 execute_u : rising_edge_synchronizer
   port map(
     clk   => clk,
@@ -184,47 +173,9 @@ execute_u : rising_edge_synchronizer
     edge  => edge
   );
 
--- channel 1
-ch1_inst : channel
-  generic map(
-    ch_index      => 1
-  )
-  port map(
-    clk           => clk,
-    reset         => reset,
-    sync          => sync,
-    instruction   => instruction,
-    state_reg     => state_reg,
-    data_address  => data_address_1
-  );
-
--- channel 0
-ch0_inst : channel
-  generic map(
-    ch_index      => 0
-  )
-  port map(
-    clk           => clk,
-    reset         => reset,
-    sync          => sync,
-    instruction   => instruction,
-    state_reg     => state_reg,
-    data_address  => data_address_0
-  );
-
 ----------------------------------------------------------------------------------
 
--- state register
-process (clk, reset)
-begin
-  if (reset = '1') then
-    state_reg <= fetch;
-  elsif (clk'event and clk = '1') then
-    state_reg <= state_next;
-  end if;
-end  process;
-
--- next state logic
+-- instruction next state logic
 process (state_reg, opcode, edge)
 begin
   -- prevent latch
@@ -250,50 +201,15 @@ begin
   end case;
 end process;
 
-----------------------------------------------------------------------------------
-
--- channel state register
+-- instruction state register
 process (clk, reset)
 begin
   if (reset = '1') then
-    ch_state_reg <= idle;
+    state_reg <= fetch;
   elsif (clk'event and clk = '1') then
-    ch_state_reg <= ch_state_next;
+    state_reg <= state_next;
   end if;
-end process;
-
--- channel next state logic
-process(ch_state_next, sync)
-begin
-  -- prevent latch
-  ch_state_next <= ch_state_reg;
-  case ch_state_reg is
-    when ch_idle   =>
-      if (sync = '1') then ch_state_next <= ch0_da;
-      end if;
-    when ch0_da    => ch_state_next <= ch0_audio;
-    when ch0_audio => ch_state_next <= ch1_da;
-    when ch1_da    => ch_state_next <= ch1_audio;
-    when ch1_audio => ch_state_next <= ch_idle;
-    when others    => ch_state_next <= ch_idle;
-  end case;
-end process;
-
-----------------------------------------------------------------------------------
-
--- data register
-process (clk, reset)
-begin
-  if (reset = '1') then
-    data_address_reg <= (others => '0');
-  elsif (clk'event and clk = '1') then
-    if (state_reg = execute) then
-      if (sync = '1') then
-        data_address_reg <= data_address;
-      end if;
-    end if;
-  end if;
-end process;
+end  process;
 
 ----------------------------------------------------------------------------------
 
@@ -315,6 +231,114 @@ begin
 end process;
 
 ----------------------------------------------------------------------------------
+
+-- program counter (instruction memory address) to instruction
+instruction_mem : rom_instructions
+  port map(
+    address => pc,
+    clock   => clk,
+    q       => instruction
+  );
+
+----------------------------------------------------------------------------------
+
+-- channel 0 instance
+ch0_inst : channel
+  generic map(
+    ch_index      => 0
+  )
+  port map(
+    clk           => clk,
+    reset         => reset,
+    sync          => sync,
+    instruction   => instruction,
+    state_reg     => state_reg,
+    data_address  => data_address_0
+  );
+
+-- channel 1 instance
+ch1_inst : channel
+  generic map(
+    ch_index      => 1
+  )
+  port map(
+    clk           => clk,
+    reset         => reset,
+    sync          => sync,
+    instruction   => instruction,
+    state_reg     => state_reg,
+    data_address  => data_address_1
+  );
+
+----------------------------------------------------------------------------------
+
+-- channel next state logic
+process(ch_state_next, sync)
+begin
+  -- prevent latch
+  ch_state_next <= ch_state_reg;
+  case ch_state_reg is
+    when ch_idle   =>
+      if (sync = '1') then ch_state_next <= ch0_send_da;
+      end if;
+    when ch0_send_da    => ch_state_next <= ch0_get_audio;
+    when ch0_get_audio  => ch_state_next <= ch1_send_da;
+    when ch1_send_da    => ch_state_next <= ch1_get_audio;
+    when ch1_get_audio  => ch_state_next <= ch_idle;
+    when others         => ch_state_next <= ch_idle;
+  end case;
+end process;
+
+-- channel state register
+process (clk, reset)
+begin
+  if (reset = '1') then
+    ch_state_reg <= idle;
+  elsif (clk'event and clk = '1') then
+    ch_state_reg <= ch_state_next;
+  end if;
+end process;
+
+----------------------------------------------------------------------------------
+
+-- channel 0, 1 data to data address mux
+process (clk, ch_state_reg)
+begin
+  if (clk'event and clk = '1') then
+    if (ch_state_reg = ch0_send_da) then
+      data_address <= '0' & data_address_0;
+    elsif (ch_state_reg = ch1_send_da) then
+      data_address <= '1' & data_address_1;
+    end if;
+  end if;
+end process;
+
+
+-- data address to audio 0, 1 demux
+process (clk, ch_state_reg)
+begin
+  if (clk'event and clk = '1') then
+    if (ch_state_reg = ch0_get_audio) then
+      ch0_audio <= audio_sig;
+    elsif (ch_state_reg = ch1_get_audio) then
+      ch1_audio <= audio_sig;
+    end if;
+  end if;
+end process;
+
+----------------------------------------------------------------------------------
+
+-- retreive audio data from memory
+data_mem_u : rom_data
+  port map (
+    address    => data_address,
+    clock      => clk,
+    q          => audio_sig
+  );
+
+----------------------------------------------------------------------------------
+
+  audio_out <= std_logic_vector(unsigned(ch0_audio) + unsigned(ch1_audio));
 
   led <= instruction;
 

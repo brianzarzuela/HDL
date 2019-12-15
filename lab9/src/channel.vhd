@@ -74,15 +74,15 @@ begin
 
 -- execution unit
 data_address_play <=
-  (others => '1') when data_address_reg = "11111111111111" else
-  std_logic_vector(unsigned(data_address_reg) + 1);
+  (others => '1') when data_address = "111111111111111" else
+  std_logic_vector(unsigned(data_address) + 1);
 
 data_address_repeat <=
-  (others => '0') when data_address_reg = "11111111111111"
-  else std_logic_vector(unsigned(data_address_reg) + 1);
+  (others => '0') when data_address = "111111111111111"
+  else std_logic_vector(unsigned(data_address) + 1);
 
-data_address_pause       <= data_address_reg;
-data_address_seek        <= seek_address & "000000000";
+data_address_pause       <= data_address;
+data_address_seek        <= seek_address & "0000000000";
 data_address_stop        <= (others => '0');
 
 -- data address routing multiplexer
