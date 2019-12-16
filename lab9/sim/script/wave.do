@@ -23,7 +23,6 @@ add wave -noupdate -radix Instructions /dj_roomba_3000_tb/dj_roomba/instruction
 add wave -noupdate -expand -group uut -format Analog-Step -height 74 -max 1492.0 /dj_roomba_3000_tb/dj_roomba/ch0_audio
 add wave -noupdate -expand -group uut -format Analog-Step -height 74 -max 1492.0 /dj_roomba_3000_tb/dj_roomba/ch1_audio
 add wave -noupdate -expand -group uut -format Analog-Step -height 74 -max 1492.0 /dj_roomba_3000_tb/dj_roomba/audio_out
-add wave -noupdate -radix Instructions /dj_roomba_3000_tb/dj_roomba/led
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {3750040 ns} 0}
 quietly wave cursor active 1

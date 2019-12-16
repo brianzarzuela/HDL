@@ -3,7 +3,7 @@ vmap altera_mf ../../src/altera_mf
 vcom -93 -work work ../../src/rom_data/rom_data.vhd
 vcom -93 -work work ../../src/rom_instructions/rom_instructions.vhd
 vcom -93 -work work ../../src/rising_edge_synchronizer.vhd
-vcom -93 -work work ../../src/channnel.vhd
+vcom -93 -work work ../../src/channel.vhd
 vcom -93 -work work ../../src/dj_roomba_3000.vhd
 vcom -93 -work work ../src/dj_roomba_3000_tb.vhd
 vsim -voptargs=+acc dj_roomba_3000_tb
