@@ -1,5 +1,5 @@
 Analysis & Synthesis report for dj_roomba
-Sun Dec 15 14:25:24 2019
+Tue Dec 17 19:04:37 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -89,7 +89,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Dec 15 14:25:24 2019       ;
+; Analysis & Synthesis Status     ; Successful - Tue Dec 17 19:04:37 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; dj_roomba                                   ;
 ; Top-level Entity Name           ; top                                         ;
@@ -1702,7 +1702,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Dec 15 14:24:55 2019
+    Info: Processing started: Tue Dec 17 19:03:48 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dj_roomba -c dj_roomba
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1748,8 +1748,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file /users/
     Info (12022): Found design unit 1: channel-imp File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 38
     Info (12023): Found entity 1: channel File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 24
 Info (12021): Found 2 design units, including 1 entities, in source file /users/briza/documents/github/hdl/lab9/src/dj_roomba_3000.vhd
-    Info (12022): Found design unit 1: dj_roomba_3000-beh File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 59
-    Info (12023): Found entity 1: dj_roomba_3000 File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 46
+    Info (12022): Found design unit 1: dj_roomba_3000-beh File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 65
+    Info (12023): Found entity 1: dj_roomba_3000 File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 52
 Info (12021): Found 2 design units, including 1 entities, in source file /users/briza/documents/github/hdl/lab9/src/top.vhd
     Info (12022): Found design unit 1: top-beh File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/top.vhd Line: 22
     Info (12023): Found entity 1: top File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/top.vhd Line: 5
@@ -1758,10 +1758,10 @@ Warning (10036): Verilog HDL or VHDL warning at top.vhd(88): object "writedata_l
 Warning (10036): Verilog HDL or VHDL warning at top.vhd(89): object "writedata_right" assigned a value but never read File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/top.vhd Line: 89
 Info (12128): Elaborating entity "generic_counter" for hierarchy "generic_counter:uut" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/top.vhd Line: 109
 Info (12128): Elaborating entity "dj_roomba_3000" for hierarchy "dj_roomba_3000:dj_roomba" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/top.vhd Line: 119
-Warning (10492): VHDL Process Statement warning at dj_roomba_3000.vhd(279): signal "ch_state_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 279
-Warning (10492): VHDL Process Statement warning at dj_roomba_3000.vhd(280): signal "ch_state_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 280
-Info (12128): Elaborating entity "rising_edge_synchronizer" for hierarchy "dj_roomba_3000:dj_roomba|rising_edge_synchronizer:execute_u" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 168
-Info (12128): Elaborating entity "rom_instructions" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 236
+Warning (10492): VHDL Process Statement warning at dj_roomba_3000.vhd(285): signal "ch_state_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 285
+Warning (10492): VHDL Process Statement warning at dj_roomba_3000.vhd(286): signal "ch_state_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 286
+Info (12128): Elaborating entity "rising_edge_synchronizer" for hierarchy "dj_roomba_3000:dj_roomba|rising_edge_synchronizer:execute_u" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 174
+Info (12128): Elaborating entity "rom_instructions" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 242
 Warning (272007): Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/rom_instructions/rom_instructions.vhd Line: 85
 Warning (272007): Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/rom_instructions/rom_instructions.vhd Line: 85
 Info (12128): Elaborating entity "altsyncram" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/rom_instructions/rom_instructions.vhd Line: 85
@@ -1803,7 +1803,7 @@ Info (12133): Instantiated megafunction "dj_roomba_3000:dj_roomba|rom_instructio
 Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_r0i1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 302
 Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_r0i1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
 Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "dj_roomba_3000:dj_roomba|rom_instructions:instruction_mem|altsyncram:altsyncram_component|altsyncram_r0i1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 828
-Info (12128): Elaborating entity "channel" for hierarchy "dj_roomba_3000:dj_roomba|channel:ch0_inst" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 246
+Info (12128): Elaborating entity "channel" for hierarchy "dj_roomba_3000:dj_roomba|channel:ch0_inst" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 252
 Warning (10492): VHDL Process Statement warning at channel.vhd(96): signal "data_address_pause" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 96
 Warning (10492): VHDL Process Statement warning at channel.vhd(98): signal "data_address_stop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 98
 Warning (10492): VHDL Process Statement warning at channel.vhd(103): signal "data_address_repeat" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 103
@@ -1825,7 +1825,7 @@ Info (10041): Inferred latch for "data_address_reg[11]" at channel.vhd(89) File:
 Info (10041): Inferred latch for "data_address_reg[12]" at channel.vhd(89) File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 89
 Info (10041): Inferred latch for "data_address_reg[13]" at channel.vhd(89) File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 89
 Info (10041): Inferred latch for "data_address_reg[14]" at channel.vhd(89) File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 89
-Info (12128): Elaborating entity "channel" for hierarchy "dj_roomba_3000:dj_roomba|channel:ch1_inst" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 260
+Info (12128): Elaborating entity "channel" for hierarchy "dj_roomba_3000:dj_roomba|channel:ch1_inst" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 266
 Warning (10492): VHDL Process Statement warning at channel.vhd(96): signal "data_address_pause" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 96
 Warning (10492): VHDL Process Statement warning at channel.vhd(98): signal "data_address_stop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 98
 Warning (10492): VHDL Process Statement warning at channel.vhd(103): signal "data_address_repeat" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 103
@@ -1847,7 +1847,7 @@ Info (10041): Inferred latch for "data_address_reg[11]" at channel.vhd(89) File:
 Info (10041): Inferred latch for "data_address_reg[12]" at channel.vhd(89) File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 89
 Info (10041): Inferred latch for "data_address_reg[13]" at channel.vhd(89) File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 89
 Info (10041): Inferred latch for "data_address_reg[14]" at channel.vhd(89) File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/channel.vhd Line: 89
-Info (12128): Elaborating entity "rom_data" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 332
+Info (12128): Elaborating entity "rom_data" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/dj_roomba_3000.vhd Line: 338
 Info (12128): Elaborating entity "altsyncram" for hierarchy "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/rom_data/rom_data.vhd Line: 60
 Info (12130): Elaborated megafunction instantiation "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/rom_data/rom_data.vhd Line: 60
 Info (12133): Instantiated megafunction "dj_roomba_3000:dj_roomba|rom_data:data_mem_u|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/rom_data/rom_data.vhd Line: 60
@@ -2037,7 +2037,7 @@ Info (12128): Elaborating entity "cntr_i2b" for hierarchy "audio_codec:codec|Alt
 Info (12128): Elaborating entity "Altera_UP_Audio_Out_Serializer" for hierarchy "audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer" File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/audio_ip/audio_codec.v Line: 267
 Warning (12030): Port "clk" on the entity instantiation of "DE_Clock_Generator_Audio" is connected to a signal of width 1. The formal width of the signal in the module is 6.  The extra bits will be left dangling without any fan-out logic. File: C:/Users/briza/Documents/GitHub/HDL/lab9/src/audio_ip/clock_generator.v Line: 134
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2019.12.15.14:25:13 Progress: Loading sld0ef9f1e8/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2019.12.17.19:04:18 Progress: Loading sld0ef9f1e8/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -2190,9 +2190,9 @@ Info (21057): Implemented 1190 device resources after synthesis - the final reso
     Info (21064): Implemented 186 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 137 warnings
-    Info: Peak virtual memory: 4946 megabytes
-    Info: Processing ended: Sun Dec 15 14:25:24 2019
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:50
+    Info: Peak virtual memory: 4957 megabytes
+    Info: Processing ended: Tue Dec 17 19:04:37 2019
+    Info: Elapsed time: 00:00:49
+    Info: Total CPU time (on all processors): 00:01:09
 
 
